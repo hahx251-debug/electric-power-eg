@@ -1,167 +1,170 @@
+إليك الكود البرمجي الأخير، المتكامل، والمصمم بدقة هندسية بالغة لصفحة هبوط شركة إلكتريك باور.
+تم دمج النصوص الرسمية الدقيقة التي أرسلتها، مع الألوان الأربعة والهوية البصرية المأخوذة من لوحتكم الإعلانية (الأزرق الداكن، الأخضر المشرق، والأصفر)، بالإضافة إلى تفعيل أزرار الاتصال الهاتفي الفوري والأزرار الأربعة المباشرة للواتساب لكل رقم هاتف لضمان سهولة تواصل العملاء معك.
+قم بنسخ هذا الكود بالكامل واستبدل محتوى ملف index.html به على حسابك في GitHub واحفظ التغييرات:
+html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electric Power | حلول الطاقة المتكاملة وأنظمة الطاقة الشمسية</title>
-    <!-- خط فريد ومميز للتصميم الهندي والتقني -->
+    <title>إلكتريك باور | طاقة أقوى... مستقبل أكثر استدامة</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e3a8a; /* أزرق داكن يعبر عن الاحترافية والثقة */
-            --secondary: #eab308; /* أصفر ذهبي يرمز للشمس والطاقة المتجددة */
-            --dark: #0f172a;
+            --navy: #1a365d;
+            --green: #22c55e;
+            --yellow: #eab308;
+            --dark: #1e293b;
             --light: #f8fafc;
-            --gray: #64748b;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.8; text-align: right; }
         
-        /* الهيدر والقائمة */
-        header { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-size: 24px; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .logo span { color: var(--secondary); }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .lang-btn { background: var(--primary); color: #fff !important; padding: 5px 15px; border-radius: 20px; font-size: 14px; }
+        header { background: var(--navy); padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; color: #ffffff; text-decoration: none; }
+        .logo span { color: var(--yellow); }
+        .nav-menu { display: flex; gap: 20px; list-style: none; }
+        .nav-menu a { text-decoration: none; color: #ffffff; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        .nav-menu a:hover { color: var(--yellow); }
 
-        /* قسم الهيرو (الواجهة الرئيسية) */
-        .hero { background: linear-gradient(135deg, rgba(30,58,138,0.95), rgba(15,23,42,0.9)), url('https://unsplash.com') no-repeat center center/cover; padding: 100px 20px; text-align: center; color: #fff; }
-        .hero h1 { font-size: 38px; margin-bottom: 20px; font-weight: 700; }
-        .hero p { font-size: 18px; max-width: 700px; margin: 0 auto 30px; color: #cbd5e1; }
-        .cta-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn { padding: 12px 30px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: 0.3s; cursor: pointer; border: none; }
-        .btn-primary { background: var(--secondary); color: var(--dark); }
-        .btn-primary:hover { background: #d9a306; }
-        .btn-secondary { background: transparent; border: 2px solid #fff; color: #fff; }
-        .btn-secondary:hover { background: #fff; color: var(--dark); }
+        .hero { padding: 60px 20px; background: #ffffff; text-align: center; border-bottom: 3px solid var(--green); }
+        .hero h1 { font-size: 32px; color: var(--navy); font-weight: 800; margin-bottom: 15px; }
+        .hero .badge { display: inline-block; background: var(--green); color: #fff; padding: 6px 20px; border-radius: 20px; font-weight: 700; font-size: 15px; margin-bottom: 20px; }
+        .hero p { font-size: 16px; color: #475569; max-width: 800px; margin: 0 auto 30px; text-align: justify; text-align-last: center; }
 
-        /* الأقسام العامة */
-        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 28px; margin-bottom: 40px; color: var(--primary); position: relative; padding-bottom: 10px; }
-        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 20px; }
+        section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { font-size: 24px; color: var(--navy); margin-bottom: 25px; font-weight: 800; position: relative; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+        .section-title::after { content: ''; width: 80px; height: 3px; background: var(--yellow); position: absolute; bottom: -2px; right: 0; }
 
-        /* من نحن */
-        .about-text { text-align: center; max-width: 800px; margin: 0 auto; font-size: 18px; color: var(--gray); }
+        .grid-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .vision-box, .mission-box { background: #ffffff; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .vision-box h3, .mission-box h3 { color: var(--navy); margin-bottom: 12px; font-weight: 700; }
 
-        /* الخدمات والمنتجات */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-top: 4px solid var(--primary); transition: 0.3s; text-align: center; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .card-icon { font-size: 40px; margin-bottom: 15px; display: inline-block; }
-        .card h3 { margin-bottom: 12px; color: var(--dark); }
-        .card p { color: var(--gray); font-size: 15px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .service-card { background: #ffffff; padding: 20px; border-radius: 8px; border-right: 4px solid var(--green); box-shadow: 0 2px 5px rgba(0,0,0,0.02); border-top: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; border-left: 1px solid #edf2f7; }
+        .service-card h3 { font-size: 16px; color: var(--navy); font-weight: 700; }
 
-        /* المشروعات */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .project-item { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .project-img { height: 200px; background-size: cover; background-position: center; background-color: #cbd5e1; }
-        .project-info { padding: 20px; }
-        .project-info h4 { color: var(--primary); margin-bottom: 8px; }
-        .project-tag { display: inline-block; background: #e2e8f0; padding: 3px 10px; border-radius: 15px; font-size: 12px; margin-top: 10px; font-weight: 600; }
-
-        /* نموذج طلب السعر والتواصل */
-        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
-        .quote-form { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; outline: none; }
-        .form-group input:focus, .form-group select:focus { border-color: var(--primary); }
+        .contact-section { background: #ffffff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; text-align: center; }
+        .contact-title { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+        .contact-desc { color: #64748b; font-size: 15px; margin-bottom: 30px; }
         
-        .contact-info h3 { margin-bottom: 20px; color: var(--primary); }
-        .info-link { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--dark); margin-bottom: 15px; font-size: 18px; font-weight: 600; }
-        .info-link.whatsapp { color: #25d366; }
-        
-        /* الفروع */
-        .branches-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .branch { background: #e0f2fe; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 14px; }
+        .phones-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .phone-card { background: var(--light); padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 10px; }
+        .btn-call { display: flex; align-items: center; justify-content: center; background: var(--navy); color: #fff; padding: 10px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 16px; transition: 0.2s; }
+        .btn-call:hover { background: #112544; }
+        .btn-whats { display: flex; align-items: center; justify-content: center; background: var(--green); color: #fff; padding: 8px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 14px; transition: 0.2s; }
+        .btn-whats:hover { background: #16a34a; }
 
-        /* الفوتر */
-        footer { background: var(--dark); color: #fff; text-align: center; padding: 20px; font-size: 14px; border-top: 3px solid var(--secondary); }
+        .branches-bar { background: var(--navy); color: white; padding: 30px 20px; text-align: center; border-radius: 12px; margin-top: 40px; }
+        .branches-title { color: var(--yellow); font-weight: 700; margin-bottom: 15px; font-size: 16px; }
+        .branches-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .branch-badge { background: rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+
+        footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 20px; font-size: 14px; border-top: 4px solid var(--yellow); }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* يفضل دمج قائمة موبايل مستقبلاً */
-            .hero h1 { font-size: 28px; }
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 26px; }
+            .phones-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر -->
     <header>
-        <nav class="nav-container">
-            <a href="#" class="logo">⚡ Electric <span>Power</span></a>
-            <ul class="nav-links">
+        <div class="header-container">
+            <a href="#" class="logo">⚡ إلكتريك <span>باور</span></a>
+            <ul class="nav-menu">
                 <li><a href="#">الرئيسية</a></li>
-                <li><a href="#about">من نحن</a></li>
+                <li><a href="#about">عن الشركة</a></li>
                 <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#projects">مشروعاتنا</a></li>
+                <li><a href="#vision">رؤيتنا ورسالتنا</a></li>
                 <li><a href="#contact">اتصل بنا</a></li>
-                <li><a href="#" class="lang-btn">English</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
-    <!-- واجهة الهيرو -->
-    <section class="hero" style="max-width:100%; width:100%;">
-        <h1>طاقة أنظف، أداء أقوى، ومستقبل أكثر استدامة</h1>
-        <p>نقدم حلولاً هندسية متكاملة في أنظمة الطاقة الشمسية وتخزين الطاقة الاحتياطية لتلبية احتياجات المزارع، المنازل، والمؤسسات الصناعية الكبرى في مصر.</p>
-        <div class="cta-btns">
-            <a href="#quote" class="btn btn-primary">اطلب عرض سعر فوراً</a>
-            <a href="#services" class="btn btn-secondary">اكتشف خدماتنا</a>
+    <div class="hero">
+        <h1>شركة إلكتريك باور</h1>
+        <div class="badge">حلول متكاملة للتنمية الزراعية والصناعية</div>
+        <p>شركة متخصصة في حلول الطاقة والطاقة الشمسية، تعمل على تقديم حلول متكاملة لتوليد وإدارة الطاقة بكفاءة واعتمادية، من خلال تصميم وتنفيذ محطات الطاقة الشمسية والأنظمة الكهربائية وفقًا لاحتياجات العملاء وطبيعة كل مشروع. نعتمد على الخبرة الفنية والهندسية، وجودة المكونات، ودقة التنفيذ، بهدف تقديم حلول عملية تحقق أعلى كفاءة تشغيلية وتساعد على خفض استهلاك الطاقة وتكاليف التشغيل.</p>
+    </div>
+
+    <section id="services">
+        <h2 class="section-title">خدماتنا المعتمدة</h2>
+        <div class="services-grid">
+            <div class="service-card"><h3>تصميم وتنفيذ محطات الطاقة الشمسية</h3></div>
+            <div class="service-card"><h3>توريد وتركيب الألواح الشمسية والإنفرترات</h3></div>
+            <div class="service-card"><h3>أنظمة البطاريات وتخزين الطاقة</h3></div>
+            <div class="service-card"><h3>أنظمة UPS والحلول الاحتياطية للطاقة</h3></div>
+            <div class="service-card"><h3>أنظمة تشغيل طلمبات المياه بالطاقة الشمسية</h3></div>
+            <div class="service-card"><h3>تنفيذ المحطات للمصانع والمزارع والمشروعات التجارية</h3></div>
+            <div class="service-card"><h3>أعمال التركيبات الكهربائية والربط والتشغيل</h3></div>
+            <div class="service-card"><h3>الصيانة والدعم الفني ومتابعة أداء المحطات</h3></div>
+            <div class="service-card"><h3>أسمدة ومبيدات حشرية مدعمة زراعياً</h3></div>
         </div>
     </section>
 
-    <!-- من نحن -->
-    <section id="about">
-        <h2 class="section-title">من نحن</h2>
-        <p class="about-text">
-            في <strong>Electric Power</strong>، نبتكر حلولاً متكاملة ومستدامة للطاقة النظيفة. انطلقنا برؤية هندسية واضحة تهدف إلى تمكين القطاعات الزراعية والصناعية في مصر من تحقيق الاستقلال الطاقي وخفض تكاليف التشغيل بنسبة تصل إلى 70%، مع ضمان أعلى معايير الجودة والدعم الفني المستمر.
-        </p>
-    </section>
-
-    <!-- الخدمات -->
-    <section id="services" style="background: #f1f5f9; max-width:100%; width:100%;">
-        <div style="max-width:1200px; margin:0 auto;">
-            <h2 class="section-title">خدماتنا ومنتجاتنا</h2>
-            <div class="grid">
-                <div class="card">
-                    <span class="card-icon">☀️</span>
-                    <h3>محطات الطاقة الشمسية</h3>
-                    <p>تصميم، توريد، وتركيب أنظمة الطاقة الشمسية الهجينة والمتصلة بالشبكة (On-Grid / Off-Grid) حسب احتياج منشأتك.</p>
+    <section id="vision" style="background: #f1f5f9; max-width: 100%;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 10px 20px;">
+            <div class="grid-two">
+                <div class="vision-box">
+                    <h3>رؤيتنا</h3>
+                    <p>أن نكون من الشركات الرائدة في تقديم حلول الطاقة النظيفة والأنظمة الكهربائية المتكاملة، والمساهمة في بناء مستقبل أكثر كفاءة واستدامة في قطاع الطاقة.</p>
                 </div>
-                <div class="card">
-                    <span class="card-icon">🔋</span>
-                    <h3>البطاريات والإنفرترات</h3>
-                    <p>أحدث حلول تخزين الطاقة وتحويلها من كبرى الماركات العالمية لضمان استمرارية التشغيل الآمن للأحمال.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon">🌱</span>
-                    <h3>حلول الطاقة الزراعية</h3>
-                    <p>تشغيل آبار الري ومضخات غاطسة برؤية هندسية تضمن استقرار تدفق المياه بأعلى كفاءة طوال ساعات السطوع.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon">🏢</span>
-                    <h3>المنازل والمؤسسات</h3>
-                    <p>تأمين مالي وتشغيلي كامل للمنازل والمنشآت التجارية عبر تقليل الاعتماد الكامل على شبكة الكهرباء التقليدية.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon">⚡</span>
-                    <h3>أنظمة UPS والتحويل</h3>
-                    <p>أنظمة التغذية الكهربائية الاحتياطية الفورية للمصانع والعيادات لحماية الأجهزة الحساسة من انقطاع التيار.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon">🛠️</span>
-                    <h3>الدعم الفني والاستشارات</h3>
-                    <p>دراسات جدوى متكاملة وفحص الأحمال لتحديد النظام الأنسب لميزانيتك مع عقود صيانة دورية معتمدة.</p>
+                <div class="mission-box">
+                    <h3>رسالتنا</h3>
+                    <p>تقديم حلول طاقة موثوقة وفعالة تجمع بين الجودة، الخبرة، التكنولوجيا، ودقة التنفيذ، بما يحقق لعملائنا أفضل أداء ممكن واستثمارًا طويل الأمد.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- المشروعات -->
-    <section id="projects">
+    <section id="contact" class="contact-section" style="max-width: 100%;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 10px 20px;">
+            <h2 class="contact-title">تواصلوا معنا الآن</h2>
+            <p class="contact-desc">اضغط مباشرة على الرقم للاتصال الهاتفي الفوري أو المراسلة المباشرة عبر واتساب</p>
+            
+            <div class="phones-list">
+                <!-- الهاتف الأول -->
+                <div class="phone-card">
+                    <a href="tel:01104967065" class="btn-call">📞 اتصل الآن: 01104967065</a>
+                    <a href="https://wa.meً%20إلكتريك%20باور،%20أود%20الاستفسار%20عن%20أنظمة%20الطاقة%20الشمسية" target="_blank" class="btn-whats">🟢 مراسلة عبر واتساب</a>
+                </div>
+                <!-- الهاتف الثاني -->
+                <div class="phone-card">
+                    <a href="tel:01119935845" class="btn-call">📞 اتصل الآن: 01119935845</a>
+                    <a href="https://wa.meً%20إلكتريك%20باور،%20أود%20الاستفسار%20عن%20حلول%20الطاقة" target="_blank" class="btn-whats">🟢 مراسلة عبر واتساب</a>
+                </div>
+                <!-- الهاتف الثالث -->
+                <div class="phone-card">
+                    <a href="tel:01119941565" class="btn-call">📞 اتصل الآن: 01119941565</a>
+                    <a href="https://wa.meً%20إلكتريك%20باور،%20أود%20طلب%20معاينة%20فنية" target="_blank" class="btn-whats">🟢 مراسلة عبر واتساب</a>
+                </div>
+                <!-- الهاتف الرابع -->
+                <div class="phone-card">
+                    <a href="tel:01119947570" class="btn-call">📞 اتصل الآن: 01119947570</a>
+يُرجى استخدام الرمز البرمجي بحذر.
+🟢 مراسلة عبر واتساب
+
+فروعنا وتغطيتنا الجغرافية الفعّالة
+
+اسكندرية
+مدينة السادات
+القاهرة
+المنيا
+أسيوط
+
+
+
+إلكتريك باور — طاقة أقوى... مستقبل أكثر استدامة.
+© 2026 جميع الحقوق محفوظة.
+
+---
+
+<FollowUp>
+بمجرد حفظ هذا الكود عبر زر **Commit changes** الأخضر، تفقد رابط موقعك الفعلي. هل تود بعد ذلك معرفة كيفية **ربط بريد الشركة الإلكتروني** لاستقبال استفسارات كبار المستثمرين مباشرة؟
+</FollowUp>
