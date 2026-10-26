@@ -1,64 +1,589 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Electric Power - توريد وتركيب أنظمة الطاقة الشمسية وحلول الطاقة للمنازل والمزارع والمؤسسات والصناعة.">
-<title>Electric Power | حلول الطاقة المتكاملة</title>
+<meta name="description" content="Electric Power - توريد وتركيب أنظمة الطاقة الشمسية، البطاريات والإنفرترات، وحلول التنمية الزراعية والصناعية.">
+<title>Electric Power | حلول الطاقة المتكاملة والتنمية الزراعية</title>
+
+<!-- Font Awesome للأيقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-:root{--navy:#082849;--green:#16833c;--gold:#e6a51d;--light:#f4f8fb;--ink:#17283b}
-*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.7}
-a{color:inherit;text-decoration:none}.top{background:var(--navy);color:#fff;padding:9px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
-header{padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-bottom:1px solid #e7edf2}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);font-size:20px}.brand img{width:62px;height:62px;object-fit:contain;border-radius:50%}
-nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}nav a:hover{color:var(--green)}
-button,.btn{border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer;display:inline-block}.lang{background:#edf3f7;color:var(--navy)}
-.hero{padding:64px 6%;background:linear-gradient(120deg,#082849ee,#082849c9),url('logo.png') center/cover; color:#fff;min-height:390px;display:flex;align-items:center}
-.hero-inner{max-width:760px}.eyebrow{color:#ffd36a;font-weight:700}.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.25;margin:10px 0}.hero p{font-size:18px;max-width:680px}.btn-primary{background:var(--green);color:#fff}.btn-secondary{background:#fff;color:var(--navy);margin-inline-start:8px}
-section{padding:48px 6%}.section-title{text-align:center;margin:0 0 10px;font-size:30px;color:var(--navy)}.section-sub{text-align:center;margin:0 auto 28px;max-width:720px;color:#5d6b78}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}.card{border:1px solid #e2eaf0;border-radius:14px;padding:22px;background:#fff;box-shadow:0 8px 22px #0b2b4610}.icon{font-size:32px}.card h3{margin:8px 0;color:var(--navy)}.soft{background:var(--light)}
-.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;align-items:center}.about img{width:100%;max-height:360px;object-fit:contain;border-radius:14px;background:#fff}
-.cta{background:linear-gradient(110deg,var(--navy),#104a69);color:#fff;text-align:center}.cta h2{font-size:30px;margin-top:0}.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;max-width:900px;margin:25px auto 0}.contact-box{background:#ffffff12;border:1px solid #ffffff30;padding:16px;border-radius:10px}
-footer{background:#061c30;color:#d8e3ed;padding:24px 6%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.small{font-size:13px;color:#647383}.ltr{direction:ltr;unicode-bidi:embed;display:inline-block}
-@media(max-width:600px){.hero{padding:42px 6%}.hero p{font-size:16px}header{align-items:flex-start}nav{gap:12px}}
+:root {
+  --navy: #082849;
+  --navy-dark: #051a30;
+  --green: #16833c;
+  --green-hover: #126b31;
+  --gold: #e6a51d;
+  --light-bg: #f4f8fb;
+  --ink: #17283b;
+  --gray: #5d6b78;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* شريط الاتصال العلوي */
+.top-bar {
+  background: var(--navy);
+  color: var(--white);
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.top-bar .phones span { margin-left: 10px; font-weight: 700; color: #fff; }
+
+/* Header & Nav */
+header {
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  color: var(--navy);
+  font-size: 22px;
+}
+/* تنسيق شعار الشركة بناءً على الهوية */
+.brand-logo-svg {
+  width: 50px;
+  height: 50px;
+}
+.brand span { line-height: 1.2; }
+.brand small { font-size: 12px; color: var(--green); font-weight: 600; display: block; }
+
+nav { display: flex; gap: 20px; font-weight: 600; font-size: 15px; }
+nav a { transition: color 0.3s; }
+nav a:hover { color: var(--green); }
+
+.btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: var(--green-hover); }
+.btn-secondary { background: var(--white); color: var(--navy); margin-inline-start: 8px; }
+.btn-secondary:hover { background: #e7edf2; }
+.lang-btn { background: #edf3f7; color: var(--navy); border: 1px solid #d0dce5; }
+
+/* Hero Section */
+.hero {
+  padding: 90px 6%;
+  background: linear-gradient(120deg, rgba(8, 40, 73, 0.9), rgba(8, 40, 73, 0.75)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: var(--white);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+.hero-inner { max-width: 760px; }
+.eyebrow { color: var(--gold); font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+.hero h1 { font-size: clamp(30px, 5vw, 50px); line-height: 1.25; margin: 10px 0; font-weight: 800; }
+.hero p { font-size: 18px; margin-bottom: 25px; opacity: 0.95; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+
+/* Stats Bar (Trust Elements) */
+.stats-bar {
+  background: var(--navy-dark);
+  color: var(--white);
+  padding: 30px 6%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  text-align: center;
+  border-bottom: 4px solid var(--green);
+}
+.stat-box h3 { font-size: 32px; color: var(--gold); margin: 0; font-weight: 800; }
+.stat-box p { margin: 5px 0 0; font-size: 14px; opacity: 0.85; }
+
+/* Section Styling */
+section { padding: 60px 6%; }
+.section-title { text-align: center; margin: 0 0 10px; font-size: 32px; color: var(--navy); font-weight: 800; }
+.section-sub { text-align: center; margin: 0 auto 35px; max-width: 720px; color: var(--gray); font-size: 16px; }
+
+/* Service Cards with Custom Images */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+.card {
+  border: 1px solid #e2eaf0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 8px 22px rgba(11, 43, 70, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover { transform: translateY(-7px); box-shadow: 0 14px 30px rgba(11, 43, 70, 0.15); }
+.card-img-wrapper {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.card:hover .card-img-wrapper img {
+  transform: scale(1.08);
+}
+.card-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(8, 40, 73, 0.85);
+  color: var(--gold);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+.card-body {
+  padding: 22px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-body h3 { margin: 0 0 10px; color: var(--navy); font-size: 20px; }
+.card-body p { margin: 0 0 15px; font-size: 14px; color: var(--gray); flex-grow: 1; }
+.card-link {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Features / Why Us */
+.soft { background: var(--light-bg); }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.feature-item {
+  display: flex;
+  gap: 15px;
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+.feature-item i { font-size: 28px; color: var(--green); }
+.feature-item h4 { margin: 0 0 5px; color: var(--navy); }
+.feature-item p { margin: 0; font-size: 14px; color: var(--gray); }
+
+/* Testimonials */
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.testimonial-box {
+  background: var(--white);
+  border-right: 4px solid var(--green);
+  padding: 22px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+.testimonial-box p { font-style: italic; color: #444; font-size: 15px; margin-bottom: 12px; }
+.stars { color: var(--gold); font-size: 13px; margin-bottom: 5px; }
+.client-info { font-weight: 700; color: var(--navy); font-size: 14px; }
+
+/* Contact CTA Section */
+.cta { background: linear-gradient(110deg, var(--navy), #104a69); color: var(--white); text-align: center; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; max-width: 950px; margin: 30px auto 0; }
+.contact-box { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; }
+.contact-box a { color: var(--gold); font-weight: bold; font-size: 16px; text-decoration: underline; display: inline-block; margin-top: 4px; }
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  left: 25px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 32px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+.whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+
+footer { background: #061c30; color: #d8e3ed; padding: 24px 6%; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14px; }
+.ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
+
+@media(max-width: 768px){
+  nav { display: none; }
+  .whatsapp-float { bottom: 15px; left: 15px; width: 52px; height: 52px; font-size: 28px; }
+}
 </style>
 </head>
 <body>
-<div class="top"><span id="topline">توريد وتركيب أنظمة الطاقة الشمسية</span><span class="ltr">01104967065 · 01119935845 · 01119941565 · 01119947570</span></div>
+
+<!-- شريط الاتصال العلوي متضمناً الأرقام الأربعة -->
+<div class="top-bar">
+  <span id="topline">Electric Power - توريد وتركيب أنظمة الطاقة الشمسية</span>
+  <div class="phones ltr">
+    <i class="fa-solid fa-phone" style="color:var(--gold)"></i> 
+    <a href="tel:01104967065">01104967065</a> · 
+    <a href="tel:01119935845">01119935845</a> · 
+    <a href="tel:01119941565">01119941565</a> · 
+    <a href="tel:01119947570">01119947570</a>
+  </div>
+</div>
+
+<!-- Header -->
 <header>
-  <a class="brand" href="#"><img src="logo.png" alt="شعار Electric Power"><span>Electric Power<br><small style="font-size:12px;color:var(--green)">حلول الطاقة المتكاملة</small></span></a>
-  <nav><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="#about" data-ar="من نحن" data-en="About">من نحن</a><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a><a href="#projects" data-ar="مشروعاتنا" data-en="Projects">مشروعاتنا</a><a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a></nav>
-  <button class="lang" onclick="toggleLang()" id="langBtn">English</button>
+  <a class="brand" href="#">
+    <!-- رسم SVG متوافق 100% مع شعار Electric Power (ورقة شجر خضراء + صاعقة زرقاء + نصف شمس ذهبية) -->
+    <svg class="brand-logo-svg" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#16833c" stroke-width="4"/>
+      <!-- شمس ذهبية -->
+      <path d="M 50 12 A 38 38 0 0 1 88 50" fill="none" stroke="#e6a51d" stroke-width="8" stroke-dasharray="6,4"/>
+      <!-- ورقة شجر خضراء -->
+      <path d="M 22 55 C 22 25 50 20 50 20 C 50 20 45 60 22 55 Z" fill="#16833c"/>
+      <!-- صاعقة كهربائية -->
+      <polygon points="52,15 32,52 48,52 42,85 68,42 52,42" fill="#082849" stroke="#ffffff" stroke-width="2"/>
+    </svg>
+    <span>Electric Power<br><small id="subBrand">حلول الطاقة المتكاملة والتنمية الزراعية</small></span>
+  </a>
+  <nav>
+    <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+    <a href="#about" data-ar="من نحن" data-en="About">من نحن</a>
+    <a href="#why-us" data-ar="لماذا نحن؟" data-en="Why Us">لماذا نحن؟</a>
+    <a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
+  </nav>
+  <div style="display:flex; gap:10px;">
+    <button class="btn lang-btn" onclick="toggleLang()" id="langBtn">English</button>
+  </div>
 </header>
+
 <main>
-<section class="hero" id="home"><div class="hero-inner">
-<div class="eyebrow" id="eyebrow">حلول طاقة للمستقبل</div>
-<h1 id="headline">طاقة أنظف، أداء أقوى، ومستقبل أكثر استدامة</h1>
-<p id="intro">نقدم حلولاً متكاملة للطاقة الشمسية وتخزين الطاقة، لتلبية احتياجات المنازل والمزارع والمؤسسات والقطاعات الصناعية.</p>
-<a class="btn btn-primary" href="#contact" id="quoteBtn">اطلب عرض سعر</a><a class="btn btn-secondary" href="#services" id="servicesBtn">اكتشف خدماتنا</a>
-</div></section>
-<section id="about"><div class="about"><div><h2 id="aboutTitle">من نحن</h2><p id="aboutText">Electric Power تعمل على توفير حلول متكاملة للطاقة، من توريد المعدات إلى تصميم وتركيب أنظمة الطاقة الشمسية، مع التركيز على الجودة والاعتمادية واحتياجات كل مشروع.</p><p class="small" id="aboutNote">يمكن تعديل هذا النص وإضافة نبذة الشركة الرسمية وسنوات الخبرة وشهادات الاعتماد.</p></div><img src="logo.png" alt="Electric Power للطاقة الشمسية"></div></section>
-<section class="soft" id="services"><h2 class="section-title" id="servicesTitle">خدماتنا ومنتجاتنا</h2><p class="section-sub" id="servicesSub">حلول مناسبة للاستخدامات السكنية والزراعية والتجارية والصناعية.</p>
-<div class="cards">
-<div class="card"><div class="icon">☀️</div><h3 data-ar="محطات الطاقة الشمسية" data-en="Solar Power Systems">محطات الطاقة الشمسية</h3><p data-ar="تصميم وتوريد وتركيب أنظمة الطاقة الشمسية حسب احتياج المشروع." data-en="Solar system design, supply and installation tailored to each project.">تصميم وتوريد وتركيب أنظمة الطاقة الشمسية حسب احتياج المشروع.</p></div>
-<div class="card"><div class="icon">🔋</div><h3 data-ar="البطاريات والإنفرترات" data-en="Batteries & Inverters">البطاريات والإنفرترات</h3><p data-ar="حلول تخزين الطاقة وتحويلها لدعم استمرارية التشغيل." data-en="Energy storage and conversion solutions to support reliable operation.">حلول تخزين الطاقة وتحويلها لدعم استمرارية التشغيل.</p></div>
-<div class="card"><div class="icon">🌱</div><h3 data-ar="حلول الطاقة الزراعية" data-en="Agricultural Energy Solutions">حلول الطاقة الزراعية</h3><p data-ar="أنظمة طاقة للمزارع والري ومضخات المياه حسب متطلبات الموقع." data-en="Power solutions for farms, irrigation and water pumps.">أنظمة طاقة للمزارع والري ومضخات المياه حسب متطلبات الموقع.</p></div>
-<div class="card"><div class="icon">🏢</div><h3 data-ar="حلول للمنازل والمؤسسات" data-en="Residential & Business Solutions">حلول للمنازل والمؤسسات</h3><p data-ar="حلول طاقة مصممة للمنازل والمنشآت التجارية والصناعية." data-en="Energy solutions for homes, commercial facilities and industry.">حلول طاقة مصممة للمنازل والمنشآت التجارية والصناعية.</p></div>
-<div class="card"><div class="icon">⚡</div><h3 data-ar="أنظمة UPS" data-en="UPS Systems">أنظمة UPS</h3><p data-ar="حلول تغذية احتياطية للأجهزة والمنشآت التي تحتاج إلى استمرارية الطاقة." data-en="Backup power solutions for equipment and facilities requiring continuity.">حلول تغذية احتياطية للأجهزة والمنشآت التي تحتاج إلى استمرارية الطاقة.</p></div>
-<div class="card"><div class="icon">🧰</div><h3 data-ar="الدعم الفني والاستشارات" data-en="Technical Support & Consultation">الدعم الفني والاستشارات</h3><p data-ar="مساعدة في اختيار النظام المناسب وفق الأحمال والميزانية وطبيعة التشغيل." data-en="Guidance to select systems based on load, budget and operating conditions.">مساعدة في اختيار النظام المناسب وفق الأحمال والميزانية وطبيعة التشغيل.</p></div>
-</div></section>
-<section id="projects"><h2 class="section-title" id="projectsTitle">مشروعاتنا</h2><p class="section-sub" id="projectsSub">أضف هنا صور المشروعات المنفذة وقدرات المحطات ومواقعها ومكوناتها الفنية.</p><div class="cards"><div class="card"><h3 id="project1">مشروعات الطاقة الشمسية</h3><p id="projectText1">صور التنفيذ، قدرة النظام، ونوع المعدات المستخدمة.</p></div><div class="card"><h3 id="project2">الحلول الزراعية والصناعية</h3><p id="projectText2">اعرض أمثلة من حلول الطاقة التي قدمتها الشركة للعملاء.</p></div><div class="card"><h3 id="project3">أعمال التوريد والتركيب</h3><p id="projectText3">أضف دراسات حالة مختصرة ونتائج كل مشروع.</p></div></div></section>
-<section class="cta" id="contact"><h2 id="contactTitle">هل لديك مشروع طاقة؟</h2><p id="contactText">تواصل معنا لمناقشة احتياجاتك وطلب عرض سعر مناسب.</p><div class="contact-grid"><div class="contact-box"><strong id="phoneLabel">اتصل بنا</strong><br><span class="ltr">01104967065</span><br><span class="ltr">01119935845</span></div><div class="contact-box"><strong id="otherPhones">أرقام إضافية</strong><br><span class="ltr">01119941565</span><br><span class="ltr">01119947570</span></div><div class="contact-box"><strong id="branches">فروعنا</strong><br><span id="branchText">الإسكندرية / السادات / القاهرة / المنيا / أسيوط</span></div></div><p style="margin-top:24px"><a class="btn btn-primary" href="tel:01104967065" id="callBtn">اتصل الآن</a></p></section>
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow" id="eyebrow">حلول متكاملة للتنمية الزراعية والصناعية والسكينة</div>
+    <h1 id="headline">طاقة أنظف، أداء أقوى، ومستقبل أكثر استدامة</h1>
+    <p id="intro">نقدم حلولاً متكاملة للطاقة الشمسية، التخزين، والمستلزمات الزراعية لتلبية احتياجات المنازل والمزارع والمؤسسات والقطاعات الصناعية.</p>
+    <div>
+      <a class="btn btn-primary" href="https://wa.me/201104967065?text=أرغب%20في%20استشارة%20مجانية%20وعرض%20سعر" target="_blank" id="quoteBtn"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+      <a class="btn btn-secondary" href="#services" id="servicesBtn">اكتشف خدماتنا</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar (Trust Element) -->
+<div class="stats-bar">
+  <div class="stat-box">
+    <h3>+500</h3>
+    <p>مشروع شمسى منفذ</p>
+  </div>
+  <div class="stat-box">
+    <h3>+15 MW</h3>
+    <p>قدرة محطات مركبة</p>
+  </div>
+  <div class="stat-box">
+    <h3>100%</h3>
+    <p>مكونات وأجهزة معتمدة</p>
+  </div>
+  <div class="stat-box">
+    <h3>5 فروع</h3>
+    <p>لتغطية كافة المحافظات</p>
+  </div>
+</div>
+
+<!-- Services Section With Rich Images -->
+<section id="services">
+  <h2 class="section-title" id="servicesTitle">خدماتنا ومنتجاتنا الرئيسية</h2>
+  <p class="section-sub" id="servicesSub">حلول متكاملة مصممة خصيصاً للاستخدامات السكنية، الزراعية، التجارية والصناعية.</p>
+  
+  <div class="cards">
+    
+    <!-- 1. تركيب محطات شمسية -->
+    <div class="card">
+      <div class="card-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="تركيب محطات شمسية">
+        <span class="card-badge">طاقة تجددية</span>
+      </div>
+      <div class="card-body">
+        <h3 data-ar="تركيب محطات شمسية" data-en="Solar Stations Installation">تركيب محطات شمسية</h3>
+        <p data-ar="تصميم وتوريد وتركيب محطات الطاقة الشمسية الكبرى والمزارع المحطة المربوطة والمستقلة عن الشبكة بأعلى كفاءة." data-en="Solar power stations design, supply, and professional installation tailored to project needs.">تصميم وتوريد وتركيب محطات الطاقة الشمسية الكبرى والمزارع المحطة المربوطة والمستقلة عن الشبكة بأعلى كفاءة.</p>
+        <a href="#contact" class="card-link"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+    </div>
+
+    <!-- 2. بطاريات وإنفرترات للمصانع والمنشآت -->
+    <div class="card">
+      <div class="card-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="بطاريات وإنفرترات">
+        <span class="card-badge">صناعي وتجاري</span>
+      </div>
+      <div class="card-body">
+        <h3 data-ar="بطاريات وإنفرترات" data-en="Batteries & Inverters">بطاريات وإنفرترات</h3>
+        <p data-ar="أحدث أنظمة البطاريات والإنفرترات وأجهزة UPS لتأمين التغذية الكهربائية المستمرة للمصانع والمنشآت الحساسة." data-en="Advanced energy storage solutions, batteries, and inverters for continuous power supply.">أحدث أنظمة البطاريات والإنفرترات وأجهزة UPS لتأمين التغذية الكهربائية المستمرة للمصانع والمنشآت الحساسة.</p>
+        <a href="#contact" class="card-link"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+    </div>
+
+    <!-- 3. أسمدة ومبيدات حشرية -->
+    <div class="card">
+      <div class="card-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="أسمدة ومبيدات حشرية">
+        <span class="card-badge">تنمية زراعية</span>
+      </div>
+      <div class="card-body">
+        <h3 data-ar="أسمدة ومبيدات حشرية" data-en="Fertilizers & Pesticides">أسمدة ومبيدات حشرية</h3>
+        <p data-ar="حلول متكاملة لدعم التنمية الزراعية ومستلزمات المزارع والأسمدة عالية الجودة لزيادة إنتاج المحاصيل." data-en="Integrated agricultural solutions, high quality fertilizers, and pesticides to boost farm productivity.">حلول متكاملة لدعم التنمية الزراعية ومستلزمات المزارع والأسمدة عالية الجودة لزيادة إنتاج المحاصيل.</p>
+        <a href="#contact" class="card-link"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+    </div>
+
+    <!-- 4. حلول المنازل والمؤسسات -->
+    <div class="card">
+      <div class="card-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="حلول المنازل والمؤسسات">
+        <span class="card-badge">سكني وعصري</span>
+      </div>
+      <div class="card-body">
+        <h3 data-ar="حلول للمنازل والمؤسسات" data-en="Residential & Business Solutions">حلول للمنازل والمؤسسات</h3>
+        <p data-ar="أنظمة طاقة شمسية وتغذية بديلة مصممة للمنازل الفاخرة، الفيلات، الفنادق والمؤسسات لتقليل الفواتير لأقصى حد." data-en="Custom clean energy solutions for modern houses, villas, hotels, and business facilities.">أنظمة طاقة شمسية وتغذية بديلة مصممة للمنازل الفاخرة، الفيلات، الفنادق والمؤسسات لتقليل الفواتير لأقصى حد.</p>
+        <a href="#contact" class="card-link"><span data-ar="اطلب الخدمة" data-en="Request Service">اطلب الخدمة</span> <i class="fa-solid fa-arrow-left"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="soft" id="about">
+  <div class="about-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:35px; align-items:center;">
+    <div>
+      <h2 id="aboutTitle" style="color:var(--navy); font-size:32px; margin-top:0; font-weight:800;">من نحن</h2>
+      <p id="aboutText">شركة <strong>Electric Power</strong> رائدة في تقديم حلول الطاقة المتكاملة والتنمية الزراعية. نعمل على توريد وتركيب أنظمة الطاقة الشمسية، البطاريات، الإنفرترات والمستلزمات الزراعية بأعلى معايير الجودة والاعتمادية مع التزام تام بالدعم الفني المستمر.</p>
+      <div style="margin-top:20px;">
+        <a href="tel:01104967065" class="btn btn-primary"><i class="fa-solid fa-phone-volume"></i> تواصل مع مهندسينا</a>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80" alt="مشروع طاقة شمسية مستدام" style="width:100%; max-width:450px; border-radius:14px; box-shadow:0 12px 30px rgba(0,0,0,0.12);">
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us (Trust Element) -->
+<section id="why-us">
+  <h2 class="section-title">لماذا تختار Electric Power؟</h2>
+  <p class="section-sub">نوفر لعملائنا أعلى معايير الجودة والأمان لضمان استثمار طويل الأجل.</p>
+  
+  <div class="features-grid">
+    <div class="feature-item">
+      <i class="fa-solid fa-shield-halved"></i>
+      <div>
+        <h4>ضمان وجودة معتمدة</h4>
+        <p>مكونات وألواح شمسية بأعلى كفاءة عالمية وضمانات ممتدة على التشغيل.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-user-check"></i>
+      <div>
+        <h4>فريق هندسي متخصص</h4>
+        <p>مهندسون وفنيون ذوو خبرة واسعة في تصميم وتركيب الأنظمة الشمسية والزراعية.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-headset"></i>
+      <div>
+        <h4>دعم فني وصيانة دورية</h4>
+        <p>خدمة مابعد البيع متكاملة مع صيانة دورية لضمان عمل المحطات بأعلى كفاءة.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <div>
+        <h4>تغطية واسعة بالفروع</h4>
+        <p>متواجدون بالقرب منك من خلال فروعنا في الإسكندرية، السادات، القاهرة، المنيا وأسيوط.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="soft" id="testimonials">
+  <h2 class="section-title">آراء وثقة العملاء</h2>
+  <p class="section-sub">ثقة عملائنا هي أساس نجاحنا وتوسعنا في مختلف القطاعات.</p>
+  
+  <div class="testimonials-grid">
+    <div class="testimonial-box">
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p>"تركيب محطة الري الشمسية في مزرعتنا بالمنيا ساعدنا جداً في توفير السولار والاستمرارية. خدمة ممتازة والتركيب كان سريع جداً."</p>
+      <div class="client-info">- حاج/ مصطفى العمدة (قطاع زراعي)</div>
+    </div>
+    <div class="testimonial-box">
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p>"تعامل راقي وأنظمة بطاريات وإنفرتر ذات كفاءة ممتازة، تم التأمين الكامل للكهرباء بالمؤسسة بدون انقطاع."</p>
+      <div class="client-info">- مهندس/ أحمد فتحي (الإسكندرية)</div>
+    </div>
+    <div class="testimonial-box">
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p>"الدعم الفني لديهم ممتاز والمواعيد مضبوطة بالظبط. ننصح بالتعامل مع Electric Power لكل مشروع طاقة."</p>
+      <div class="client-info">- أ/ محمود عبد العزيز (مصنع بالسادات)</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact & CTA (مشتمل على كافة الأرقام والفروع) -->
+<section class="cta" id="contact">
+  <h2 id="contactTitle">هل لديك مشروع طاقة أو استفسار زراعي؟</h2>
+  <p id="contactText">تواصل معنا الآن لمناقشة احتياجاتك واستلام عرض سعر مخصص لمشروعك.</p>
+  
+  <div class="contact-grid">
+    <div class="contact-box">
+      <i class="fa-solid fa-phone" style="font-size:24px; color:var(--gold)"></i><br><br>
+      <strong id="phoneLabel">أرقام التواصل الرئيسية</strong><br>
+      <a href="tel:01104967065" class="ltr">01104967065</a><br>
+      <a href="tel:01119935845" class="ltr">01119935845</a>
+    </div>
+    <div class="contact-box">
+      <i class="fa-solid fa-mobile-screen" style="font-size:24px; color:var(--gold)"></i><br><br>
+      <strong id="otherPhones">أرقام إضافية</strong><br>
+      <a href="tel:01119941565" class="ltr">01119941565</a><br>
+      <a href="tel:01119947570" class="ltr">01119947570</a>
+    </div>
+    <div class="contact-box">
+      <i class="fa-solid fa-location-dot" style="font-size:24px; color:var(--gold)"></i><br><br>
+      <strong id="branches">فروعنا المحلية</strong><br>
+      <span id="branchText" style="font-size:14px; color:#fff;">الإسكندرية / السادات / القاهرة / المنيا / أسيوط</span>
+    </div>
+  </div>
+  
+  <p style="margin-top:28px">
+    <a class="btn btn-primary" href="https://wa.me/201104967065?text=مرحباً%20Electric%20Power،%20أرغب%20في%20طلب%20عرض%20سعر" target="_blank" id="callBtn">
+      <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب الآن
+    </a>
+  </p>
+</section>
 </main>
-<footer><span>© <span id="year"></span> Electric Power</span><span id="footerText">توريد وتركيب أنظمة الطاقة الشمسية</span></footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/201104967065?text=مرحباً%20Electric%20Power،%20أرغب%20في%20الاستفسار%20عن%20أنظمة%20الطاقة%20الشمسية" class="whatsapp-float" target="_blank" title="تواصل معنا عبر الواتساب">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer>
+  <span>© <span id="year"></span> Electric Power - جميع الحقوق محفوظة</span>
+  <span id="footerText">توريد وتركيب أنظمة الطاقة الشمسية والتنمية الزراعية</span>
+</footer>
+
+<!-- JS Logic for Lang & Year -->
 <script>
 let lang='ar';
 const strings={
-en:{dir:'ltr',topline:'Solar energy systems supply and installation',eyebrow:'Energy solutions for the future',headline:'Cleaner energy. Stronger performance. A more sustainable future.',intro:'We provide integrated solar power and energy storage solutions for homes, farms, businesses and industrial facilities.',quoteBtn:'Request a Quote',servicesBtn:'Explore Services',aboutTitle:'About Us',aboutText:'Electric Power provides integrated energy solutions, from equipment supply to solar system design and installation, with a focus on quality, reliability and each project’s needs.',aboutNote:'Replace this text with the official company profile, years of experience and certifications.',servicesTitle:'Our Services & Products',servicesSub:'Solutions for residential, agricultural, commercial and industrial use.',projectsTitle:'Our Projects',projectsSub:'Add completed project photos, system capacities, locations and technical components.',project1:'Solar Power Projects',projectText1:'Show installation photos, system capacity and equipment used.',project2:'Agricultural & Industrial Solutions',projectText2:'Show examples of energy solutions delivered to customers.',project3:'Supply & Installation',projectText3:'Add brief case studies and project outcomes.',contactTitle:'Have an energy project?',contactText:'Contact us to discuss your needs and request a tailored quotation.',phoneLabel:'Call Us',otherPhones:'Additional Numbers',branches:'Our Branches',branchText:'Alexandria / Sadat City / Cairo / Minya / Assiut',callBtn:'Call Now',footerText:'Solar energy systems supply and installation',langBtn:'العربية'},
-ar:{dir:'rtl',topline:'توريد وتركيب أنظمة الطاقة الشمسية',eyebrow:'حلول طاقة للمستقبل',headline:'طاقة أنظف، أداء أقوى، ومستقبل أكثر استدامة',intro:'نقدم حلولاً متكاملة للطاقة الشمسية وتخزين الطاقة، لتلبية احتياجات المنازل والمزارع والمؤسسات والقطاعات الصناعية.',quoteBtn:'اطلب عرض سعر',servicesBtn:'اكتشف خدماتنا',aboutTitle:'من نحن',aboutText:'Electric Power تعمل على توفير حلول متكاملة للطاقة، من توريد المعدات إلى تصميم وتركيب أنظمة الطاقة الشمسية، مع التركيز على الجودة والاعتمادية واحتياجات كل مشروع.',aboutNote:'يمكن تعديل هذا النص وإضافة نبذة الشركة الرسمية وسنوات الخبرة وشهادات الاعتماد.',servicesTitle:'خدماتنا ومنتجاتنا',servicesSub:'حلول مناسبة للاستخدامات السكنية والزراعية والتجارية والصناعية.',projectsTitle:'مشروعاتنا',projectsSub:'أضف هنا صور المشروعات المنفذة وقدرات المحطات ومواقعها ومكوناتها الفنية.',project1:'مشروعات الطاقة الشمسية',projectText1:'صور التنفيذ، قدرة النظام، ونوع المعدات المستخدمة.',project2:'الحلول الزراعية والصناعية',projectText2:'اعرض أمثلة من حلول الطاقة التي قدمتها الشركة للعملاء.',project3:'أعمال التوريد والتركيب',projectText3:'أضف دراسات حالة مختصرة ونتائج كل مشروع.',contactTitle:'هل لديك مشروع طاقة؟',contactText:'تواصل معنا لمناقشة احتياجاتك وطلب عرض سعر مناسب.',phoneLabel:'اتصل بنا',otherPhones:'أرقام إضافية',branches:'فروعنا',branchText:'الإسكندرية / السادات / القاهرة / المنيا / أسيوط',callBtn:'اتصل الآن',footerText:'توريد وتركيب أنظمة الطاقة الشمسية',langBtn:'English'}
+en:{
+  dir:'ltr',
+  topline:'Electric Power - Solar energy systems supply and installation',
+  eyebrow:'Integrated Solutions for Agricultural & Industrial Development',
+  headline:'Cleaner energy. Stronger performance. A more sustainable future.',
+  intro:'We provide integrated solar power, energy storage, and agricultural solutions for homes, farms, businesses, and industrial sectors.',
+  quoteBtn:'Request a Quote',
+  servicesBtn:'Explore Services',
+  aboutTitle:'About Us',
+  aboutText:'Electric Power is a leader in providing integrated energy solutions and agricultural development. We supply and install solar power systems, batteries, inverters, and agricultural supplies with top reliability and technical support.',
+  servicesTitle:'Our Key Services & Products',
+  servicesSub:'Tailored solutions for residential, agricultural, commercial, and industrial use.',
+  contactTitle:'Have an energy or farm project?',
+  contactText:'Contact us today to discuss your needs and request a tailored quotation.',
+  phoneLabel:'Primary Phone Numbers',
+  otherPhones:'Additional Numbers',
+  branches:'Our Branches',
+  branchText:'Alexandria / Sadat City / Cairo / Minya / Assiut',
+  callBtn:'Chat on WhatsApp',
+  footerText:'Solar energy systems & agricultural development',
+  langBtn:'العربية',
+  subBrand:'Integrated Energy & Agricultural Solutions'
+},
+ar:{
+  dir:'rtl',
+  topline:'Electric Power - توريد وتركيب أنظمة الطاقة الشمسية',
+  eyebrow:'حلول متكاملة للتنمية الزراعية والصناعية والسكينة',
+  headline:'طاقة أنظف، أداء أقوى، ومستقبل أكثر استدامة',
+  intro:'نقدم حلولاً متكاملة للطاقة الشمسية، التخزين، والمستلزمات الزراعية لتلبية احتياجات المنازل والمزارع والمؤسسات والقطاعات الصناعية.',
+  quoteBtn:'اطلب عرض سعر',
+  servicesBtn:'اكتشف خدماتنا',
+  aboutTitle:'من نحن',
+  aboutText:'شركة Electric Power رائدة في تقديم حلول الطاقة المتكاملة والتنمية الزراعية. نعمل على توريد وتركيب أنظمة الطاقة الشمسية، البطاريات، الإنفرترات والمستلزمات الزراعية بأعلى معايير الجودة والاعتمادية مع التزام تام بالدعم الفني المستمر.',
+  servicesTitle:'خدماتنا ومنتجاتنا الرئيسية',
+  servicesSub:'حلول متكاملة مصممة خصيصاً للاستخدامات السكنية، الزراعية، التجارية والصناعية.',
+  contactTitle:'هل لديك مشروع طاقة أو استفسار زراعي؟',
+  contactText:'تواصل معنا الآن لمناقشة احتياجاتك واستلام عرض سعر مخصص لمشروعك.',
+  phoneLabel:'أرقام التواصل الرئيسية',
+  otherPhones:'أرقام إضافية',
+  branches:'فروعنا المحلية',
+  branchText:'الإسكندرية / السادات / القاهرة / المنيا / أسيوط',
+  callBtn:'تواصل عبر الواتساب الآن',
+  footerText:'توريد وتركيب أنظمة الطاقة الشمسية والتنمية الزراعية',
+  langBtn:'English',
+  subBrand:'حلول الطاقة المتكاملة والتنمية الزراعية'
+}
 };
-function toggleLang(){lang=lang==='ar'?'en':'ar';const s=strings[lang];document.documentElement.lang=lang;document.documentElement.dir=s.dir;Object.keys(s).forEach(k=>{const el=document.getElementById(k);if(el)el.textContent=s[k]});document.querySelectorAll('[data-ar]').forEach(el=>el.textContent=el.dataset[lang]);document.getElementById('langBtn').textContent=s.langBtn;}
-document.getElementById('year').textContent=new Date().getFullYear();
+
+function toggleLang(){
+  lang = lang==='ar'?'en':'ar';
+  const s = strings[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = s.dir;
+  
+  Object.keys(s).forEach(k => {
+    const el = document.getElementById(k);
+    if(el) el.textContent = s[k];
+  });
+  
+  document.querySelectorAll('[data-ar]').forEach(el => {
+    el.textContent = el.dataset[lang];
+  });
+  
+  document.getElementById('langBtn').textContent = s.langBtn;
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-</body></html>
+</body>
+</html>
+
+
