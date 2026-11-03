@@ -4,74 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#073b79">
+  <meta name="description" content="معرض مشروعات Electric Power Company للطاقة الشمسية والحلول الزراعية والصناعية.">
   <title>معرض المشروعات | Electric Power Company</title>
+  <link rel="icon" type="image/svg+xml" href="electric-power-logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:light;--navy:#073b79;--deep:#052d5b;--green:#159d2f;--ink:#102b4d;--muted:#66788e;--paper:#f4f7fa}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Cairo,Tahoma,Arial,sans-serif}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}.top{padding:48px 0 30px;text-align:center}.back{display:inline-flex;align-items:center;gap:8px;color:var(--navy);font-weight:700;text-decoration:none}.eyebrow{display:block;margin:20px 0 4px;color:var(--green);font-weight:800}.top h1{margin:0;color:var(--deep);font-size:clamp(30px,5vw,48px);line-height:1.3}.top p{max-width:620px;margin:12px auto 0;color:var(--muted);line-height:1.9}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:220px;grid-auto-flow:dense;gap:16px;padding:10px 0 64px}.card{position:relative;overflow:hidden;border:0;border-radius:18px;background:#dce7f0;box-shadow:0 12px 30px #052d5b15;cursor:zoom-in;text-align:inherit;padding:0}.card:nth-child(6n+1){grid-column:span 2;grid-row:span 2}.card:nth-child(6n+4){grid-row:span 2}.card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .6s ease}.card:hover img,.card:focus-visible img{transform:scale(1.045)}.caption{position:absolute;inset:auto 0 0;padding:42px 18px 16px;color:#fff;font-weight:800;background:linear-gradient(transparent,#071a2de0)}.open-icon{position:absolute;top:14px;left:14px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ffffffdf;color:var(--deep);font-size:20px;opacity:0;transform:translateY(4px);transition:.2s}.card:hover .open-icon,.card:focus-visible .open-icon{opacity:1;transform:none}.lightbox{position:fixed;inset:0;z-index:5;display:none;place-items:center;padding:24px;background:#061322ed}.lightbox.open{display:grid}.lightbox figure{position:relative;max-width:min(1100px,95vw);max-height:90vh;margin:0;text-align:center}.lightbox img{display:block;max-width:100%;max-height:82vh;margin:auto;object-fit:contain;border-radius:12px}.lightbox figcaption{padding:12px;color:#fff;font-weight:700}.close,.step{position:absolute;z-index:1;display:grid;place-items:center;width:46px;height:46px;border:0;border-radius:50%;background:#ffffffeb;color:var(--deep);font-size:27px;cursor:pointer}.close{top:18px;left:18px}.step{top:50%;transform:translateY(-50%)}.prev{right:18px}.next{left:18px}.close:hover,.step:hover{background:#fff}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:760px){.top{padding-top:30px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px;gap:10px}.card:nth-child(6n+1){grid-column:span 2;grid-row:span 1}.card:nth-child(6n+4){grid-row:span 1}.open-icon{opacity:1;transform:none}.lightbox{padding:12px}.step{width:40px;height:40px}.prev{right:8px}.next{left:8px}}@media(max-width:420px){.gallery{grid-auto-rows:145px}.caption{font-size:13px;padding:36px 12px 12px}}
+    :root{--blue:#073b79;--deep:#052d5b;--green:#159d2f;--bright:#25bd39;--ink:#102b4d;--muted:#66788e;--line:#e3eaf1;--soft:#f4f7fa;--white:#fff;--shadow:0 16px 38px rgba(5,45,91,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--soft);color:var(--ink);font-family:"Cairo",Tahoma,Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+    .header{position:sticky;top:0;z-index:3;background:rgba(255,255,255,.96);border-bottom:1px solid #e8edf2;backdrop-filter:blur(12px)}.nav-wrap{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand img{display:block;width:min(270px,52vw);height:auto}.nav{display:flex;align-items:center;gap:24px;font-weight:700;color:var(--deep)}.nav a{transition:color .2s}.nav a:hover{color:var(--green)}.nav .cta{padding:10px 18px;border-radius:999px;background:var(--green);color:white}.hero{position:relative;overflow:hidden;padding:66px 0 58px;background:linear-gradient(115deg,#052d5b,#073b79 58%,#08794b);color:white}.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid #ffffff25;inset:auto -80px -280px auto;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff06}.hero-content{position:relative;z-index:1;max-width:760px}.eyebrow{display:inline-block;color:#a6f096;font-size:14px;font-weight:800;letter-spacing:.04em}.hero h1{margin:10px 0 12px;font-size:clamp(32px,5vw,52px);line-height:1.3}.hero p{max-width:650px;margin:0;color:#e0eaf4;font-size:16px;line-height:1.9}.hero-link{display:inline-flex;margin-top:22px;padding:11px 20px;border:1px solid #ffffff52;border-radius:999px;font-weight:700;transition:background .2s}.hero-link:hover{background:#ffffff18}
+    .main{padding:44px 0 72px}.section-title{text-align:center;margin:0 auto 28px}.section-title h2{margin:4px 0 8px;color:var(--deep);font-size:clamp(25px,3vw,34px)}.section-title p{margin:0;color:var(--muted);line-height:1.8}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:230px;grid-auto-flow:dense;gap:16px}.card{position:relative;overflow:hidden;padding:0;border:0;border-radius:18px;background:#dce7f0;box-shadow:var(--shadow);cursor:zoom-in;text-align:inherit}.card:nth-child(6n+1){grid-column:span 2;grid-row:span 2}.card:nth-child(6n+4){grid-row:span 2}.card img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .65s ease}.card:hover img,.card:focus-visible img{transform:scale(1.05)}.card:focus-visible,.nav a:focus-visible,.hero-link:focus-visible{outline:3px solid #73d64c;outline-offset:3px}.caption{position:absolute;inset:auto 0 0;padding:46px 18px 16px;color:#fff;font-weight:800;background:linear-gradient(transparent,rgba(5,25,45,.84))}.zoom{position:absolute;top:14px;left:14px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ffffffeb;color:var(--deep);font-size:21px;opacity:0;transform:translateY(4px);transition:.2s}.card:hover .zoom,.card:focus-visible .zoom{opacity:1;transform:none}.footer{padding:20px 0;background:var(--deep);color:#fff}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}.footer img{width:180px;filter:brightness(0) invert(1)}.footer small{color:#d5e0eb}
+    .lightbox{position:fixed;inset:0;z-index:8;display:none;place-items:center;padding:24px;background:rgba(3,14,27,.94)}.lightbox.open{display:grid}.lightbox figure{position:relative;max-width:min(1100px,95vw);max-height:90vh;margin:0;text-align:center}.lightbox img{display:block;max-width:100%;max-height:82vh;margin:auto;object-fit:contain;border-radius:12px}.lightbox figcaption{padding:12px;color:white;font-weight:700}.control{position:absolute;z-index:1;display:grid;place-items:center;width:46px;height:46px;border:0;border-radius:50%;background:#ffffffeb;color:var(--deep);font-size:27px;cursor:pointer}.close{top:18px;left:18px}.step{top:50%;transform:translateY(-50%)}.prev{right:18px}.next{left:18px}.control:hover{background:#fff}
+    @media(max-width:760px){.container{width:calc(100% - 30px)}.nav-wrap{min-height:70px}.nav{gap:12px;font-size:13px}.nav .cta{padding:8px 12px}.hero{padding:48px 0}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:175px;gap:10px}.card:nth-child(6n+1),.card:nth-child(6n+4){grid-row:span 1}.card:nth-child(6n+1){grid-column:span 2}.zoom{opacity:1;transform:none}.footer-inner{flex-direction:column;align-items:flex-start}.lightbox{padding:12px}.control{width:40px;height:40px}.prev{right:8px}.next{left:8px}}@media(max-width:430px){.nav{gap:8px;font-size:11px}.nav .cta{padding:7px 9px}.gallery{grid-auto-rows:145px}.caption{font-size:13px;padding:38px 12px 12px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body>
-  <header class="top wrap">
-    <a class="back" href="index.html#projects" aria-label="العودة إلى الصفحة الرئيسية">→ العودة للموقع</a>
-    <span class="eyebrow">Electric Power Company</span>
-    <h1>معرض المشروعات</h1>
-    <p>استكشف صور حلول الطاقة الشمسية والمشروعات الزراعية والصناعية. اضغط على أي صورة لعرضها بالحجم الكامل.</p>
-  </header>
-  <main class="wrap">
+  <header class="header"><div class="container nav-wrap">
+    <a class="brand" href="index.html#home" aria-label="Electric Power Company - الرئيسية"><img src="electric-power-logo.svg" alt="Electric Power Company"></a>
+    <nav class="nav" aria-label="التنقل الرئيسي"><a href="index.html#home">الرئيسية</a><a href="index.html#services">خدماتنا</a><a href="index.html#about">من نحن</a><a class="cta" href="index.html#contact">تواصل معنا</a></nav>
+  </div></header>
+  <section class="hero"><div class="container hero-content"><span class="eyebrow">مشروعاتنا على أرض الواقع</span><h1>معرض الصور</h1><p>لقطات من حلول الطاقة الشمسية والمشروعات الزراعية والصناعية. اضغط على أي صورة لعرضها بالحجم الكامل والتنقل بين الصور.</p><a class="hero-link" href="index.html#projects">العودة إلى الموقع <span aria-hidden="true">←</span></a></div></section>
+  <main class="main container"><div class="section-title"><span class="eyebrow">Electric Power Company</span><h2>حلول تنجز وتدوم</h2><p>تعرّف على نماذج من الأعمال والحلول التي نقدمها لعملائنا.</p></div>
     <div class="gallery" aria-label="صور المشروعات">
-      <button class="card" type="button" data-title="محطات الطاقة الشمسية"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1400&q=88" alt="ألواح شمسية لتوليد الطاقة النظيفة" loading="lazy"><span class="caption">محطات الطاقة الشمسية</span><span class="open-icon" aria-hidden="true">⌕</span></button>
-      <button class="card" type="button" data-title="مشروعات زراعية"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1100&q=88" alt="أرض زراعية ومشروع تنمية" loading="lazy"><span class="caption">مشروعات زراعية</span><span class="open-icon" aria-hidden="true">⌕</span></button>
-      <button class="card" type="button" data-title="أنظمة صناعية"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1100&q=88" alt="معدات ومنشآت صناعية" loading="lazy"><span class="caption">أنظمة صناعية</span><span class="open-icon" aria-hidden="true">⌕</span></button>
-      <button class="card" type="button" data-title="تنفيذ المواقع"><img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1100&q=88" alt="ألواح طاقة شمسية في موقع المشروع" loading="lazy"><span class="caption">تنفيذ المواقع</span><span class="open-icon" aria-hidden="true">⌕</span></button>
-      <button class="card" type="button" data-title="الخلايا الشمسية"><img src="https://images.unsplash.com/photo-1497436072909-60f36c5d54b7?auto=format&fit=crop&w=1400&q=88" alt="ألواح شمسية تحت ضوء الشمس" loading="lazy"><span class="caption">الخلايا الشمسية</span><span class="open-icon" aria-hidden="true">⌕</span></button>
-      <button class="card" type="button" data-title="شبكات الطاقة"><img src="https://images.unsplash.com/photo-1473341304170-971ffcb5ac4e?auto=format&fit=crop&w=1100&q=88" alt="أبراج كهرباء وشبكات نقل الطاقة" loading="lazy"><span class="caption">شبكات الطاقة</span><span class="open-icon" aria-hidden="true">⌕</span></button>
+      <button class="card" type="button" data-title="محطات الطاقة الشمسية"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1400&q=88" alt="ألواح شمسية لتوليد الطاقة النظيفة" loading="lazy"><span class="caption">محطات الطاقة الشمسية</span><span class="zoom" aria-hidden="true">⌕</span></button>
+      <button class="card" type="button" data-title="مشروعات زراعية"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1100&q=88" alt="أرض زراعية ومشروع تنمية" loading="lazy"><span class="caption">مشروعات زراعية</span><span class="zoom" aria-hidden="true">⌕</span></button>
+      <button class="card" type="button" data-title="أنظمة صناعية"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1100&q=88" alt="معدات ومنشآت صناعية" loading="lazy"><span class="caption">أنظمة صناعية</span><span class="zoom" aria-hidden="true">⌕</span></button>
+      <button class="card" type="button" data-title="تنفيذ المواقع"><img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1100&q=88" alt="ألواح طاقة شمسية في موقع المشروع" loading="lazy"><span class="caption">تنفيذ المواقع</span><span class="zoom" aria-hidden="true">⌕</span></button>
+      <button class="card" type="button" data-title="الخلايا الشمسية"><img src="https://images.unsplash.com/photo-1497436072909-60f36c5d54b7?auto=format&fit=crop&w=1400&q=88" alt="ألواح شمسية تحت ضوء الشمس" loading="lazy"><span class="caption">الخلايا الشمسية</span><span class="zoom" aria-hidden="true">⌕</span></button>
+      <button class="card" type="button" data-title="شبكات الطاقة"><img src="https://images.unsplash.com/photo-1473341304170-971ffcb5ac4e?auto=format&fit=crop&w=1100&q=88" alt="أبراج كهرباء وشبكات نقل الطاقة" loading="lazy"><span class="caption">شبكات الطاقة</span><span class="zoom" aria-hidden="true">⌕</span></button>
     </div>
   </main>
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عارض صور المعرض" aria-hidden="true">
-    <button class="close" type="button" aria-label="إغلاق">×</button>
-    <button class="step prev" type="button" aria-label="الصورة السابقة">›</button>
-    <figure><img id="largeImage" alt=""><figcaption id="imageCaption"></figcaption></figure>
-    <button class="step next" type="button" aria-label="الصورة التالية">‹</button>
-  </div>
+  <footer class="footer"><div class="container footer-inner"><a href="index.html#home"><img src="electric-power-logo.svg" alt="Electric Power Company"></a><small>© <span id="year"></span> Electric Power Company — جميع الحقوق محفوظة.</small></div></footer>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عارض صور المعرض" aria-hidden="true"><button class="control close" type="button" aria-label="إغلاق">×</button><button class="control step prev" type="button" aria-label="الصورة السابقة">›</button><figure><img id="largeImage" alt=""><figcaption id="imageCaption"></figcaption></figure><button class="control step next" type="button" aria-label="الصورة التالية">‹</button></div>
   <script>
-    const cards = [...document.querySelectorAll('.card')];
-    const lightbox = document.getElementById('lightbox');
-    const largeImage = document.getElementById('largeImage');
-    const imageCaption = document.getElementById('imageCaption');
-    let active = 0;
-    function show(index) {
-      active = (index + cards.length) % cards.length;
-      const image = cards[active].querySelector('img');
-      largeImage.src = image.src;
-      largeImage.alt = image.alt;
-      imageCaption.textContent = cards[active].dataset.title;
-    }
-    function open(index) {
-      show(index);
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      lightbox.querySelector('.close').focus();
-    }
-    function close() {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      cards[active].focus();
-    }
-    cards.forEach((card, index) => card.addEventListener('click', () => open(index)));
-    lightbox.querySelector('.close').addEventListener('click', close);
-    lightbox.querySelector('.prev').addEventListener('click', () => show(active - 1));
-    lightbox.querySelector('.next').addEventListener('click', () => show(active + 1));
-    lightbox.addEventListener('click', event => { if (event.target === lightbox) close(); });
-    document.addEventListener('keydown', event => {
-      if (!lightbox.classList.contains('open')) return;
-      if (event.key === 'Escape') close();
-      if (event.key === 'ArrowRight') show(active - 1);
-      if (event.key === 'ArrowLeft') show(active + 1);
-    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const cards=[...document.querySelectorAll('.card')],lightbox=document.getElementById('lightbox'),largeImage=document.getElementById('largeImage'),imageCaption=document.getElementById('imageCaption');let active=0;
+    function show(index){active=(index+cards.length)%cards.length;const img=cards[active].querySelector('img');largeImage.src=img.src;largeImage.alt=img.alt;imageCaption.textContent=cards[active].dataset.title}
+    function open(index){show(index);lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';lightbox.querySelector('.close').focus()}
+    function close(){lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');document.body.style.overflow='';cards[active].focus()}
+    cards.forEach((card,index)=>card.addEventListener('click',()=>open(index)));lightbox.querySelector('.close').addEventListener('click',close);lightbox.querySelector('.prev').addEventListener('click',()=>show(active-1));lightbox.querySelector('.next').addEventListener('click',()=>show(active+1));lightbox.addEventListener('click',event=>{if(event.target===lightbox)close()});document.addEventListener('keydown',event=>{if(!lightbox.classList.contains('open'))return;if(event.key==='Escape')close();if(event.key==='ArrowRight')show(active-1);if(event.key==='ArrowLeft')show(active+1)});
   </script>
 </body>
 </html>
