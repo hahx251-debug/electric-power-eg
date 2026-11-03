@@ -1,534 +1,317 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a3a72" />
-    <title>Electric Power</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --blue: #073a7a;
-        --blue-deep: #042d5b;
-        --green: #1dbb3a;
-        --green-dark: #0a9d2a;
-        --green-soft: #8ae88d;
-        --white: #ffffff;
-        --bg: #f1f6fb;
-        --text: #0f2446;
-        --muted: #5a6a82;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#073a7a" />
+  <meta name="description" content="Electric Power — حلول متكاملة للطاقة الشمسية والبطاريات والحلول الزراعية والصناعية في مصر." />
+  <title>Electric Power | حلول طاقة متكاملة</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #073a7a;
+      --blue-deep: #042d5b;
+      --green: #1dbb3a;
+      --green-dark: #0a9d2a;
+      --white: #fff;
+      --bg: #f1f6fb;
+      --text: #0f2446;
+      --muted: #5a6a82;
+      --line: #e2eaf2;
+      --shadow: 0 16px 38px rgba(7, 45, 85, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    body { margin: 0; background: #fff; color: var(--text); font-family: "Cairo", Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+    .container { width: min(1480px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar { background: var(--blue); color: #fff; min-height: 42px; }
+    .topbar-inner { min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .topbar-contact, .topbar-social { display: flex; align-items: center; gap: 13px; font-size: 13px; font-weight: 700; }
+    .topbar-contact { direction: ltr; }
+    .topbar-contact a { white-space: nowrap; }
+    .topbar-contact svg, .topbar-social svg { width: 16px; height: 16px; fill: currentColor; flex: 0 0 auto; }
+    .topbar-social a { display: inline-flex; align-items: center; }
+    .lang { border-right: 1px solid #ffffff80; padding-right: 12px; }
+    .header { position: relative; z-index: 10; background: #fff; box-shadow: 0 4px 18px #092d5110; }
+    .nav-wrap { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .brand img { width: 78px; height: 78px; object-fit: contain; }
+    .brand-name { color: var(--blue); font-size: 27px; font-weight: 900; line-height: .96; font-style: italic; letter-spacing: -.04em; }
+    .brand-name span { display: block; font-size: 25px; }
+    .nav { display: flex; align-items: center; gap: clamp(20px, 3.2vw, 56px); color: var(--blue); font-weight: 800; font-size: 18px; }
+    .nav a { position: relative; padding: 12px 0; white-space: nowrap; }
+    .nav a:hover, .nav a.active { color: var(--green-dark); }
+    .nav a.active::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 4px; background: var(--green); border-radius: 5px; }
+    .menu-toggle { display: none; background: none; border: 0; color: var(--blue); font-size: 29px; cursor: pointer; }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family: "Cairo", Arial, sans-serif;
-      }
-      a { text-decoration: none; color: inherit; }
-      img { display: block; max-width: 100%; }
-      button { font: inherit; }
-      .container {
-        width: min(1480px, calc(100% - 30px));
-        margin: 0 auto;
-      }
+    .hero { min-height: 390px; height: clamp(390px, 28vw, 520px); background: linear-gradient(270deg, rgba(4,52,107,.94), rgba(4,52,107,.72) 36%, rgba(4,52,107,.08) 78%), url("https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=2000&q=85") center 54% / cover no-repeat; }
+    .hero-inner { height: 100%; min-height: inherit; display: flex; align-items: center; }
+    .hero-copy { width: min(760px, 62%); color: #fff; padding-inline-start: 2%; }
+    .hero h1 { margin: 0; font-size: clamp(2.7rem, 4.2vw, 5rem); line-height: 1.15; font-weight: 900; text-shadow: 0 4px 10px #001c3d80; }
+    .hero p { margin: 18px 0 24px; font-size: clamp(1.15rem, 1.7vw, 1.8rem); font-weight: 800; text-shadow: 0 2px 6px #001c3d80; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 11px 24px; border: 0; border-radius: 999px; background: linear-gradient(180deg, #24c63d, #0d9729); box-shadow: 0 8px 22px #08792860; border: 2px solid #87e66a; color: #fff; font-weight: 900; font-size: 19px; transition: transform .2s, filter .2s; }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .button-arrow { font-size: 28px; line-height: 1; }
 
-      .topbar {
-        background: var(--blue);
-        color: var(--white);
-        height: 52px;
-      }
-      .topbar-inner {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-      }
-      .topbar-left,
-      .topbar-right {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        white-space: nowrap;
-      }
-      .topbar-left {
-        font-size: 13px;
-        font-weight: 700;
-      }
-      .topbar-left a,
-      .topbar-right a {
-        color: var(--white);
-      }
-      .topbar-left .item,
-      .topbar-right .item {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .topbar-right {
-        font-size: 14px;
-        font-weight: 700;
-      }
-      .svg-icon {
-        width: 16px;
-        height: 16px;
-        fill: currentColor;
-        display: inline-block;
-        vertical-align: middle;
-      }
-      .socials {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .socials a {
-        width: 22px;
-        height: 22px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .lang-sep {
-        border-right: 1px solid rgba(255,255,255,0.6);
-        padding-right: 12px;
-        margin-right: 4px;
-      }
+    .service-strip { padding: 18px 0 16px; background: #f5f8fb; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; }
+    .service-tile { position: relative; height: 164px; overflow: hidden; border-radius: 13px; box-shadow: 0 8px 22px #092d511a; }
+    .service-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+    .service-tile:hover img { transform: scale(1.05); }
+    .service-tile::after { content: ""; position: absolute; inset: 30% 0 0; background: linear-gradient(transparent, #052b55e8); }
+    .service-tile span { position: absolute; z-index: 1; inset-inline: 8px; bottom: 0; min-height: 48px; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; font-weight: 900; font-size: 16px; }
 
-      .header {
-        background: rgba(255, 255, 255, 0.96);
-        box-shadow: 0 6px 16px rgba(12, 34, 66, 0.04);
-      }
-      .nav-wrap {
-        min-height: 110px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 22px;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .brand-logo {
-        width: 80px;
-        height: 80px;
-        object-fit: contain;
-      }
-      .brand-name {
-        display: flex;
-        flex-direction: column;
-        line-height: 0.9;
-      }
-      .brand-name strong {
-        font-size: 2.1rem;
-        letter-spacing: -0.05em;
-        color: var(--blue);
-        font-weight: 900;
-      }
-      .brand-name strong:last-child {
-        font-size: 1.85rem;
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        gap: clamp(18px, 2vw, 40px);
-        font-size: 18px;
-        font-weight: 800;
-        color: var(--blue);
-      }
-      .nav a {
-        position: relative;
-        padding: 14px 0 10px;
-      }
-      .nav a.active {
-        color: var(--green);
-      }
-      .nav a.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -6px;
-        height: 4px;
-        border-radius: 999px;
-        background: var(--green);
-      }
-      .nav a:hover {
-        color: var(--green);
-      }
-      .menu-toggle {
-        display: none;
-      }
+    .stats { position: relative; overflow: hidden; padding: 8px 0 17px; background: linear-gradient(110deg, #052d5c, #073e7c 53%, #052d5c); color: #fff; border-bottom: 8px solid #78d83d; }
+    .stats::after { content: ""; position: absolute; bottom: -32px; left: -3%; right: -3%; height: 38px; background: #fff; border-radius: 50% 50% 0 0 / 65% 65% 0 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat { min-height: 132px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 12px; }
+    .stat:not(:last-child)::after { content: ""; position: absolute; left: 0; top: 17%; height: 65%; width: 2px; background: #ffffffc9; }
+    .stat svg { width: 37px; height: 37px; fill: #fff; margin-bottom: 4px; }
+    .stat strong { font-size: 31px; line-height: 1.1; font-weight: 900; }
+    .stat span { margin-top: 3px; font-size: 16px; font-weight: 800; }
 
-      .hero {
-        position: relative;
-        min-height: 540px;
-        background:
-          linear-gradient(90deg, rgba(5, 45, 90, 0.12), rgba(5, 45, 90, 0.10) 30%, rgba(5, 45, 90, 0.52) 68%, rgba(5, 45, 90, 0.56) 100%),
-          url("https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1800&q=80") center center / cover no-repeat;
-      }
-      .hero-inner {
-        min-height: 540px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-      }
-      .hero-copy {
-        width: min(1040px, 63%);
-        text-align: right;
-        color: var(--white);
-        padding: 10px 0 10px 10px;
-      }
-      .hero-copy h1 {
-        margin: 0;
-        font-size: clamp(2.8rem, 4vw, 5.1rem);
-        line-height: 1.08;
-        font-weight: 900;
-        letter-spacing: -0.04em;
-      }
-      .hero-copy p {
-        margin: 20px 0 30px;
-        font-size: clamp(1.25rem, 1.7vw, 2rem);
-        line-height: 1.6;
-        font-weight: 700;
-      }
-      .cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        padding: 14px 24px 14px 18px;
-        min-width: 310px;
-        border-radius: 16px;
-        background: linear-gradient(180deg, var(--green), var(--green-dark));
-        border: 2px solid rgba(153, 245, 128, 0.9);
-        color: var(--white);
-        font-size: 18px;
-        font-weight: 900;
-        box-shadow: 0 12px 28px rgba(28, 160, 58, 0.4);
-      }
-      .cta .arrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        background: rgba(255,255,255,0.12);
-        font-size: 30px;
-      }
+    .section { padding: 76px 0; }
+    .section-soft { background: var(--bg); }
+    .section-heading { max-width: 760px; text-align: center; margin: 0 auto 38px; }
+    .eyebrow { display: inline-block; margin-bottom: 8px; color: var(--green-dark); font-weight: 800; }
+    .section-heading h2, .about-copy h2 { margin: 0 0 12px; color: var(--blue); font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.25; }
+    .section-heading p { margin: 0; color: var(--muted); line-height: 1.9; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-image { position: relative; }
+    .about-image img { width: 100%; height: 400px; object-fit: cover; border-radius: 22px; box-shadow: var(--shadow); }
+    .about-badge { position: absolute; bottom: 18px; inset-inline-start: 18px; padding: 12px 18px; border-radius: 14px; background: var(--blue); color: #fff; font-weight: 800; box-shadow: var(--shadow); }
+    .about-badge strong { display: block; font-size: 25px; }
+    .about-copy p { color: var(--muted); line-height: 1.95; margin: 0 0 18px; }
+    .benefits { display: grid; gap: 10px; margin: 20px 0 24px; }
+    .benefit { display: flex; align-items: flex-start; gap: 10px; font-weight: 700; line-height: 1.7; }
+    .check { flex: 0 0 24px; width: 24px; height: 24px; display: inline-grid; place-items: center; color: var(--green-dark); background: #e2f5e7; border-radius: 50%; font-weight: 900; }
 
-      .cards-wrap {
-        background: var(--bg);
-        padding-top: 12px;
-      }
-      .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: -10px;
-      }
-      .service-card {
-        position: relative;
-        height: 190px;
-        overflow: hidden;
-        border-radius: 16px;
-        box-shadow: 0 10px 18px rgba(7, 59, 124, 0.12);
-      }
-      .service-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .service-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(7,59,124,0.10), rgba(6,34,62,0.76) 85%);
-      }
-      .service-label {
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        min-height: 55px;
-        padding: 8px 12px;
-        color: var(--white);
-        font-size: 15px;
-        font-weight: 900;
-      }
-      .service-label svg {
-        width: 24px;
-        height: 24px;
-        fill: currentColor;
-      }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .project-card { position: relative; overflow: hidden; min-height: 250px; border-radius: 17px; background: var(--blue); box-shadow: var(--shadow); }
+    .project-card img { width: 100%; height: 250px; object-fit: cover; transition: transform .35s; }
+    .project-card:hover img { transform: scale(1.04); }
+    .project-card::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, #052b55ed); }
+    .project-caption { position: absolute; z-index: 1; inset-inline: 18px; bottom: 14px; color: #fff; }
+    .project-caption h3 { margin: 0 0 3px; font-size: 19px; }
+    .project-caption p { margin: 0; font-size: 13px; color: #ffffffd9; }
 
-      .stats {
-        background: linear-gradient(180deg, #073d7d 0%, #042e5b 100%);
-        color: var(--white);
-        border-bottom: 8px solid #7be55f;
-        margin-top: 0;
-      }
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .stat {
-        position: relative;
-        min-height: 160px;
-        padding: 16px 12px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-      .stat:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 18%;
-        height: 64%;
-        width: 2px;
-        background: rgba(255,255,255,0.8);
-      }
-      .stat strong {
-        display: block;
-        font-size: clamp(2.1rem, 3vw, 3.2rem);
-        line-height: 1;
-        font-weight: 900;
-      }
-      .stat span {
-        display: block;
-        margin-top: 10px;
-        font-size: 17px;
-        line-height: 1.5;
-        font-weight: 700;
-      }
-      .stat-svg {
-        width: 38px;
-        height: 38px;
-        fill: currentColor;
-        margin-bottom: 10px;
-      }
+    .contact-section { background: #f3f7fb; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: stretch; }
+    .contact-info, .contact-details { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 28px; box-shadow: 0 10px 28px #092d510c; }
+    .contact-info h2 { margin: 0 0 10px; color: var(--blue); font-size: 27px; }
+    .contact-info > p { margin: 0 0 22px; color: var(--muted); line-height: 1.8; }
+    .contact-item { display: flex; gap: 12px; align-items: flex-start; padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .contact-item:last-child { border-bottom: 0; }
+    .contact-icon { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 12px; background: #e8f6eb; color: var(--green-dark); font-size: 19px; }
+    .contact-item small { display: block; color: var(--muted); }
+    .contact-item strong { display: block; direction: ltr; text-align: right; }
+    .contact-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .contact-card { padding: 18px; background: #f7fafc; border: 1px solid var(--line); border-radius: 15px; }
+    .contact-card h3 { margin: 0 0 6px; color: var(--blue); font-size: 17px; }
+    .contact-card p { margin: 0 0 9px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .contact-card a { color: var(--blue); font-weight: 800; direction: ltr; display: inline-block; }
+    .contact-card a:hover { color: var(--green-dark); }
+    .branch-list { line-height: 1.9 !important; }
+    .footer { padding: 24px 0; background: var(--blue-deep); color: #fff; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; font-weight: 900; }
+    .footer-brand img { width: 42px; height: 42px; object-fit: contain; }
+    .footer-note { color: #d3deeb; font-size: 13px; }
 
-      @media (max-width: 980px) {
-        .topbar-left { font-size: 11px; }
-        .brand-name strong { font-size: 1.7rem; }
-        .brand-name strong:last-child { font-size: 1.5rem; }
-        .nav { font-size: 15px; gap: 18px; }
-        .hero-inner { justify-content: center; }
-        .hero-copy { width: min(780px, 80%); text-align: center; }
-        .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .stat:not(:last-child)::after { display: none; }
-      }
-
-      @media (max-width: 760px) {
-        .topbar { height: auto; }
-        .topbar-inner {
-          flex-direction: column;
-          justify-content: center;
-          gap: 6px;
-          padding: 8px 0;
-        }
-        .topbar-left {
-          flex-wrap: wrap;
-          justify-content: center;
-          font-size: 10px;
-        }
-        .topbar-right {
-          display: none;
-        }
-        .menu-toggle {
-          display: block;
-          border: 0;
-          background: transparent;
-          color: var(--blue);
-          font-size: 30px;
-          cursor: pointer;
-        }
-        .nav-wrap {
-          position: relative;
-          min-height: 78px;
-        }
-        .brand-logo { width: 50px; height: 50px; }
-        .brand-name strong { font-size: 1.6rem; }
-        .brand-name strong:last-child { font-size: 1.4rem; }
-        .nav {
-          display: none;
-          position: absolute;
-          top: calc(100% + 1px);
-          left: 0;
-          right: 0;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0;
-          background: rgba(255,255,255,0.98);
-          border: 1px solid #e7edf6;
-          border-radius: 12px;
-          box-shadow: 0 14px 30px rgba(10, 35, 66, 0.12);
-          padding: 12px 18px;
-          z-index: 20;
-        }
-        .nav.open { display: flex; }
-        .nav a { width: 100%; padding: 10px 0; }
-        .hero { min-height: 420px; }
-        .hero-inner { min-height: 420px; }
-        .hero-copy { width: min(100%, 92%); }
-        .cta { min-width: 0; width: min(100%, 300px); font-size: 17px; }
-        .cards-grid { grid-template-columns: 1fr; }
-        .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <div class="topbar-left">
-          <span class="item">
-            <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm0 2-8 5-8-5h16Zm-16 8V8.5l7.5 5 7.5-5V16H4Z"/></svg>
-            <a href="mailto:info@electric-power-eg.com">info@electric-power-eg.com</a>
-          </span>
-          <span>|</span>
-          <span class="item">
-            <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.8 3.7 5 6.8 8.7 8.7l2.9-2.9a1 1 0 0 1 1.1-.2c1.3.4 2.7.6 4.2.6.6 0 1 .4 1 1V21a1 1 0 0 1-1 1C9.7 22 2 14.3 2 4a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1c0 1.5.2 2.9.6 4.2.1.4 0 .9-.3 1.2l-2.9 2.9Z"/></svg>
-            <a href="tel:01104967065">01104967065 - 01119935845 - 01119941565 - 01119947570</a>
-          </span>
-        </div>
-
-        <div class="topbar-right">
-          <div class="socials" aria-label="روابط التواصل الاجتماعي">
-            <a href="#" aria-label="facebook"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V7.5c0-.9.3-1.5 1.5-1.5h1.8V3.2c-.3 0-1.3-.1-2.5-.1-2.4 0-4 1.5-4 4.2V11H7.5v3h2.8v8h3.2Z"/></svg></a>
-            <a href="#" aria-label="linkedin"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M6.9 8.3A1.8 1.8 0 1 1 6.9 4.7a1.8 1.8 0 0 1 0 3.6ZM5.2 10.5h3.4V20H5.2v-9.5Zm5.4 0h3.3v1.3h.1c.5-.9 1.6-1.8 3.4-1.8 3.7 0 4.3 2.5 4.3 5.5V20h-3.4V15c0-1.6-.1-3.6-2.2-3.6-2.2 0-2.6 1.7-2.6 3.5V20h-3.4v-9.5Z"/></svg></a>
-            <a href="#" aria-label="youtube"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M21.6 8.1c-.3-1.2-1.3-2.1-2.5-2.3C17.4 5.5 12 5.5 12 5.5s-5.4 0-7.1.3A3 3 0 0 0 2.4 8c-.4 1.5-.4 4.7-.4 4.7s0 3.2.4 4.7a3 3 0 0 0 2.5 2.3c1.7.3 7.1.3 7.1.3s5.4 0 7.1-.3a3 3 0 0 0 2.5-2.3c.4-1.5.4-4.7.4-4.7s0-3.2-.4-4.7ZM10 15.4v-7l6 3.5-6 3.5Z"/></svg></a>
-            <a href="#" aria-label="instagram"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Zm4.1-2.3a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2Z"/></svg></a>
-          </div>
-          <span class="lang-sep"><a href="#">عربي</a></span>
-          <a href="#">English</a>
-        </div>
+    @media (max-width: 980px) {
+      .nav { gap: 18px; font-size: 15px; }
+      .brand-name { font-size: 23px; }
+      .hero-copy { width: 70%; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .container { width: calc(100% - 30px); }
+      .topbar-inner { justify-content: center; }
+      .topbar-social { display: none; }
+      .topbar-contact { flex-wrap: wrap; justify-content: center; gap: 7px; font-size: 10px; }
+      .topbar-contact .email { display: none; }
+      .nav-wrap { position: relative; min-height: 76px; }
+      .brand img { width: 54px; height: 54px; }
+      .brand-name { font-size: 21px; }
+      .brand-name span { font-size: 19px; }
+      .menu-toggle { display: block; }
+      .nav { display: none; position: absolute; top: 100%; inset-inline: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 18px; background: #fff; border: 1px solid var(--line); border-radius: 0 0 14px 14px; box-shadow: var(--shadow); }
+      .nav.open { display: flex; }
+      .nav a { padding: 10px 0; }
+      .hero { min-height: 410px; height: 410px; background-position: 44% center; }
+      .hero-inner { min-height: 410px; justify-content: center; }
+      .hero-copy { width: 94%; text-align: center; padding: 0; }
+      .hero h1 { font-size: clamp(2.4rem, 9vw, 3.2rem); }
+      .hero p { font-size: 1rem; }
+      .button { font-size: 16px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .service-tile { height: 130px; }
+      .service-tile span { font-size: 12px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat { min-height: 118px; }
+      .stat:nth-child(2)::after { display: none; }
+      .stat strong { font-size: 26px; }
+      .stat span { font-size: 12px; }
+      .section { padding: 52px 0; }
+      .about-grid { gap: 24px; }
+      .about-image img { height: 280px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card, .project-card img { min-height: 210px; height: 210px; }
+      .contact-details { grid-template-columns: 1fr; padding: 18px; }
+      .contact-info { padding: 22px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-contact" aria-label="بيانات التواصل">
+        <a class="item email" href="mailto:info@electric-power-eg.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm0 2-8 5-8-5h16Zm-16 8V8.5l7.5 5 7.5-5V16H4Z"/></svg>info@electric-power-eg.com</a>
+        <a class="item" href="tel:01104967065"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.8 3.7 5 6.8 8.7 8.7l2.9-2.9a1 1 0 0 1 1.1-.2c1.3.4 2.7.6 4.2.6.6 0 1 .4 1 1V21a1 1 0 0 1-1 1C9.7 22 2 14.3 2 4a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1c0 1.5.2 2.9.6 4.2.1.4 0 .9-.3 1.2l-2.9 2.9Z"/></svg>01104967065 - 01119935845 - 01119941565 - 01119947570</a>
+      </div>
+      <div class="topbar-social">
+        <a href="#contact" aria-label="Facebook">f</a><a href="#contact" aria-label="YouTube">▶</a><a href="#contact" aria-label="LinkedIn">in</a>
+        <span class="lang"><a href="#">عربي</a> | <a href="#">English</a></span>
       </div>
     </div>
+  </div>
 
-    <header class="header">
-      <div class="container nav-wrap">
-        <a href="#" class="brand" aria-label="Electric Power">
-          <img src="logo.png" alt="Electric Power" class="brand-logo" />
-          <span class="brand-name">
-            <strong>Electric</strong>
-            <strong>Power</strong>
-          </span>
-        </a>
+  <header class="header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Electric Power الرئيسية">
+        <img src="logo.png" alt="شعار Electric Power" />
+        <span class="brand-name">Electric<span>Power</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+        <a class="active" href="#home">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#projects">مشاريعنا</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">☰</button>
-
-        <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
-          <a href="#" class="active">الرئيسية</a>
-          <a href="#">من نحن</a>
-          <a href="#">مشاريعنا</a>
-          <a href="#">خدماتنا</a>
-          <a href="#">تواصل معنا</a>
-        </nav>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>حلول متكاملة<br>للتنمية الزراعية والصناعية</h1>
+          <p>طاقة أنظف .. أداء أقوى .. ومستقبل أكثر استدامة</p>
+          <a class="button" href="#services"><span class="button-arrow" aria-hidden="true">←</span>اكتشف خدماتنا</a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section class="hero">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <h1>حلول متكاملة<br>للتنمية الزراعية<br>والصناعية</h1>
-            <p>طاقة أنظف .. أداء أقوى .. مستقبل أكثر استدامة</p>
-            <a class="cta" href="#">
-              <span>اكتشف خدماتنا</span>
-              <span class="arrow" aria-hidden="true">→</span>
-            </a>
+    <section class="service-strip" id="services" aria-label="خدماتنا">
+      <div class="container service-grid">
+        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=85" alt="ألواح ومحطات الطاقة الشمسية" /><span>محطات الطاقة الشمسية</span></a>
+        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=85" alt="البطاريات والإنفرترات" /><span>البطاريات والإنفرترات</span></a>
+        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=800&q=85" alt="حلول الطاقة الصناعية" /><span>حلول صناعية</span></a>
+        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=85" alt="حلول زراعية" /><span>حلول زراعية</span></a>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="إحصاءات الشركة">
+      <div class="container stats-grid">
+        <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 2 6v7c0 5.5 3.7 10.5 10 13 6.3-2.5 10-7.5 10-13V6l-10-5Zm0 4.2 6.3 3.1V13c0 3.9-2.5 7.5-6.3 9.4C8.2 20.5 5.7 16.9 5.7 13V8.3L12 5.2Zm-1 7.3h2v5h-2v-5Zm0-4h2v2h-2V8.5Z"/></svg><strong>100%</strong><span>مكونات وأجهزة معتمدة</span></div>
+        <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18v2H3v-2Zm1-2V8h4v10H4Zm6 0V4h4v14h-4Zm6 0v-7h4v7h-4Z"/></svg><strong>+15 MW</strong><span>قدرة محطات مركبة</span></div>
+        <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a8 8 0 0 1 8 8c0 5.8-6.7 11.1-7.3 11.5a.8.8 0 0 1-.9 0C10.7 21.1 4 15.8 4 10a8 8 0 0 1 8-8Zm0 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 5.5Z"/></svg><strong>+500</strong><span>مشروع شمسي منفذ</span></div>
+        <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a8 8 0 0 1 8 8c0 5.8-6.7 11.1-7.3 11.5a.8.8 0 0 1-.9 0C10.7 21.1 4 15.8 4 10a8 8 0 0 1 8-8Zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg><strong>5</strong><span>فروع لتغطية المحافظات</span></div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1100&q=85" alt="ألواح طاقة شمسية ضمن مشروع مستدام" loading="lazy" />
+          <div class="about-badge"><strong>Electric Power</strong><span>طاقة لمستقبل أفضل</span></div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">من نحن</span>
+          <h2>حلول طاقة تخدم احتياج مشروعك</h2>
+          <p>نقدم حلولاً متكاملة في الطاقة الشمسية والبطاريات والأنظمة الكهربائية للمنازل والمزارع والمنشآت. نبدأ بفهم احتياج المشروع، ثم نساعد في اختيار الحل والمكونات المناسبة، مع دعم فني في مراحل التنفيذ والتشغيل.</p>
+          <div class="benefits">
+            <div class="benefit"><span class="check">✓</span><span>حلول مصممة وفق طبيعة الأحمال وموقع المشروع.</span></div>
+            <div class="benefit"><span class="check">✓</span><span>أنظمة شمسية وتخزين طاقة وحلول كهربائية متكاملة.</span></div>
+            <div class="benefit"><span class="check">✓</span><span>تواصل مباشر لمتابعة احتياجاتك قبل التنفيذ وبعده.</span></div>
+          </div>
+          <a class="button" href="#contact">تحدث مع فريقنا</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">مشاريعنا</span>
+          <h2>حلول لمشروعات متنوعة</h2>
+          <p>نخدم احتياجات الطاقة في القطاعات الزراعية والصناعية والتجارية من خلال أنظمة مصممة بحسب ظروف كل مشروع.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=900&q=85" alt="مشروعات الطاقة الشمسية" loading="lazy" /><div class="project-caption"><h3>محطات الطاقة الشمسية</h3><p>حلول لتوليد الطاقة للمواقع والمنشآت.</p></div></article>
+          <article class="project-card"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85" alt="مشروعات زراعية" loading="lazy" /><div class="project-caption"><h3>المشروعات الزراعية</h3><p>دعم احتياجات المزارع والطاقة والري.</p></div></article>
+          <article class="project-card"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=900&q=85" alt="مشروعات صناعية" loading="lazy" /><div class="project-caption"><h3>الحلول الصناعية</h3><p>أنظمة كهربائية وطاقة لدعم استمرارية التشغيل.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">تواصل معنا</span>
+          <h2>ابدأ مناقشة مشروعك معنا</h2>
+          <p>للاستفسارات أو طلب عرض سعر، تواصل معنا عبر الهاتف أو البريد الإلكتروني.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>يسعدنا مساعدتك</h2>
+            <p>أرسل لنا نبذة عن المشروع أو احتياجك للطاقة وسيتواصل معك فريقنا.</p>
+            <div class="contact-item"><span class="contact-icon">☎</span><div><small>اتصل بنا</small><strong><a href="tel:01104967065">01104967065</a></strong></div></div>
+            <div class="contact-item"><span class="contact-icon">✉</span><div><small>البريد الإلكتروني</small><strong style="direction:ltr"><a href="mailto:info@electric-power-eg.com">info@electric-power-eg.com</a></strong></div></div>
+            <div class="contact-item"><span class="contact-icon">⌖</span><div><small>مناطق الخدمة</small><strong>الإسكندرية، السادات، القاهرة، المنيا، أسيوط</strong></div></div>
+          </div>
+          <div class="contact-details">
+            <div class="contact-card"><h3>أرقام التواصل</h3><p>اختر أي رقم للاتصال مباشرة.</p><a href="tel:01104967065">01104967065</a><br /><a href="tel:01119935845">01119935845</a></div>
+            <div class="contact-card"><h3>أرقام إضافية</h3><p>متاحون لاستفساراتكم.</p><a href="tel:01119941565">01119941565</a><br /><a href="tel:01119947570">01119947570</a></div>
+            <div class="contact-card"><h3>واتساب</h3><p>راسلنا للاستفسار وطلب عرض سعر.</p><a href="https://wa.me/201104967065" target="_blank" rel="noopener noreferrer">ابدأ محادثة واتساب</a></div>
+            <div class="contact-card"><h3>فروعنا</h3><p class="branch-list">الإسكندرية · السادات · القاهرة · المنيا · أسيوط</p><a href="mailto:info@electric-power-eg.com">اسأل عن أقرب فرع</a></div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="cards-wrap">
-        <div class="container cards-grid">
-          <a class="service-card" href="#">
-            <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=900&q=80" alt="محطات الطاقة الشمسية" />
-            <div class="service-label">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 7v6c0 4.5 2.8 8.7 9 11 6.2-2.3 9-6.5 9-11V7l-9-5Zm0 5.5 2.1 1.2L12 10l-2.1-1.3L12 7.5Zm-5 3.4 4 2.3v4.4l-4-2.4v-4.3Zm10 0v4.3l-4 2.4v-4.4l4-2.3Z"/></svg>
-              <span>محطات الطاقة الشمسية</span>
-            </div>
-          </a>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><img src="logo.png" alt="" /><span>Electric Power</span></div>
+      <div class="footer-note">© <span id="year"></span> Electric Power — جميع الحقوق محفوظة</div>
+      <a href="#home">العودة للأعلى ↑</a>
+    </div>
+  </footer>
 
-          <a class="service-card" href="#">
-            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80" alt="البطاريات والإنفرترات" />
-            <div class="service-label">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10v2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm2 4h6V4H9v2Zm-5 4v8h16V8H4Zm7 2h2v3h3v2h-3v3h-2v-3H8v-2h3v-3Z"/></svg>
-              <span>البطاريات والإنفرترات</span>
-            </div>
-          </a>
-
-          <a class="service-card" href="#">
-            <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=900&q=80" alt="الحلول الصناعية" />
-            <div class="service-label">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V8l7 4V8l7 4V4h4v16H3Zm2-2h2v-2H5v2Zm0-4h2v-2H5v2Zm5 4h2v-2h-2v2Zm0-4h2v-2h-2v2Zm5 4h2v-2h-2v2Zm0-4h2v-2h-2v2Zm5 4h2v-2h-2v2Zm0-4h2v-2h-2v2Z"/></svg>
-              <span>حلول صناعية</span>
-            </div>
-          </a>
-
-          <a class="service-card" href="#">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="حلول زراعية" />
-            <div class="service-label">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.5 0 4.8 1.3 6.1 3.3 1.2 1.9 1.7 4.3 1.2 6.7-.5 2.3-2 4.4-4.1 5.6L12 22l-3.2-4.4C6.7 16.4 5.2 14.3 4.7 12c-.5-2.4 0-4.8 1.2-6.7A7.2 7.2 0 0 1 12 2Zm1.3 6.4c-1.1.2-2.1.8-2.9 1.7-1.6 1.8-1.8 4.4-.4 6.3 1.2 1.5 3.5 2.1 5.4 1.4 1.9-.8 3.1-2.9 2.9-4.9-.1-1.9-1.3-3.6-3.2-4.2-.3-.1-.7-.2-1-.3Z"/></svg>
-              <span>حلول زراعية</span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section class="stats" aria-label="إحصاءات الشركة">
-        <div class="container stats-grid">
-          <div class="stat">
-            <svg class="stat-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 2 6v7c0 5.5 3.7 10.5 10 13 6.3-2.5 10-7.5 10-13V6l-10-5Zm0 4.2 6.3 3.1V13c0 3.9-2.5 7.5-6.3 9.4C8.2 20.5 5.7 16.9 5.7 13V8.3L12 5.2Zm-1 7.3h2v5h-2v-5Zm0-4h2v2h-2V8.5Z"/></svg>
-            <strong>100%</strong>
-            <span>مكونات وأجهزة معتمدة</span>
-          </div>
-          <div class="stat">
-            <svg class="stat-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18v2H3v-2Zm1-2V8h4v10H4Zm6 0V4h4v14h-4Zm6 0v-7h4v7h-4Z"/></svg>
-            <strong>+15 MW</strong>
-            <span>قدرة محطات مركبة</span>
-          </div>
-          <div class="stat">
-            <svg class="stat-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a8 8 0 0 1 8 8c0 5.8-6.7 11.1-7.3 11.5a.8.8 0 0 1-.9 0C10.7 21.1 4 15.8 4 10a8 8 0 0 1 8-8Zm0 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 5.5Z"/></svg>
-            <strong>+500</strong>
-            <span>مشروع شمسي منفذ</span>
-          </div>
-          <div class="stat">
-            <svg class="stat-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a8 8 0 0 1 8 8c0 5.8-6.7 11.1-7.3 11.5a.8.8 0 0 1-.9 0C10.7 21.1 4 15.8 4 10a8 8 0 0 1 8-8Zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg>
-            <strong>5</strong>
-            <span>فروع لتغطية كافة المحافظات</span>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script>
-      const menuToggle = document.getElementById('menuToggle');
-      const nav = document.getElementById('nav');
-      menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('open');
-      });
-      nav.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => nav.classList.remove('open'));
-      });
-    </script>
-  </body>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    menuToggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.textContent = open ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
