@@ -1,1205 +1,219 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b2744" />
-    <meta
-      name="description"
-      content="Electric Power — حلول الطاقة الشمسية، البطاريات، الأنظمة الكهروضوئية، وحلول الطاقة المتكاملة في مصر."
-    />
-    <title>Electric Power | طاقة تصنع المستقبل</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --navy: #071d35;
-        --navy-2: #0d2d4f;
-        --green: #178542;
-        --green-2: #22a354;
-        --gold: #efb83f;
-        --gold-soft: #f7d97d;
-        --white: #ffffff;
-        --ink: #14283b;
-        --muted: #607086;
-        --line: #e3ebf2;
-        --soft: #f5f9fc;
-        --shadow: 0 25px 60px rgba(7, 29, 53, 0.12);
-        --radius: 24px;
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-      body {
-        margin: 0;
-        font-family: "Cairo", Tahoma, Arial, sans-serif;
-        background: linear-gradient(180deg, #f8fbfe 0%, #edf5fb 100%);
-        color: var(--ink);
-      }
-      a { color: inherit; text-decoration: none; }
-      img { max-width: 100%; display: block; }
-      button { font: inherit; }
-      .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-
-      .topbar {
-        background: var(--navy);
-        color: var(--white);
-        font-size: 0.92rem;
-      }
-      .topbar-inner {
-        min-height: 52px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-      }
-      .topbar-text {
-        font-weight: 800;
-        letter-spacing: 0.01em;
-      }
-      .topbar-links {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0 16px;
-      }
-      .topbar-links a {
-        color: rgba(255,255,255,0.87);
-        transition: opacity 0.2s ease;
-      }
-      .topbar-links a:hover { opacity: 1; }
-
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(255,255,255,0.9);
-        backdrop-filter: blur(14px);
-        box-shadow: 0 8px 28px rgba(7,29,53,0.06);
-      }
-      .nav-wrap {
-        min-height: 88px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-      }
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .brand img {
-        width: 58px;
-        height: 58px;
-        border-radius: 16px;
-      }
-      .brand-name {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.1;
-      }
-      .brand-name strong {
-        font-size: 1.6rem;
-        letter-spacing: -0.04em;
-        color: var(--navy);
-      }
-      .brand-name span {
-        font-size: 0.74rem;
-        color: var(--muted);
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        gap: 22px;
-        font-weight: 700;
-        color: var(--navy);
-      }
-      .nav a {
-        position: relative;
-        transition: color 0.2s ease;
-      }
-      .nav a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -8px;
-        height: 3px;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--green), var(--gold));
-        transform: scaleX(0);
-        transform-origin: center; transition: transform 0.2s ease;
-      }
-      .nav a:hover::after, .nav a:focus-visible::after { transform: scaleX(1); }
-      .menu-toggle { display: none; }
-      .header-actions {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        white-space: nowrap;
-        border: 0;
-        border-radius: 999px;
-        padding: 0.9rem 1.5rem;
-        font-weight: 800;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-      .btn:hover, .btn:focus-visible { transform: translateY(-1px); }
-      .btn-primary {
-        background: linear-gradient(135deg, var(--green), var(--green-2));
-        color: var(--white);
-        box-shadow: 0 18px 30px rgba(23,133,66,0.22);
-      }
-      .btn-secondary {
-        background: rgba(255,255,255,0.7);
-        color: var(--navy);
-        border: 1px solid rgba(7,29,53,0.09);
-      }
-
-      .hero { padding: 52px 0 22px; }
-      .hero-inner {
-        display: grid;
-        grid-template-columns: 1.08fr 0.92fr;
-        gap: 42px;
-        align-items: center;
-      }
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(23,133,66,0.08);
-        color: var(--green);
-        border: 1px solid rgba(23,133,66,0.12);
-        border-radius: 999px;
-        padding: 0.56rem 0.9rem;
-        font-size: 0.8rem;
-        font-weight: 800;
-        margin-bottom: 18px;
-      }
-      h1 {
-        margin: 0 0 18px;
-        font-size: clamp(2.6rem, 4vw, 4.7rem);
-        line-height: 1.12;
-        letter-spacing: -0.04em;
-        color: var(--navy);
-      }
-      h1 em { color: var(--green); font-style: normal; }
-      .lead {
-        margin: 0 0 28px;
-        max-width: 620px;
-        color: var(--muted);
-        font-size: 1.12rem;
-        line-height: 1.9;
-      }
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-bottom: 24px;
-      }
-      .hero-points {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        gap: 12px;
-      }
-      .hero-points li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--ink);
-        font-weight: 700;
-      }
-      .check {
-        width: 27px; height: 27px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(23,133,66,0.12);
-        color: var(--green);
-        font-weight: 900;
-      }
-
-      .hero-visual { position: relative; }
-      .visual-card {
-        background: radial-gradient(circle at top left, #e0f8eb 0%, #f7fbff 42%, #ffffff 100%);
-        border: 1px solid rgba(7,29,53,0.08);
-        border-radius: 34px;
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-      .visual-top {
-        padding: 24px 24px 0;
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-      }
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.52rem 0.8rem;
-        border-radius: 999px;
-        background: rgba(7,29,53,0.04);
-        color: var(--navy);
-        font-weight: 800;
-        font-size: 0.78rem;
-      }
-      .visual-image { padding: 18px 24px 0; }
-      .visual-image img {
-        width: 100%;
-        height: 370px;
-        object-fit: cover;
-        border-radius: 24px;
-      }
-      .mini-stats {
-        padding: 18px 24px 24px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-      }
-      .mini-stat {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 16px 10px;
-        text-align: center;
-      }
-      .mini-stat strong {
-        display: block;
-        font-size: 1.5rem;
-        color: var(--navy);
-      }
-      .mini-stat span {
-        color: var(--muted);
-        font-size: 0.8rem;
-      }
-
-      .stats { padding: 26px 0 12px; }
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 18px;
-      }
-      .stat-card {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 22px 18px;
-        text-align: center;
-        box-shadow: 0 8px 22px rgba(7,29,53,0.03);
-      }
-      .stat-card strong {
-        display: block;
-        font-size: 2rem;
-        color: var(--navy);
-      }
-      .stat-card span {
-        color: var(--muted);
-        font-weight: 700;
-      }
-
-      .section { padding: 86px 0; }
-      .section-soft { background: rgba(255,255,255,0.45); }
-      .section-heading {
-        text-align: center;
-        max-width: 760px;
-        margin: 0 auto 38px;
-      }
-      .kicker {
-        display: inline-block;
-        background: rgba(23,133,66,0.08);
-        color: var(--green);
-        border: 1px solid rgba(23,133,66,0.12);
-        border-radius: 999px;
-        padding: 0.48rem 0.9rem;
-        font-weight: 800;
-        margin-bottom: 12px;
-      }
-      h2 {
-        margin: 0 0 16px;
-        color: var(--navy);
-        font-size: clamp(2rem, 2.5vw, 3.1rem);
-        line-height: 1.2;
-        letter-spacing: -0.03em;
-      }
-      .section-heading p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.9;
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 22px;
-      }
-      .service-card {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: 0 18px 34px rgba(7,29,53,0.05);
-        overflow: hidden;
-      }
-      .service-photo { position: relative; height: 220px; }
-      .service-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .service-copy {
-        padding: 22px 20px 24px;
-      }
-      .service-copy h3 {
-        margin: 0 0 10px;
-        font-size: 1.45rem;
-      }
-      .service-copy p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.9;
-      }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: 0.96fr 1.04fr;
-        gap: 30px;
-        align-items: center;
-      }
-      .about-visual { position: relative; }
-      .about-visual img {
-        width: 100%;
-        height: 540px;
-        object-fit: cover;
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-      }
-      .about-badge {
-        position: absolute;
-        right: 22px;
-        bottom: 22px;
-        background: rgba(7,29,53,0.9);
-        color: var(--white);
-        border-radius: 18px;
-        padding: 18px 20px;
-        box-shadow: 0 14px 28px rgba(7,29,53,0.24);
-      }
-      .about-badge strong {
-        display: block;
-        font-size: 1.8rem;
-        margin-bottom: 4px;
-      }
-      .about-copy {
-        display: grid;
-        gap: 18px;
-      }
-      .about-copy p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.9;
-      }
-      .check-list {
-        display: grid;
-        gap: 12px;
-      }
-      .check-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        color: var(--ink);
-        font-weight: 700;
-        line-height: 1.8;
-      }
-      .check-item .mark {
-        width: 28px; height: 28px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(23,133,66,0.12);
-        color: var(--green);
-        flex-shrink: 0;
-      }
-
-      .why-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 22px;
-      }
-      .why-card {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 28px 22px 24px;
-        box-shadow: 0 15px 30px rgba(7,29,53,0.05);
-      }
-      .why-icon {
-        width: 58px; height: 58px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 16px;
-        background: linear-gradient(135deg, rgba(23,133,66,0.12), rgba(239,184,63,0.16));
-        font-size: 1.8rem;
-        margin-bottom: 18px;
-      }
-      .why-card h3 {
-        margin: 0 0 10px;
-        font-size: 1.3rem;
-      }
-      .why-card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.8;
-      }
-
-      .process {
-        background: linear-gradient(180deg, rgba(7,29,53,0.98), rgba(13,45,79,0.98));
-        color: var(--white);
-      }
-      .process .section-heading p,
-      .process .section-heading h2,
-      .process .kicker { color: var(--white); }
-      .process-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 22px;
-      }
-      .process-card {
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 22px;
-        padding: 24px 22px;
-      }
-      .process-number {
-        width: 40px; height: 40px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--gold), #ffd96f);
-        color: var(--navy);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 900;
-        margin-bottom: 18px;
-      }
-      .process-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
-      .process-card p {
-        margin: 0;
-        color: rgba(255,255,255,0.74);
-        line-height: 1.8;
-      }
-
-      .cta-banner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        background: linear-gradient(135deg, rgba(23,133,66,0.08), rgba(239,184,63,0.12));
-        border: 1px solid rgba(7,29,53,0.08);
-        border-radius: 28px;
-        padding: 28px 30px;
-      }
-      .cta-banner h3 {
-        margin: 0 0 6px;
-        font-size: clamp(1.6rem, 2vw, 2.2rem);
-      }
-      .cta-banner p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .contact-wrap {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 28px;
-      }
-      .contact-box {
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 26px;
-        padding: 28px;
-        box-shadow: 0 15px 30px rgba(7,29,53,0.04);
-      }
-      .contact-box h3 {
-        margin: 0 0 12px;
-        font-size: 1.8rem;
-      }
-      .contact-box p {
-        margin: 0 0 18px;
-        color: var(--muted);
-        line-height: 1.9;
-      }
-      .contact-list {
-        display: grid;
-        gap: 16px;
-      }
-      .contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 12px 0;
-        border-bottom: 1px solid var(--line);
-      }
-      .contact-item:last-child { border-bottom: 0; }
-      .icon {
-        width: 42px; height: 42px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(23,133,66,0.12);
-        border-radius: 12px;
-        color: var(--green);
-        font-size: 1.25rem;
-      }
-      .contact-item small {
-        display: block;
-        margin-bottom: 5px;
-        color: var(--muted);
-      }
-      .contact-item strong, .contact-item a {
-        display: block;
-        font-size: 1.08rem;
-      }
-      .contact-cards {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0,1fr));
-        gap: 22px;
-      }
-      .contact-card {
-        background: linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 26px 22px;
-      }
-      .contact-card h4 {
-        margin: 0 0 10px;
-        font-size: 1.32rem;
-      }
-      .contact-card p {
-        margin: 0 0 12px;
-        color: var(--muted);
-      }
-      .phone-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: 700;
-        color: var(--navy);
-      }
-      .phone-link:hover { color: var(--green); }
-
-      footer {
-        background: var(--navy);
-        color: var(--white);
-        padding: 28px 0;
-      }
-      .footer-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-      .footer-brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .footer-brand img { width: 42px; height: 42px; }
-      .footer-copy {
-        color: rgba(255,255,255,0.78);
-      }
-
-      @media (max-width: 980px) {
-        .hero-inner, .about-grid, .contact-wrap { grid-template-columns: 1fr; }
-        .services-grid, .why-grid, .process-grid, .stats-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      }
-      @media (max-width: 760px) {
-        .topbar-inner { flex-direction: column; justify-content: center; padding: 10px 0; }
-        .menu-toggle {
-          display: block;
-          border: 0;
-          background: transparent;
-          color: var(--navy);
-          font-size: 1.7rem;
-          cursor: pointer;
-        }
-        .nav {
-          position: absolute;
-          top: 100%;
-          right: 16px;
-          left: 16px;
-          display: none;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 12px;
-          background: rgba(255,255,255,0.96);
-          border: 1px solid var(--line);
-          border-radius: 18px;
-          box-shadow: var(--shadow);
-          padding: 18px 20px;
-        }
-        .nav.open { display: flex; }
-        .nav-wrap { position: relative; }
-        .header-actions { gap: 8px; }
-        .services-grid, .why-grid, .process-grid, .stats-grid, .contact-cards { grid-template-columns: 1fr; }
-        .cta-banner { flex-direction: column; align-items: flex-start; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <div class="topbar-text" data-i18n="topline">حلول الطاقة المتكاملة — من التصميم إلى التشغيل</div>
-        <div class="topbar-links" aria-label="أرقام التواصل">
-          <a href="tel:01104967065">01104967065</a>
-          <a href="tel:01119935845">01119935845</a>
-          <a href="tel:01119941565">01119941565</a>
-          <a href="tel:01119947570">01119947570</a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#073b79" />
+  <meta name="description" content="Electric Power — حلول متكاملة للطاقة الشمسية والتنمية الزراعية والصناعية في مصر." />
+  <title>Electric Power | حلول متكاملة للطاقة</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #073b79;
+      --blue-dark: #052d5c;
+      --green: #159b2d;
+      --text: #082c5a;
+      --white: #fff;
+      --container: 1530px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+    body { margin: 0; color: var(--text); font-family: "Cairo", Tahoma, Arial, sans-serif; background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(var(--container), calc(100% - 8.5%)); margin-inline: auto; }
+    .topbar { color: #fff; background: var(--blue); box-shadow: 0 2px 6px #001c3d30; }
+    .topbar-inner { min-height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 15px; font-weight: 700; }
+    .contact-strip, .social-strip { display: flex; align-items: center; gap: 12px; }
+    .contact-strip a { direction: ltr; white-space: nowrap; }
+    .contact-strip .email { margin-inline-end: 28px; }
+    .top-icon { width: 19px; height: 19px; fill: currentColor; flex: 0 0 auto; }
+    .social-strip { gap: 13px; }
+    .social-strip a { display: inline-flex; align-items: center; opacity: .95; }
+    .social-strip svg { width: 17px; height: 17px; fill: currentColor; }
+    .language { border: 0; border-inline-start: 1px solid #ffffff70; padding: 2px 0 2px 15px; margin-inline-start: 4px; background: none; color: #fff; font: inherit; cursor: pointer; }
+    .site-header { position: relative; z-index: 5; background: rgba(255,255,255,.98); border-bottom: 1px solid #e8edf2; }
+    .nav-wrap { min-height: 120px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; flex: 0 0 auto; }
+    .brand img { width: clamp(190px, 21vw, 320px); height: 110px; object-fit: contain; }
+    .nav { display: flex; align-items: center; justify-content: space-between; flex: 1; max-width: 850px; gap: clamp(18px, 3.2vw, 55px); font-size: 22px; font-weight: 800; }
+    .nav a { position: relative; padding: 10px 0; white-space: nowrap; transition: color .2s ease; }
+    .nav a::after { position: absolute; inset-inline: 0; bottom: 1px; height: 4px; content: ""; border-radius: 10px; background: var(--green); transform: scaleX(0); transition: transform .2s ease; }
+    .nav a:hover, .nav a.active { color: var(--green); }
+    .nav a:hover::after, .nav a.active::after { transform: scaleX(1); }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--blue); font-size: 30px; cursor: pointer; }
+    .hero { min-height: 382px; height: clamp(360px, 23vw, 410px); position: relative; isolation: isolate; overflow: hidden; background: #075398 url("https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=2200&q=88") center 54% / cover no-repeat; }
+    .hero::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(270deg, rgba(4,57,119,.96) 0%, rgba(4,57,119,.82) 31%, rgba(4,57,119,.22) 63%, rgba(4,57,119,.03) 100%); }
+    .hero-content { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: #fff; padding-inline-start: 4%; }
+    .hero h1 { max-width: 760px; margin: 0; font-size: clamp(2.5rem, 4.1vw, 4.45rem); line-height: 1.18; font-weight: 900; text-shadow: 0 4px 8px #001b3e90; }
+    .hero p { margin: 15px 0 21px; font-size: clamp(1.15rem, 1.8vw, 1.8rem); font-weight: 800; text-shadow: 0 2px 5px #001b3e90; }
+    .hero-button { display: inline-flex; align-items: center; gap: 20px; min-width: 285px; justify-content: center; padding: 9px 24px; color: #fff; background: linear-gradient(180deg, #1cb92c, #07891d); border: 2px solid #91df66; border-radius: 50px; box-shadow: 0 5px 15px #001c3d60; font-size: 24px; font-weight: 900; transition: transform .2s, filter .2s; }
+    .hero-button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .hero-button span { font-size: 40px; line-height: 1; }
+    .services { padding: 20px 0 15px; background: #fff; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; }
+    .service-card { height: 174px; position: relative; overflow: hidden; border-radius: 14px; box-shadow: 0 3px 12px #092d5120; isolation: isolate; }
+    .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .service-card:hover img { transform: scale(1.05); }
+    .service-card::after { content: ""; position: absolute; inset: 45% 0 0; z-index: 0; background: linear-gradient(transparent, rgba(0,37,77,.92)); }
+    .service-label { position: absolute; z-index: 1; bottom: 0; inset-inline: 0; min-height: 53px; display: flex; align-items: center; justify-content: center; gap: 12px; color: #fff; font-size: 20px; font-weight: 900; text-shadow: 0 2px 4px #001b3d; }
+    .service-label svg { width: 27px; height: 27px; fill: currentColor; flex: 0 0 auto; }
+    .stats { position: relative; overflow: hidden; padding: 10px 0 26px; color: #fff; background: linear-gradient(110deg, #052b59, #073e7d 55%, #052b59); border-bottom: 9px solid #69c92c; }
+    .stats::after { content: ""; position: absolute; left: -3%; right: -3%; bottom: -34px; height: 42px; border-radius: 50% 50% 0 0 / 65% 65% 0 0; background: #fff; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); direction: rtl; }
+    .stat { min-height: 135px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; padding: 4px 14px; }
+    .stat:not(:last-child)::after { content: ""; position: absolute; left: 0; top: 20%; height: 65%; width: 2px; background: #fff; opacity: .9; }
+    .stat-icon { width: 44px; height: 44px; margin-bottom: 1px; fill: #fff; }
+    .stat strong { font-size: 33px; line-height: 1.1; font-weight: 900; }
+    .stat span { margin-top: 3px; font-size: 19px; font-weight: 800; line-height: 1.45; }
+    .below { padding: 70px 0; background: #f7fafc; }
+    .below-inner { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+    .below h2 { margin: 0 0 8px; color: var(--blue); font-size: clamp(1.7rem, 3vw, 2.5rem); }
+    .below p { margin: 0; color: #52677b; font-size: 1.1rem; line-height: 1.8; }
+    .contact-button { flex: 0 0 auto; padding: 12px 25px; border-radius: 30px; color: #fff; background: var(--green); font-weight: 800; }
+    footer { padding: 20px 0; color: #dce8f4; background: var(--blue-dark); text-align: center; }
+    @media (max-width: 1050px) {
+      .container { width: min(100% - 40px, var(--container)); }
+      .nav-wrap { min-height: 100px; gap: 18px; }
+      .brand img { width: 220px; height: 92px; }
+      .nav { gap: 20px; font-size: 18px; }
+      .hero { height: 380px; }
+      .service-card { height: 150px; }
+      .service-label { font-size: 17px; }
+    }
+    @media (max-width: 760px) {
+      .container { width: calc(100% - 32px); }
+      .topbar-inner { min-height: 38px; justify-content: center; }
+      .contact-strip { gap: 8px; font-size: 12px; }
+      .contact-strip .email { display: none; }
+      .social-strip { display: none; }
+      .nav-wrap { min-height: 78px; }
+      .brand img { width: 175px; height: 72px; }
+      .menu-toggle { display: block; margin-inline-start: auto; }
+      .nav { display: none; position: absolute; top: calc(100% - 1px); inset-inline: 16px; max-width: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 18px; border: 1px solid #e3ebf2; border-radius: 0 0 14px 14px; background: #fff; box-shadow: 0 14px 25px #092d5120; font-size: 17px; }
+      .nav.open { display: flex; }
+      .nav a { padding: 10px 0; }
+      .nav a::after { bottom: 5px; width: 42px; }
+      .hero { height: 400px; min-height: 0; background-position: 42% center; }
+      .hero::before { background: linear-gradient(270deg, rgba(4,57,119,.94), rgba(4,57,119,.67) 70%, rgba(4,57,119,.25)); }
+      .hero-content { align-items: center; text-align: center; padding: 20px 10px; }
+      .hero h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
+      .hero p { font-size: 1.1rem; }
+      .hero-button { min-width: 230px; font-size: 19px; }
+      .hero-button span { font-size: 32px; }
+      .services { padding: 14px 0; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+      .service-card { height: 140px; border-radius: 11px; }
+      .service-label { min-height: 45px; gap: 7px; font-size: 14px; }
+      .service-label svg { width: 22px; height: 22px; }
+      .stats { padding: 8px 0 20px; border-bottom-width: 6px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat { min-height: 125px; padding: 8px 4px; }
+      .stat:nth-child(2)::after { display: none; }
+      .stat:not(:last-child)::after { top: 15%; height: 70%; }
+      .stat-icon { width: 36px; height: 36px; }
+      .stat strong { font-size: 28px; }
+      .stat span { font-size: 14px; }
+      .below { padding: 45px 0; }
+      .below-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 380px) {
+      .contact-strip { font-size: 11px; }
+      .brand img { width: 150px; }
+      .service-card { height: 122px; }
+      .service-label { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="contact-strip" aria-label="بيانات التواصل">
+        <a class="email" href="mailto:info@electric-power-eg.com"><svg class="top-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2 .2v.2l8 6.1 8-6.1v-.2a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.5.5Zm16 2.7-7.4 5.6a1 1 0 0 1-1.2 0L4 8.4v10.1a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5V8.4Z"/></svg>info@electric-power-eg.com</a>
+        <svg class="top-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.8 9.4 2a1.8 1.8 0 0 1 2.1 1l1.4 3.3a1.8 1.8 0 0 1-.5 2l-1.8 1.5a15 15 0 0 0 3.6 3.6l1.5-1.8a1.8 1.8 0 0 1 2-.5l3.3 1.4a1.8 1.8 0 0 1 1 2.1l-.8 2.8a2.4 2.4 0 0 1-2.3 1.7C10.7 19.1 4.9 13.3 4.9 6.1a2.4 2.4 0 0 1 1.7-2.3Z"/></svg>
+        <a href="tel:01104967065">01104967065 - 01119935845 - 01119941565 - 01119947570</a>
+      </div>
+      <div class="social-strip" aria-label="روابط التواصل الاجتماعي">
+        <a href="https://www.facebook.com/" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5ZM9.7 15.1V8.9l5.5 3.1-5.5 3.1Z"/></svg></a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M5.2 3a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4ZM3.3 9h3.8v12H3.3V9Zm6.2 0h3.6v1.6h.1A4 4 0 0 1 16.8 8c3.9 0 4.6 2.5 4.6 5.8V21h-3.8v-6.4c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21H9.5V9Z"/></svg></a>
+        <button class="language" id="langToggle" type="button" aria-label="Switch language">عربي | English</button>
       </div>
     </div>
-
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#home" aria-label="Electric Power الرئيسية">
-          <img src="logo.png" alt="شعار Electric Power" />
-          <span class="brand-name">
-            <strong>Electric Power</strong>
-            <span data-i18n="tagline">حلول الطاقة المتكاملة والتنمية الزراعية</span>
-          </span>
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">☰</button>
-
-        <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
-          <a href="#home" data-i18n="navHome">الرئيسية</a>
-          <a href="#services" data-i18n="navServices">خدماتنا</a>
-          <a href="#about" data-i18n="navAbout">من نحن</a>
-          <a href="#why" data-i18n="navWhy">لماذا نحن</a>
-          <a href="#contact" data-i18n="navContact">تواصل معنا</a>
-        </nav>
-
-        <div class="header-actions">
-          <a class="btn btn-primary" href="https://wa.me/201104967065?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A7%D9%84%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%B9%D9%86%20%D8%AD%D9%84%D9%88%D9%84%D8%A9%20%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D9%8A%D8%A9" data-i18n="ctaNav">احجز استشارة</a>
-          <button class="btn btn-secondary" id="langToggle" type="button" aria-label="تبديل اللغة">English</button>
-        </div>
+  </div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Electric Power"><img src="logo.png" alt="Electric Power" /></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+        <a class="active" href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+        <a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+        <a href="#projects" data-ar="مشاريعنا" data-en="Projects">مشاريعنا</a>
+        <a href="#about" data-ar="من نحن" data-en="About us">من نحن</a>
+        <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <h1 data-ar="حلول متكاملة<br>للتنمية الزراعية والصناعية" data-en="Integrated solutions<br>for agricultural and industrial development">حلول متكاملة<br>للتنمية الزراعية والصناعية</h1>
+        <p data-ar="طاقة أنظف .. أداء أقوى .. ومستقبل أكثر استدامة" data-en="Cleaner energy .. stronger performance .. a more sustainable future">طاقة أنظف .. أداء أقوى .. ومستقبل أكثر استدامة</p>
+        <a class="hero-button" href="#services"><span aria-hidden="true">←</span><span data-ar="اكتشف خدماتنا" data-en="Explore our services">اكتشف خدماتنا</span></a>
       </div>
-    </header>
-
-    <main>
-      <section class="hero" id="home">
-        <div class="container hero-inner">
-          <div>
-            <div class="eyebrow" data-i18n="eyebrow">خبرة هندسية • حلول موثوقة • طاقة مستدامة</div>
-            <h1 data-i18n-html="heroTitle">طاقة تصنع الفارق،<br><em>ومستقبل يبدأ اليوم.</em></h1>
-            <p class="lead" data-i18n="heroText">نصمم ونورد وننفذ حلول الطاقة الشمسية، البطاريات، والأنظمة الكهربائية للمنازل والمزارع والمنشآت الصناعية والتجارية.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://wa.me/201104967065?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A7%D9%84%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D9%84%D9%8A%D9%87%D8%A9%20%D9%84%D9%86%D8%A7%D8%82%D9%8A%D8%A9" data-i18n="heroPrimary">استشارة مجانية</a>
-              <a class="btn btn-secondary" href="tel:01104967065" data-i18n="heroSecondary">اتصل الآن</a>
-            </div>
-            <ul class="hero-points">
-              <li><span class="check">✓</span><span data-i18n="note1">حلول تناسب احتياجك</span></li>
-              <li><span class="check">✓</span><span data-i18n="note2">اختيار فني مدروس</span></li>
-              <li><span class="check">✓</span><span data-i18n="note3">دعم ما بعد البيع</span></li>
-            </ul>
-          </div>
-
-          <div class="hero-visual">
-            <div class="visual-card">
-              <div class="visual-top">
-                <span class="badge" data-i18n="badge1">تصميم • توريد • تنفيذ</span>
-                <span class="badge" data-i18n="badge2">مؤهلات فنية</span>
-              </div>
-              <div class="visual-image">
-                <img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="حلول الطاقة الشمسية" />
-              </div>
-              <div class="mini-stats">
-                <div class="mini-stat"><strong>24/7</strong><span data-i18n="mini1">استجابة سريعة</span></div>
-                <div class="mini-stat"><strong>+5</strong><span data-i18n="mini2">فروع</span></div>
-                <div class="mini-stat"><strong>100%</strong><span data-i18n="mini3">حلول مخصصة</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="stats">
-        <div class="container stats-grid">
-          <div class="stat-card"><strong>Solar</strong><span data-i18n="stat1">أنظمة شمسية</span></div>
-          <div class="stat-card"><strong>Battery</strong><span data-i18n="stat2">تخزين طاقة</span></div>
-          <div class="stat-card"><strong>UPS</strong><span data-i18n="stat3">حلول كهربائية</span></div>
-          <div class="stat-card"><strong>Agri</strong><span data-i18n="stat4">دعم زراعي وصناعي</span></div>
-        </div>
-      </section>
-
-      <section class="section" id="services">
-        <div class="container">
-          <div class="section-heading">
-            <span class="kicker" data-i18n="servicesKicker">ماذا نقدم؟</span>
-            <h2 data-i18n="servicesTitle">حلول متكاملة لكل احتياج</h2>
-            <p data-i18n="servicesIntro">من دراسة الاحتياج إلى التنفيذ، نُسهم في اختيار أفضل نظام للطاقة بما يحقق الكفاءة، الاستقرار، والموثوقية.</p>
-          </div>
-
-          <div class="services-grid">
-            <article class="service-card">
-              <div class="service-photo"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=900&q=80" alt="أنظمة الطاقة الشمسية" /></div>
-              <div class="service-copy">
-                <h3 data-i18n="service1">الطاقة الشمسية</h3>
-                <p data-i18n="service1p">تصميم، توريد، وتركيب أنظمة الطاقة الشمسية للمنازل، المزارع، والمنشآت التجارية والصناعية.</p>
-              </div>
-            </article>
-
-            <article class="service-card">
-              <div class="service-photo"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80" alt="بطاريات تخزين الطاقة" /></div>
-              <div class="service-copy">
-                <h3 data-i18n="service2">تخزين الطاقة</h3>
-                <p data-i18n="service2p">بطاريات احتياطية وأنظمة إدارة طاقة تقلل الانقطاعات وتزيد استقرار الإمداد.</p>
-              </div>
-            </article>
-
-            <article class="service-card">
-              <div class="service-photo"><img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=80" alt="الإنفرترات والحلول الكهربائية" /></div>
-              <div class="service-copy">
-                <h3 data-i18n="service3">الحلول الكهربائية</h3>
-                <p data-i18n="service3p">إنفرترات، UPS، ومكونات كهربائية متكاملة لضمان استقرار التشغيل وجودة الأداء.</p>
-              </div>
-            </article>
-
-            <article class="service-card">
-              <div class="service-photo"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="التنمية الزراعية والطاقة" /></div>
-              <div class="service-copy">
-                <h3 data-i18n="service4">التنمية الزراعية</h3>
-                <p data-i18n="service4p">حلول تدعم المشروعات الزراعية والصناعية والتجارية ضمن رؤية متكاملة للطاقة والاستدامة.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-soft" id="about">
-        <div class="container about-grid">
-          <div class="about-visual">
-            <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=80" alt="أنظمة الطاقة الشمسية" />
-            <div class="about-badge">
-              <strong>+5</strong>
-              <span data-i18n="branchCount">فروع ومناطق خدمة</span>
-            </div>
-          </div>
-
-          <div class="about-copy">
-            <div>
-              <span class="kicker" data-i18n="aboutKicker">عن Electric Power</span>
-              <h2 data-i18n="aboutTitle">نحو طاقة أكثر كفاءة واعتمادية</h2>
-            </div>
-            <p data-i18n="aboutText">نقدم حلولاً متكاملة في الطاقة الشمسية، البطاريات، والإنفرترات مع دعم فني يساعد العميل على اختيار النظام المناسب بحسب احتياجه الفعلي وظروف التشغيل.</p>
-            <div class="check-list">
-              <div class="check-item"><span class="mark">✓</span><span data-i18n="benefit1">فهم احتياجات المشروع قبل اختيار المعدات</span></div>
-              <div class="check-item"><span class="mark">✓</span><span data-i18n="benefit2">تقييم فني للأحمال والامكانيات المتاحة</span></div>
-              <div class="check-item"><span class="mark">✓</span><span data-i18n="benefit3">تنفيذ معتمد مع متابعة ودعم ما بعد البيع</span></div>
-            </div>
-            <a class="btn btn-primary" href="https://wa.me/201104967065?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D9%8B%D8%8C%20%D8%AA%D8%AD%D8%AF%D8%AB%20%D9%85%D9%84%D9%86%D8%B4%D8%A7%D8%B1%D9%83%20%D9%85%D9%84%D8%B7%D8%A7%D9%82%D9%8A%D8%A9" data-i18n="aboutCta">تحدث مع فريقنا</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="why">
-        <div class="container">
-          <div class="section-heading">
-            <span class="kicker" data-i18n="whyKicker">لماذا Electric Power؟</span>
-            <h2 data-i18n="whyTitle">شراكة تبدأ بفهم احتياجك</h2>
-            <p data-i18n="whyIntro">نركز على تجربة واضحة من أول استفسار وحتى تنفيذ المشروع، مع مراعاة الجودة والجوانب التقنية والعملية.</p>
-          </div>
-
-          <div class="why-grid">
-            <div class="why-card">
-              <div class="why-icon">⌕</div>
-              <h3 data-i18n="why1">دراسة فنية للاحتياج</h3>
-              <p data-i18n="why1p">تحديد المتطلبات والأحمال والظروف التشغيلية بدقة قبل اختيار الحل المناسب.</p>
-            </div>
-            <div class="why-card">
-              <div class="why-icon">◇</div>
-              <h3 data-i18n="why2">اختيار مكونات مناسب</h3>
-              <p data-i18n="why2p">مقارنة البدائل بناءً على التوافق، الجودة، والكفاءة التشغيلية.</p>
-            </div>
-            <div class="why-card">
-              <div class="why-icon">⚙</div>
-              <h3 data-i18n="why3">اهتمام بالتنفيذ</h3>
-              <p data-i18n="why3p">تركيز على الجودة في التركيب، التوصيل، والتنظيم لضمان استقرار الأداء.</p>
-            </div>
-            <div class="why-card">
-              <div class="why-icon">◉</div>
-              <h3 data-i18n="why4">تواصل مباشر</h3>
-              <p data-i18n="why4p">سهولة الوصول إلينا لمناقشة احتياجك، وطلب الاستشارة أو عرض السعر.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section process">
-        <div class="container">
-          <div class="section-heading">
-            <span class="kicker" data-i18n="processKicker">كيف نعمل؟</span>
-            <h2 data-i18n="processTitle">من الاستشارة إلى التشغيل</h2>
-            <p data-i18n="processIntro">نطبق منهجية واضحة تضمن أن كل مشروع يناسب الاحتياج الحقيقي ويحقق أعلى قيمة.</p>
-          </div>
-
-          <div class="process-grid">
-            <div class="process-card">
-              <div class="process-number">1</div>
-              <h3 data-i18n="step1Title">الفهم الأولي</h3>
-              <p data-i18n="step1Text">نراجع احتياجك، الأحمال، والبيئة التشغيلية قبل وضع أي خطة.</p>
-            </div>
-            <div class="process-card">
-              <div class="process-number">2</div>
-              <h3 data-i18n="step2Title">التخطيط الفني</h3>
-              <p data-i18n="step2Text">نقوم بتجهيز حلول مناسبة من حيث السعة، التوافق، والفعالية التشغيلية.</p>
-            </div>
-            <div class="process-card">
-              <div class="process-number">3</div>
-              <h3 data-i18n="step3Title">التنفيذ</h3>
-              <p data-i18n="step3Text">نتابع التركيبات والتوصيلات وضمان الجودة خلال مراحل التنفيذ.</p>
-            </div>
-            <div class="process-card">
-              <div class="process-number">4</div>
-              <h3 data-i18n="step4Title">الدعم والتشغيل</h3>
-              <p data-i18n="step4Text">نقدم متابعة مستمرة بعد التشغيل لضمان استقرار الأداء وكفاءة العمل.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="cta-banner">
-            <div>
-              <h3 data-i18n="bannerTitle">هل تخطط لمشروع طاقة جديد؟</h3>
-              <p data-i18n="bannerText">أرسل لنا تفاصيل المشروع أو الأحمال المطلوبة، وسنساعدك في بدء المناقشة نحو الحل المناسب.</p>
-            </div>
-            <a class="btn btn-primary" href="https://wa.me/201104967065?text=%D9%85%D8%B1%D8%AC%D8%A8%20%D8%A7%D9%84%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%B7%D8%A7%D9%84%D9%8A%20%D9%84%D8%A7%D9%86%20%D9%85%D9%84%D8%A7%D8%AD%D9%85%D8%A7%D9%84%D8%A9%D9%8A%20%D8%A7%D9%84%D9%85%D8%B1%D8%AF%D8%A9" data-i18n="bannerCta">اطلب عرض سعر</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-soft" id="contact">
-        <div class="container contact-wrap">
-          <div class="contact-box">
-            <span class="kicker" data-i18n="contactKicker">نحن على تواصل</span>
-            <h3 data-i18n="contactTitle">دعنا نتحدث عن مشروعك</h3>
-            <p data-i18n="contactIntro">اختر وسيلة التواصل المناسبة، وسنكون سعداء بالمساعدة في تقييم احتياجك وتقديم الحل الأنسب.</p>
-
-            <div class="contact-list">
-              <div class="contact-item">
-                <span class="icon">☎</span>
-                <div>
-                  <small data-i18n="phoneLabel">اتصل بنا</small>
-                  <a href="tel:01104967065">01104967065</a>
-                </div>
-              </div>
-              <div class="contact-item">
-                <span class="icon">⌖</span>
-                <div>
-                  <small data-i18n="branchesLabel">فروعنا</small>
-                  <strong data-i18n="branchesText">الإسكندرية، السادات، القاهرة، المنيا، أسيوط</strong>
-                </div>
-              </div>
-              <div class="contact-item">
-                <span class="icon">◷</span>
-                <div>
-                  <small data-i18n="responseLabel">للطلبات والاستفسارات</small>
-                  <strong data-i18n="responseText">راسلنا مباشرة عبر الواتساب</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-cards">
-            <div class="contact-card">
-              <h4 data-i18n="mainPhones">أرقام التواصل الرئيسية</h4>
-              <p data-i18n="phoneDesc">اضغط على الرقم للاتصال مباشرة</p>
-              <a class="phone-link" href="tel:01104967065">01104967065</a><br />
-              <a class="phone-link" href="tel:01119935845">01119935845</a>
-            </div>
-            <div class="contact-card">
-              <h4 data-i18n="extraPhones">أرقام إضافية</h4>
-              <p data-i18n="phoneDesc">اضغط على الرقم للاتصال مباشرة</p>
-              <a class="phone-link" href="tel:01119941565">01119941565</a><br />
-              <a class="phone-link" href="tel:01119947570">01119947570</a>
-            </div>
-            <div class="contact-card">
-              <h4 data-i18n="whatsTitle">واتساب</h4>
-              <p data-i18n="whatsDesc">للاستفسار وطلب عرض سعر</p>
-              <a class="phone-link" href="https://wa.me/201104967065?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%88%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%88%D8%B1%D8%82%D9%8A%20%D8%AA%D9%82%D9%8A%D9%87%D8%AA%20%D8%A7%D9%84%D8%B7%D8%A7%D9%82%D8%A9">WhatsApp</a>
-            </div>
-            <div class="contact-card">
-              <h4 data-i18n="locationsTitle">الفروع</h4>
-              <p data-i18n="locationsDesc">الإسكندرية، السادات، القاهرة، المنيا، أسيوط</p>
-              <a class="phone-link" href="#about" data-i18n="locationsLink">عرض الفروع</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container footer-inner">
-        <div class="footer-brand">
-          <img src="logo.png" alt="شعار Electric Power" />
-          <div><strong>Electric Power</strong></div>
-        </div>
-        <div class="footer-copy" data-i18n="footerCopy">© <span id="year"></span> Electric Power • جميع الحقوق محفوظة</div>
+    </section>
+    <section class="services" id="services" aria-label="خدماتنا">
+      <div class="container services-grid">
+        <a class="service-card" href="#projects"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=85" alt="محطات الطاقة الشمسية" /><span class="service-label"><svg viewBox="0 0 24 24"><path d="M3 3h18v2H3V3Zm1 4h16l2 12H2L4 7Zm2 2-1.3 8h3.1l.5-8H6Zm4.3 0-.5 8h4.4l-.5-8h-3.4Zm5.4 0 .5 8h3.1L18 9h-2.3ZM1 21h22v2H1v-2Z"/></svg><span data-ar="محطات الطاقة الشمسية" data-en="Solar power plants">محطات الطاقة الشمسية</span></span></a>
+        <a class="service-card" href="#projects"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=85" alt="البطاريات والإنفرترات" /><span class="service-label"><svg viewBox="0 0 24 24"><path d="M7 4h10v2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3V4Zm2 2h6V5h-6v1ZM4 8v12h16V8H4Zm7 2h2v3h3v2h-3v3h-2v-3H8v-2h3v-3Z"/></svg><span data-ar="البطاريات والإنفرترات" data-en="Batteries & inverters">البطاريات والإنفرترات</span></span></a>
+        <a class="service-card" href="#projects"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=800&q=85" alt="الحلول الصناعية" /><span class="service-label"><svg viewBox="0 0 24 24"><path d="M2 21V9l7 4V9l7 4V5h6v16H2Zm2-2h2v-2H4v2Zm0-4h2v-2H4v2Zm5 4h2v-2H9v2Zm0-4h2v-2H9v2Zm5 4h2v-2h-2v2Zm0-4h2v-2h-2v2Zm5 4h2v-2h-2v2Zm0-4h2v-2h-2v2ZM18 7v2h2V7h-2Z"/></svg><span data-ar="حلول صناعية" data-en="Industrial solutions">حلول صناعية</span></span></a>
+        <a class="service-card" href="#projects"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=85" alt="حلول زراعية" /><span class="service-label"><svg viewBox="0 0 24 24"><path d="M20.8 3.2C12 3.5 5.1 5 3 10.1c-1.2 2.9.2 5.7 3.1 6.7 2.7.9 5.3-.5 6.5-3.1.9-1.8 1.2-4.2 1.3-6.6-1.4 3.1-3.6 5.7-6.5 7.5 2.2-3.9 6.4-7.2 13.4-9.2v-2.2ZM3 20h18v2H3v-2Z"/></svg><span data-ar="حلول زراعية" data-en="Agricultural solutions">حلول زراعية</span></span></a>
       </div>
-    </footer>
-
-    <script>
-      const translations = {
-        ar: {
-          topline: "حلول الطاقة المتكاملة — من التصميم إلى التشغيل",
-          tagline: "حلول الطاقة المتكاملة والتنمية الزراعية",
-          navHome: "الرئيسية",
-          navServices: "خدماتنا",
-          navAbout: "من نحن",
-          navWhy: "لماذا نحن",
-          navContact: "تواصل معنا",
-          ctaNav: "احجز استشارة",
-          eyebrow: "خبرة هندسية • حلول موثوقة • طاقة مستدامة",
-          heroTitle: "طاقة تصنع الفارق،<br><em>ومستقبل يبدأ اليوم.</em>",
-          heroText: "نصمم ونورد وننفذ حلول الطاقة الشمسية، البطاريات، والأنظمة الكهربائية للمنازل والمزارع والمنشآت الصناعية والتجارية.",
-          heroPrimary: "استشارة مجانية",
-          heroSecondary: "اتصل الآن",
-          note1: "حلول تناسب احتياجك",
-          note2: "اختيار فني مدروس",
-          note3: "دعم ما بعد البيع",
-          badge1: "تصميم • توريد • تنفيذ",
-          badge2: "مؤهلات فنية",
-          mini1: "استجابة سريعة",
-          mini2: "فروع",
-          mini3: "حلول مخصصة",
-          stat1: "أنظمة شمسية",
-          stat2: "تخزين طاقة",
-          stat3: "حلول كهربائية",
-          stat4: "دعم زراعي وصناعي",
-          servicesKicker: "ماذا نقدم؟",
-          servicesTitle: "حلول متكاملة لكل احتياج",
-          servicesIntro: "من دراسة الاحتياج إلى التنفيذ، نُسهم في اختيار أفضل نظام للطاقة بما يحقق الكفاءة، الاستقرار، والموثوقية.",
-          service1: "الطاقة الشمسية",
-          service1p: "تصميم، توريد، وتركيب أنظمة الطاقة الشمسية للمنازل، المزارع، والمنشآت التجارية والصناعية.",
-          service2: "تخزين الطاقة",
-          service2p: "بطاريات احتياطية وأنظمة إدارة طاقة تقلل الانقطاعات وتزيد استقرار الإمداد.",
-          service3: "الحلول الكهربائية",
-          service3p: "إنفرترات، UPS، ومكونات كهربائية متكاملة لضمان استقرار التشغيل وجودة الأداء.",
-          service4: "التنمية الزراعية",
-          service4p: "حلول تدعم المشروعات الزراعية والصناعية والتجارية ضمن رؤية متكاملة للطاقة والاستدامة.",
-          aboutKicker: "عن Electric Power",
-          aboutTitle: "نحو طاقة أكثر كفاءة واعتمادية",
-          aboutText: "نقدم حلولاً متكاملة في الطاقة الشمسية، البطاريات، والإنفرترات مع دعم فني يساعد العميل على اختيار النظام المناسب بحسب احتياجه الفعلي وظروف التشغيل.",
-          benefit1: "فهم احتياجات المشروع قبل اختيار المعدات",
-          benefit2: "تقييم فني للأحمال والامكانيات المتاحة",
-          benefit3: "تنفيذ معتمد مع متابعة ودعم ما بعد البيع",
-          aboutCta: "تحدث مع فريقنا",
-          branchCount: "فروع ومناطق خدمة",
-          whyKicker: "لماذا Electric Power؟",
-          whyTitle: "شراكة تبدأ بفهم احتياجك",
-          whyIntro: "نركز على تجربة واضحة من أول استفسار وحتى تنفيذ المشروع، مع مراعاة الجودة والجوانب التقنية والعملية.",
-          why1: "دراسة فنية للاحتياج",
-          why1p: "تحديد المتطلبات والأحمال والظروف التشغيلية بدقة قبل اختيار الحل المناسب.",
-          why2: "اختيار مكونات مناسب",
-          why2p: "مقارنة البدائل بناءً على التوافق، الجودة، والكفاءة التشغيلية.",
-          why3: "اهتمام بالتنفيذ",
-          why3p: "تركيز على الجودة في التركيب، التوصيل، والتنظيم لضمان استقرار الأداء.",
-          why4: "تواصل مباشر",
-          why4p: "سهولة الوصول إلينا لمناقشة احتياجك، وطلب الاستشارة أو عرض السعر.",
-          processKicker: "كيف نعمل؟",
-          processTitle: "من الاستشارة إلى التشغيل",
-          processIntro: "نطبق منهجية واضحة تضمن أن كل مشروع يناسب الاحتياج الحقيقي ويحقق أعلى قيمة.",
-          step1Title: "الفهم الأولي",
-          step1Text: "نراجع احتياجك، الأحمال، والبيئة التشغيلية قبل وضع أي خطة.",
-          step2Title: "التخطيط الفني",
-          step2Text: "نقوم بتجهيز حلول مناسبة من حيث السعة، التوافق، والفعالية التشغيلية.",
-          step3Title: "التنفيذ",
-          step3Text: "نتابع التركيبات والتوصيلات وضمان الجودة خلال مراحل التنفيذ.",
-          step4Title: "الدعم والتشغيل",
-          step4Text: "نقدم متابعة مستمرة بعد التشغيل لضمان استقرار الأداء وكفاءة العمل.",
-          bannerTitle: "هل تخطط لمشروع طاقة جديد؟",
-          bannerText: "أرسل لنا تفاصيل المشروع أو الأحمال المطلوبة، وسنساعدك في بدء المناقشة نحو الحل المناسب.",
-          bannerCta: "اطلب عرض سعر",
-          contactKicker: "نحن على تواصل",
-          contactTitle: "دعنا نتحدث عن مشروعك",
-          contactIntro: "اختر وسيلة التواصل المناسبة، وسنكون سعداء بالمساعدة في تقييم احتياجك وتقديم الحل الأنسب.",
-          phoneLabel: "اتصل بنا",
-          branchesLabel: "فروعنا",
-          branchesText: "الإسكندرية، السادات، القاهرة، المنيا، أسيوط",
-          responseLabel: "للطلبات والاستفسارات",
-          responseText: "راسلنا مباشرة عبر الواتساب",
-          mainPhones: "أرقام التواصل الرئيسية",
-          extraPhones: "أرقام إضافية",
-          phoneDesc: "اضغط على الرقم للاتصال مباشرة",
-          whatsTitle: "واتساب",
-          whatsDesc: "للاستفسار وطلب عرض سعر",
-          locationsTitle: "الفروع",
-          locationsDesc: "الإسكندرية، السادات، القاهرة، المنيا، أسيوط",
-          locationsLink: "عرض الفروع",
-          footerCopy: "© <span id=\"year\"></span> Electric Power • جميع الحقوق محفوظة"
-        },
-        en: {
-          topline: "Integrated energy solutions — from design to commissioning",
-          tagline: "Integrated Energy & Agricultural Solutions",
-          navHome: "Home",
-          navServices: "Services",
-          navAbout: "About us",
-          navWhy: "Why us",
-          navContact: "Contact",
-          ctaNav: "Book a consult",
-          eyebrow: "Engineering expertise • Reliable solutions • Sustainable energy",
-          heroTitle: "Energy that makes a difference,<br><em>a future that starts today.</em>",
-          heroText: "We design, supply and implement solar energy, battery systems, and electrical solutions for homes, farms, and industrial or commercial facilities.",
-          heroPrimary: "Free consultation",
-          heroSecondary: "Call now",
-          note1: "Solutions tailored to your needs",
-          note2: "Technically selected systems",
-          note3: "After-sales support",
-          badge1: "Design • Supply • Installation",
-          badge2: "Technical expertise",
-          mini1: "Fast response",
-          mini2: "Branches",
-          mini3: "Custom solutions",
-          stat1: "Solar systems",
-          stat2: "Energy storage",
-          stat3: "Electrical solutions",
-          stat4: "Agricultural support",
-          servicesKicker: "What we do",
-          servicesTitle: "Integrated solutions for every need",
-          servicesIntro: "From requirement study to execution, we help choose the best energy system that delivers efficiency, stability and reliability.",
-          service1: "Solar energy",
-          service1p: "Design, supply and install solar systems for homes, farms, and commercial or industrial facilities.",
-          service2: "Energy storage",
-          service2p: "Backup batteries and energy management systems that reduce outages and improve supply stability.",
-          service3: "Electrical solutions",
-          service3p: "Inverters, UPS units, and electrical components that guarantee reliable operation and high performance.",
-          service4: "Agricultural development",
-          service4p: "Solutions that support agriculture, industrial and commercial projects through an integrated energy vision.",
-          aboutKicker: "About Electric Power",
-          aboutTitle: "Toward more efficient and reliable energy",
-          aboutText: "We provide integrated solar, battery and inverter solutions with technical support that helps clients choose the right system according to their actual needs and operating conditions.",
-          benefit1: "Understand project needs before selecting equipment",
-          benefit2: "Technical assessment of loads and available capacity",
-          benefit3: "Certified implementation with after-sales support",
-          aboutCta: "Talk to our team",
-          branchCount: "Branches and service areas",
-          whyKicker: "Why Electric Power?",
-          whyTitle: "A partnership that starts by understanding your needs",
-          whyIntro: "We focus on a clear customer experience from the first inquiry to final implementation, with attention to quality and practical effectiveness.",
-          why1: "Technical needs study",
-          why1p: "Precisely identify requirements, loads and operating conditions before choosing the right solution.",
-          why2: "Suitable component selection",
-          why2p: "Compare alternatives based on compatibility, quality and operating efficiency.",
-          why3: "Execution focus",
-          why3p: "Pay close attention to installation quality, electrical connections and overall performance stability.",
-          why4: "Direct communication",
-          why4p: "Easily reach us to discuss your needs and request a consultation or quotation.",
-          processKicker: "How we work",
-          processTitle: "From consultation to commissioning",
-          processIntro: "We apply a clear process that ensures each project matches the actual need and delivers maximum value.",
-          step1Title: "Initial understanding",
-          step1Text: "We review your needs, loads and operating environment before creating any plan.",
-          step2Title: "Technical planning",
-          step2Text: "We prepare suitable solutions in terms of capacity, compatibility and efficiency.",
-          step3Title: "Execution",
-          step3Text: "We supervise installations and wiring and maintain quality throughout each stage.",
-          step4Title: "Support and operation",
-          step4Text: "We provide ongoing follow-up after launch to ensure stable performance and efficient operation.",
-          bannerTitle: "Planning a new energy project?",
-          bannerText: "Send us the project details or required loads and we will help you begin the right discussion.",
-          bannerCta: "Request a quote",
-          contactKicker: "Let's connect",
-          contactTitle: "Let's talk about your project",
-          contactIntro: "Choose the communication method that suits you and we will be happy to help evaluate your needs and propose the best solution.",
-          phoneLabel: "Call us",
-          branchesLabel: "Our branches",
-          branchesText: "Alexandria, Sadat, Cairo, Minya, Assiut",
-          responseLabel: "For requests and inquiries",
-          responseText: "Message us directly via WhatsApp",
-          mainPhones: "Main contact numbers",
-          extraPhones: "Additional numbers",
-          phoneDesc: "Tap the number to call directly",
-          whatsTitle: "WhatsApp",
-          whatsDesc: "For questions and quotation requests",
-          locationsTitle: "Branches",
-          locationsDesc: "Alexandria, Sadat, Cairo, Minya, Assiut",
-          locationsLink: "View branches",
-          footerCopy: "© <span id=\"year\"></span> Electric Power • All rights reserved"
-        }
-      };
-
-      let currentLang = "ar";
-
-      function setLanguage(nextLang) {
-        currentLang = nextLang;
-        const t = translations[currentLang];
-        document.documentElement.lang = currentLang;
-        document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
-
-        document.querySelectorAll("[data-i18n]").forEach((el) => {
-          const key = el.dataset.i18n;
-          if (t[key]) el.textContent = t[key];
-        });
-
-        document.querySelectorAll("[data-i18n-html]").forEach((el) => {
-          const key = el.dataset.i18nHtml;
-          if (t[key]) el.innerHTML = t[key];
-        });
-
-        document.getElementById("year").textContent = new Date().getFullYear();
-
-        const nav = document.getElementById("nav");
-        const toggle = document.getElementById("menuToggle");
-        if (nav && toggle) {
-          nav.classList.remove("open");
-          toggle.setAttribute("aria-expanded", "false");
-          toggle.textContent = "☰";
-        }
-      }
-
-      const nav = document.getElementById("nav");
-      const menuToggle = document.getElementById("menuToggle");
-      const langToggle = document.getElementById("langToggle");
-
-      if (menuToggle && nav) {
-        menuToggle.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
-          menuToggle.textContent = isOpen ? "✕" : "☰";
-        });
-
-        nav.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            nav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.textContent = "☰";
-          });
-        });
-      }
-
-      if (langToggle) {
-        langToggle.addEventListener("click", () => {
-          setLanguage(currentLang === "ar" ? "en" : "ar");
-          langToggle.textContent = currentLang === "ar" ? "English" : "العربية";
-        });
-      }
-
-      setLanguage("ar");
-      if (langToggle) langToggle.textContent = "English";
-    </script>
-  </body>
+    </section>
+    <section class="stats" id="projects" aria-label="إنجازاتنا">
+      <div class="container stats-grid">
+        <div class="stat"><svg class="stat-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 2 6 9v13c0 12 7.7 20.7 18 24 10.3-3.3 18-12 18-24V9L24 2Zm0 7 11 4.3V22c0 8.6-4.8 15.6-11 18.4C17.8 37.6 13 30.6 13 22v-8.7L24 9Zm-2.3 23.2-7-7 4.2-4.2 2.8 2.8 7.4-7.4 4.2 4.2-11.6 11.6Z"/></svg><strong>100%</strong><span data-ar="مكونات وأجهزة معتمدة" data-en="Certified components & equipment">مكونات وأجهزة معتمدة</span></div>
+        <div class="stat"><svg class="stat-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 43h40v3H4v-3Zm3-3V13h13v27H7Zm17 0V4h17v36H24ZM11 17h4v4h-4v-4Zm0 8h4v4h-4v-4Zm0 8h4v4h-4v-4Zm17-24h4v4h-4V9Zm8 0h2v4h-2V9Zm-8 8h4v4h-4v-4Zm8 0h2v4h-2v-4Zm-8 8h4v4h-4v-4Zm8 0h2v4h-2v-4Zm-8 8h4v4h-4v-4Zm8 0h2v4h-2v-4ZM19 6l-3-3 2-2 3 3-2 2Z"/></svg><strong>+15 MW</strong><span data-ar="قدرة محطات مركبة" data-en="Installed station capacity">قدرة محطات مركبة</span></div>
+        <div class="stat"><svg class="stat-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 2a2 2 0 0 1 2 2v3h-4V4a2 2 0 0 1 2-2ZM8 10l3-3 3 3-3 3-3-3Zm26 0 3-3 3 3-3 3-3-3ZM5 16h38v3H5v-3Zm3 5h32l5 22H3l5-22Zm4 4-3 14h7l1-14h-5Zm9 0-1 14h6l-1-14h-4Zm8 0 1 14h7l-3-14h-5ZM2 46h44v2H2v-2Z"/></svg><strong>+500</strong><span data-ar="مشروع شمسي منفذ" data-en="Solar projects delivered">مشروع شمسي منفذ</span></div>
+        <div class="stat"><svg class="stat-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 2C14.6 2 7 9.6 7 19c0 12.8 17 27 17 27s17-14.2 17-27C41 9.6 33.4 2 24 2Zm0 23a6 6 0 1 1 0-12 6 6 0 0 1 0 12Z"/></svg><strong>5</strong><span data-ar="فروع لتغطية كافة المحافظات" data-en="Branches covering Egypt">فروع لتغطية كافة المحافظات</span></div>
+      </div>
+    </section>
+    <section class="below" id="about">
+      <div class="container below-inner">
+        <div><h2 data-ar="شريكك في مستقبل أكثر استدامة" data-en="Your partner in a more sustainable future">شريكك في مستقبل أكثر استدامة</h2><p data-ar="نقدم حلول طاقة متكاملة للمشروعات الزراعية والصناعية والتجارية، من التصميم والتوريد إلى التنفيذ والدعم." data-en="We deliver integrated energy solutions for agricultural, industrial, and commercial projects—from design and supply to installation and support.">نقدم حلول طاقة متكاملة للمشروعات الزراعية والصناعية والتجارية، من التصميم والتوريد إلى التنفيذ والدعم.</p></div>
+        <a class="contact-button" id="contact" href="mailto:info@electric-power-eg.com" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">© <span id="year"></span> Electric Power — جميع الحقوق محفوظة</div></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }));
+    let language = 'ar';
+    document.getElementById('langToggle').addEventListener('click', () => {
+      language = language === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+      document.querySelectorAll('[data-ar][data-en]').forEach((element) => {
+        element.innerHTML = element.dataset[language];
+      });
+      document.getElementById('langToggle').textContent = language === 'ar' ? 'عربي | English' : 'English | عربي';
+      menuToggle.setAttribute('aria-label', language === 'ar' ? 'فتح القائمة' : 'Open menu');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
