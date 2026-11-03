@@ -1,28 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
-  <title id="title">Electric Power Company</title>
-  <desc id="desc">Electric Power Company renewable energy logo with green leaves, a blue lightning bolt, and a golden sun.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Electric Power Company</title>
+  <desc id="logo-description">Green leaves, a blue lightning bolt and golden sun representing clean electric power.</desc>
   <defs>
-    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#53c51b"/><stop offset="1" stop-color="#08732e"/></linearGradient>
-    <linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#39d5ff"/><stop offset=".48" stop-color="#0879cf"/><stop offset="1" stop-color="#073b79"/></linearGradient>
-    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe34c"/><stop offset="1" stop-color="#f39200"/></linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6bd82d"/>
+      <stop offset=".52" stop-color="#189b28"/>
+      <stop offset="1" stop-color="#075d2b"/>
+    </linearGradient>
+    <linearGradient id="blue" x1=".15" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#46dcff"/>
+      <stop offset=".42" stop-color="#078bd8"/>
+      <stop offset="1" stop-color="#06366f"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff044"/>
+      <stop offset=".55" stop-color="#ffba08"/>
+      <stop offset="1" stop-color="#ed7900"/>
+    </linearGradient>
   </defs>
-  <g transform="translate(10 8)">
-    <path d="M132 13C71 12 20 57 20 111c0 34 19 59 51 69-22-17-35-42-35-68 0-40 37-77 96-99Z" fill="url(#leaf)"/>
-    <path d="M46 111c4 35 26 58 63 68-3-24-14-42-34-56-14-10-24-20-29-35-4 8-3 15 0 23Z" fill="url(#leaf)"/>
-    <path d="M101 178c43-9 68-35 77-75-22 8-38 21-48 40-8 15-17 27-29 35Z" fill="url(#leaf)"/>
-    <path d="M116 26c19-10 42-15 64-12-29 8-48 23-61 43-9 14-14 30-16 46-8-30-4-58 13-77Z" fill="url(#sun)"/>
-    <path d="M178 16c43 6 76 41 80 82 3 35-13 62-42 79 20-23 29-46 26-72-3-36-27-67-64-89Z" fill="url(#sun)"/>
-    <path d="m210 17 10-17 5 20 17 10-20 4-9 18-5-21-18-8 20-6Z" fill="url(#sun)"/>
-    <path d="m247 43 15-13-3 20 12 14-20-3-15 12 3-20-13-15 21 5Z" fill="url(#sun)"/>
-    <path d="m270 83 19-7-10 18 7 19-18-10-19 7 10-18-7-19 18 10Z" fill="url(#sun)"/>
-    <path d="m269 128 18 10-20 2-11 17-1-20-17-11 20-1 11-18Z" fill="url(#sun)"/>
-    <path d="m199 24-69 82 42-5-37 72 92-105-48 7 20-51Z" fill="url(#bolt)" stroke="#064578" stroke-width="3" stroke-linejoin="round"/>
-    <path d="M20 111c0 42 39 73 91 73 56 0 103-31 124-70" fill="none" stroke="#159d2f" stroke-width="5" stroke-linecap="round"/>
+  <g transform="translate(4 8)">
+    <!-- Green outer leaf/swoosh -->
+    <path d="M174 11C94 8 28 57 17 122c-8 45 18 76 63 91-30-20-45-49-39-81C51 77 99 34 174 11Z" fill="url(#green)"/>
+    <path d="M42 110c2 42 27 75 69 96 10-28 2-55-23-76-18-15-30-33-34-54-10 10-14 22-12 34Z" fill="url(#green)"/>
+    <path d="M102 201c49-8 81-39 95-88-27 9-48 25-61 49-10 18-21 31-34 39Z" fill="url(#green)"/>
+    <path d="M53 118c16 26 36 42 57 60M112 198c9-17 17-34 24-53" fill="none" stroke="#e9ffd5" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+    <!-- Sun arc and rays -->
+    <path d="M91 96C95 55 131 26 181 22c27-2 51 3 71 16-35-9-67-4-91 9-27 15-46 33-70 49Z" fill="url(#gold)"/>
+    <path d="M173 27c54-4 101 32 111 82 8 39-9 72-40 94 21-27 30-52 23-81-8-43-42-78-94-95Z" fill="url(#gold)"/>
+    <path d="m216 11 14-9 2 19 17 11-20 1-10 16-3-20-17-9 19-9Z" fill="url(#gold)"/>
+    <path d="m257 35 17-7-5 18 12 13-19-3-14 13 3-19-13-13 19-2Z" fill="url(#gold)"/>
+    <path d="m282 72 19-3-9 17 7 18-17-9-18 7 9-17-7-18 16 8Z" fill="url(#gold)"/>
+    <path d="m285 115 18 7-18 7-7 18-6-18-18-7 18-7 6-18 7 18Z" fill="url(#gold)"/>
+    <path d="m270 158 15 13-20 1-11 16-2-20-16-11 20-2 10-16 4 19Z" fill="url(#gold)"/>
+    <!-- Blue lightning bolt -->
+    <path d="m198 30-87 94 53-7-44 82 116-116-59 8 21-61Z" fill="url(#blue)" stroke="#07376d" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m198 30-34 86 31-5-75 88 44-82-53 7 87-94Z" fill="#5be4ff" opacity=".45"/>
+    <!-- Lower green sweep -->
+    <path d="M25 130c9 47 54 74 111 74 50 0 96-20 124-57-17 42-66 67-124 67-67 0-112-32-121-84Z" fill="none" stroke="url(#green)" stroke-width="7" stroke-linecap="round"/>
   </g>
   <g font-family="Arial, Helvetica, sans-serif" font-style="italic" font-weight="800" fill="#073b79">
-    <text x="318" y="89" font-size="58">Electric</text>
-    <text x="318" y="148" font-size="58">Power</text>
-    <text x="322" y="198" font-size="27" font-style="normal" letter-spacing="7">COMPANY</text>
+    <text x="330" y="91" font-size="62" letter-spacing="-2">Electric</text>
+    <text x="330" y="151" font-size="62" letter-spacing="-2">Power</text>
+    <text x="336" y="194" font-family="Arial, Helvetica, sans-serif" font-style="normal" font-size="25" font-weight="700" letter-spacing="8" fill="#168a34">COMPANY</text>
   </g>
-  <path d="M322 161h315" stroke="#159d2f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M337 163h330" stroke="#26a739" stroke-width="6" stroke-linecap="round"/>
 </svg>
