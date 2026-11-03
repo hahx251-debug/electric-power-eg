@@ -3,169 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#073a7a" />
-  <meta name="description" content="Electric Power — حلول متكاملة للطاقة الشمسية والبطاريات والحلول الزراعية والصناعية في مصر." />
-  <title>Electric Power | حلول طاقة متكاملة</title>
+  <meta name="theme-color" content="#073b79" />
+  <meta name="description" content="Electric Power — حلول متكاملة للطاقة الشمسية والبطاريات والأنظمة الكهربائية للمشروعات الزراعية والصناعية في مصر." />
+  <title>Electric Power | حلول متكاملة للطاقة</title>
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --blue: #073a7a;
-      --blue-deep: #042d5b;
-      --green: #1dbb3a;
-      --green-dark: #0a9d2a;
+      --blue: #073b79;
+      --blue-dark: #052d5b;
+      --green: #159d2f;
+      --green-bright: #25bd39;
+      --ink: #102b4d;
+      --muted: #62738a;
+      --line: #e3eaf1;
+      --soft: #f5f8fb;
       --white: #fff;
-      --bg: #f1f6fb;
-      --text: #0f2446;
-      --muted: #5a6a82;
-      --line: #e2eaf2;
-      --shadow: 0 16px 38px rgba(7, 45, 85, .10);
+      --shadow: 0 16px 38px rgba(5, 45, 91, .12);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
-    body { margin: 0; background: #fff; color: var(--text); font-family: "Cairo", Arial, sans-serif; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; color: var(--ink); background: #fff; font-family: "Cairo", Tahoma, Arial, sans-serif; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
     button { font: inherit; }
-    .container { width: min(1480px, calc(100% - 36px)); margin: 0 auto; }
-    .topbar { background: var(--blue); color: #fff; min-height: 42px; }
-    .topbar-inner { min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .topbar-contact, .topbar-social { display: flex; align-items: center; gap: 13px; font-size: 13px; font-weight: 700; }
-    .topbar-contact { direction: ltr; }
-    .topbar-contact a { white-space: nowrap; }
-    .topbar-contact svg, .topbar-social svg { width: 16px; height: 16px; fill: currentColor; flex: 0 0 auto; }
-    .topbar-social a { display: inline-flex; align-items: center; }
-    .lang { border-right: 1px solid #ffffff80; padding-right: 12px; }
-    .header { position: relative; z-index: 10; background: #fff; box-shadow: 0 4px 18px #092d5110; }
-    .nav-wrap { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand img { width: 78px; height: 78px; object-fit: contain; }
-    .brand-name { color: var(--blue); font-size: 27px; font-weight: 900; line-height: .96; font-style: italic; letter-spacing: -.04em; }
-    .brand-name span { display: block; font-size: 25px; }
-    .nav { display: flex; align-items: center; gap: clamp(20px, 3.2vw, 56px); color: var(--blue); font-weight: 800; font-size: 18px; }
-    .nav a { position: relative; padding: 12px 0; white-space: nowrap; }
-    .nav a:hover, .nav a.active { color: var(--green-dark); }
-    .nav a.active::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 4px; background: var(--green); border-radius: 5px; }
-    .menu-toggle { display: none; background: none; border: 0; color: var(--blue); font-size: 29px; cursor: pointer; }
+    .container { width: min(1530px, calc(100% - 8.5%)); margin-inline: auto; }
 
-    .hero { min-height: 390px; height: clamp(390px, 28vw, 520px); background: linear-gradient(270deg, rgba(4,52,107,.94), rgba(4,52,107,.72) 36%, rgba(4,52,107,.08) 78%), url("https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=2000&q=85") center 54% / cover no-repeat; }
-    .hero-inner { height: 100%; min-height: inherit; display: flex; align-items: center; }
-    .hero-copy { width: min(760px, 62%); color: #fff; padding-inline-start: 2%; }
-    .hero h1 { margin: 0; font-size: clamp(2.7rem, 4.2vw, 5rem); line-height: 1.15; font-weight: 900; text-shadow: 0 4px 10px #001c3d80; }
-    .hero p { margin: 18px 0 24px; font-size: clamp(1.15rem, 1.7vw, 1.8rem); font-weight: 800; text-shadow: 0 2px 6px #001c3d80; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 11px 24px; border: 0; border-radius: 999px; background: linear-gradient(180deg, #24c63d, #0d9729); box-shadow: 0 8px 22px #08792860; border: 2px solid #87e66a; color: #fff; font-weight: 900; font-size: 19px; transition: transform .2s, filter .2s; }
-    .button:hover { transform: translateY(-2px); filter: brightness(1.05); }
-    .button-arrow { font-size: 28px; line-height: 1; }
+    .topbar { color: #fff; background: var(--blue); }
+    .topbar-inner { min-height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .topbar-contact, .topbar-social, .topbar-contact a { display: flex; align-items: center; }
+    .topbar-contact { gap: clamp(14px, 2.8vw, 46px); font-size: 14px; font-weight: 700; }
+    .topbar-contact a { gap: 8px; direction: ltr; white-space: nowrap; }
+    .topbar-contact svg, .social-links svg { width: 17px; height: 17px; fill: currentColor; flex: 0 0 auto; }
+    .topbar-social { gap: 14px; font-size: 13px; font-weight: 700; }
+    .social-links { display: flex; align-items: center; gap: 12px; }
+    .social-links a { display: inline-flex; align-items: center; }
+    .language { padding-inline-start: 13px; border-inline-start: 1px solid #ffffff80; white-space: nowrap; }
+    .language a:hover { color: #b6f2a0; }
 
-    .service-strip { padding: 18px 0 16px; background: #f5f8fb; }
-    .service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; }
-    .service-tile { position: relative; height: 164px; overflow: hidden; border-radius: 13px; box-shadow: 0 8px 22px #092d511a; }
-    .service-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
-    .service-tile:hover img { transform: scale(1.05); }
-    .service-tile::after { content: ""; position: absolute; inset: 30% 0 0; background: linear-gradient(transparent, #052b55e8); }
-    .service-tile span { position: absolute; z-index: 1; inset-inline: 8px; bottom: 0; min-height: 48px; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; font-weight: 900; font-size: 16px; }
+    .site-header { position: relative; z-index: 20; background: rgba(255,255,255,.98); border-bottom: 1px solid #edf1f5; }
+    .nav-wrap { min-height: 120px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { display: flex; align-items: center; flex: 0 0 auto; }
+    .brand img { width: clamp(225px, 22vw, 330px); height: 108px; object-fit: contain; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: clamp(20px, 3.2vw, 58px); font-size: 20px; font-weight: 800; color: var(--blue-dark); }
+    .nav a { position: relative; padding: 12px 0; white-space: nowrap; transition: color .2s ease; }
+    .nav a:hover, .nav a.active { color: var(--green); }
+    .nav a.active::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 4px; background: var(--green); border-radius: 6px; }
+    .menu-toggle { display: none; padding: 6px 9px; border: 0; background: transparent; color: var(--blue); font-size: 30px; cursor: pointer; }
 
-    .stats { position: relative; overflow: hidden; padding: 8px 0 17px; background: linear-gradient(110deg, #052d5c, #073e7c 53%, #052d5c); color: #fff; border-bottom: 8px solid #78d83d; }
-    .stats::after { content: ""; position: absolute; bottom: -32px; left: -3%; right: -3%; height: 38px; background: #fff; border-radius: 50% 50% 0 0 / 65% 65% 0 0; }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .stat { min-height: 132px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 12px; }
-    .stat:not(:last-child)::after { content: ""; position: absolute; left: 0; top: 17%; height: 65%; width: 2px; background: #ffffffc9; }
-    .stat svg { width: 37px; height: 37px; fill: #fff; margin-bottom: 4px; }
-    .stat strong { font-size: 31px; line-height: 1.1; font-weight: 900; }
-    .stat span { margin-top: 3px; font-size: 16px; font-weight: 800; }
+    .hero {
+      height: clamp(370px, 23vw, 430px);
+      position: relative;
+      isolation: isolate;
+      background: #14528a url("https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=2200&q=88") center 54% / cover no-repeat;
+    }
+    .hero::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(270deg, rgba(4, 53, 111, .97) 0%, rgba(4, 53, 111, .82) 31%, rgba(4, 53, 111, .27) 63%, rgba(4, 53, 111, .02) 100%); }
+    .hero-inner { height: 100%; display: flex; align-items: center; }
+    .hero-copy { width: min(780px, 58%); padding-inline-start: 2%; color: #fff; }
+    .hero h1 { margin: 0; font-size: clamp(2.7rem, 4.2vw, 4.6rem); font-weight: 900; line-height: 1.16; letter-spacing: -.035em; text-shadow: 0 4px 10px #001c3d90; }
+    .hero p { margin: 16px 0 23px; font-size: clamp(1.2rem, 1.65vw, 1.8rem); line-height: 1.5; font-weight: 800; text-shadow: 0 2px 6px #001c3d90; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 13px; padding: 10px 24px; min-height: 58px; border: 2px solid #86e86a; border-radius: 999px; background: linear-gradient(180deg, var(--green-bright), #0c9228); color: #fff; box-shadow: 0 9px 22px #08792855; font-size: 19px; font-weight: 900; transition: transform .2s, filter .2s; }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .button-arrow { font-size: 31px; line-height: 1; }
 
-    .section { padding: 76px 0; }
-    .section-soft { background: var(--bg); }
-    .section-heading { max-width: 760px; text-align: center; margin: 0 auto 38px; }
-    .eyebrow { display: inline-block; margin-bottom: 8px; color: var(--green-dark); font-weight: 800; }
-    .section-heading h2, .about-copy h2 { margin: 0 0 12px; color: var(--blue); font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.25; }
+    .services-strip { padding: 18px 0 15px; background: #f6f8fa; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; direction: ltr; }
+    .service-tile { position: relative; height: 174px; overflow: hidden; border-radius: 13px; box-shadow: 0 8px 20px #092d511a; background: #dce8f0; }
+    .service-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .service-tile:hover img { transform: scale(1.045); }
+    .service-tile::after { content: ""; position: absolute; inset: 32% 0 0; background: linear-gradient(transparent, rgba(3, 39, 78, .93)); }
+    .service-label { position: absolute; z-index: 1; inset-inline: 8px; bottom: 0; min-height: 51px; display: flex; align-items: center; justify-content: center; gap: 9px; color: #fff; text-align: center; font-size: 17px; font-weight: 900; text-shadow: 0 2px 4px #001b3d; direction: rtl; }
+    .service-label svg { width: 24px; height: 24px; fill: currentColor; flex: 0 0 auto; }
+
+    .stats { position: relative; overflow: hidden; padding: 5px 0 18px; color: #fff; background: linear-gradient(110deg, #052d5c, #073e7c 53%, #052d5c); border-bottom: 8px solid #70d635; }
+    .stats::after { content: ""; position: absolute; left: -3%; right: -3%; bottom: -34px; height: 39px; border-radius: 50% 50% 0 0 / 65% 65% 0 0; background: #fff; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); direction: ltr; }
+    .stat { min-height: 140px; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 12px; direction: rtl; }
+    .stat:not(:last-child)::after { content: ""; position: absolute; left: 0; top: 17%; height: 66%; width: 2px; background: #ffffffd0; }
+    .stat svg { width: 39px; height: 39px; margin-bottom: 3px; fill: currentColor; }
+    .stat strong { font-size: 32px; line-height: 1.08; font-weight: 900; }
+    .stat span { margin-top: 4px; font-size: 17px; line-height: 1.45; font-weight: 800; }
+
+    .section { padding: 74px 0; }
+    .section-soft { background: var(--soft); }
+    .section-heading { max-width: 760px; margin: 0 auto 36px; text-align: center; }
+    .eyebrow { display: inline-block; margin-bottom: 6px; color: var(--green); font-weight: 900; }
+    .section-heading h2, .about-copy h2 { margin: 0 0 12px; color: var(--blue); font-size: clamp(1.9rem, 3vw, 2.65rem); line-height: 1.3; }
     .section-heading p { margin: 0; color: var(--muted); line-height: 1.9; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 46px; align-items: center; }
     .about-image { position: relative; }
-    .about-image img { width: 100%; height: 400px; object-fit: cover; border-radius: 22px; box-shadow: var(--shadow); }
-    .about-badge { position: absolute; bottom: 18px; inset-inline-start: 18px; padding: 12px 18px; border-radius: 14px; background: var(--blue); color: #fff; font-weight: 800; box-shadow: var(--shadow); }
-    .about-badge strong { display: block; font-size: 25px; }
-    .about-copy p { color: var(--muted); line-height: 1.95; margin: 0 0 18px; }
-    .benefits { display: grid; gap: 10px; margin: 20px 0 24px; }
-    .benefit { display: flex; align-items: flex-start; gap: 10px; font-weight: 700; line-height: 1.7; }
-    .check { flex: 0 0 24px; width: 24px; height: 24px; display: inline-grid; place-items: center; color: var(--green-dark); background: #e2f5e7; border-radius: 50%; font-weight: 900; }
+    .about-image img { width: 100%; height: 405px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
+    .about-badge { position: absolute; inset-inline-start: 18px; bottom: 18px; padding: 12px 17px; border-radius: 13px; color: #fff; background: var(--blue); box-shadow: var(--shadow); font-weight: 800; }
+    .about-badge strong { display: block; font-size: 22px; }
+    .about-copy p { margin: 0 0 17px; color: var(--muted); line-height: 1.95; }
+    .benefits { display: grid; gap: 10px; margin: 19px 0 23px; }
+    .benefit { display: flex; align-items: flex-start; gap: 10px; font-weight: 700; line-height: 1.75; }
+    .check { display: inline-grid; flex: 0 0 24px; width: 24px; height: 24px; place-items: center; border-radius: 50%; color: var(--green); background: #e4f5e8; font-weight: 900; }
 
     .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-    .project-card { position: relative; overflow: hidden; min-height: 250px; border-radius: 17px; background: var(--blue); box-shadow: var(--shadow); }
-    .project-card img { width: 100%; height: 250px; object-fit: cover; transition: transform .35s; }
-    .project-card:hover img { transform: scale(1.04); }
-    .project-card::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, #052b55ed); }
-    .project-caption { position: absolute; z-index: 1; inset-inline: 18px; bottom: 14px; color: #fff; }
+    .project-card { position: relative; overflow: hidden; min-height: 250px; border-radius: 16px; background: var(--blue); box-shadow: var(--shadow); }
+    .project-card img { width: 100%; height: 250px; object-fit: cover; transition: transform .35s ease; }
+    .project-card:hover img { transform: scale(1.045); }
+    .project-card::after { content: ""; position: absolute; inset: 36% 0 0; background: linear-gradient(transparent, #052b55ed); }
+    .project-caption { position: absolute; z-index: 1; inset-inline: 17px; bottom: 14px; color: #fff; }
     .project-caption h3 { margin: 0 0 3px; font-size: 19px; }
-    .project-caption p { margin: 0; font-size: 13px; color: #ffffffd9; }
+    .project-caption p { margin: 0; color: #ffffffdf; font-size: 13px; }
+
+    .why-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; }
+    .why-card { padding: 24px 19px; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 10px 26px #092d510c; }
+    .why-icon { display: grid; width: 48px; height: 48px; margin-bottom: 13px; place-items: center; border-radius: 14px; background: #e9f6ec; color: var(--green); font-size: 23px; font-weight: 900; }
+    .why-card h3 { margin: 0 0 7px; color: var(--blue); font-size: 17px; }
+    .why-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
 
     .contact-section { background: #f3f7fb; }
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: stretch; }
-    .contact-info, .contact-details { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 28px; box-shadow: 0 10px 28px #092d510c; }
-    .contact-info h2 { margin: 0 0 10px; color: var(--blue); font-size: 27px; }
-    .contact-info > p { margin: 0 0 22px; color: var(--muted); line-height: 1.8; }
-    .contact-item { display: flex; gap: 12px; align-items: flex-start; padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; align-items: stretch; }
+    .contact-info, .contact-details { padding: 27px; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 10px 28px #092d510c; }
+    .contact-info h3 { margin: 0 0 9px; color: var(--blue); font-size: 25px; }
+    .contact-info > p { margin: 0 0 17px; color: var(--muted); line-height: 1.8; }
+    .contact-item { display: flex; align-items: flex-start; gap: 11px; padding: 12px 0; border-bottom: 1px solid var(--line); }
     .contact-item:last-child { border-bottom: 0; }
-    .contact-icon { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 12px; background: #e8f6eb; color: var(--green-dark); font-size: 19px; }
+    .contact-icon { display: grid; flex: 0 0 39px; width: 39px; height: 39px; place-items: center; border-radius: 11px; color: var(--green); background: #e8f6eb; font-size: 18px; }
     .contact-item small { display: block; color: var(--muted); }
-    .contact-item strong { display: block; direction: ltr; text-align: right; }
-    .contact-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .contact-card { padding: 18px; background: #f7fafc; border: 1px solid var(--line); border-radius: 15px; }
-    .contact-card h3 { margin: 0 0 6px; color: var(--blue); font-size: 17px; }
-    .contact-card p { margin: 0 0 9px; color: var(--muted); font-size: 14px; line-height: 1.7; }
-    .contact-card a { color: var(--blue); font-weight: 800; direction: ltr; display: inline-block; }
-    .contact-card a:hover { color: var(--green-dark); }
-    .branch-list { line-height: 1.9 !important; }
-    .footer { padding: 24px 0; background: var(--blue-deep); color: #fff; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-    .footer-brand { display: flex; align-items: center; gap: 10px; font-weight: 900; }
-    .footer-brand img { width: 42px; height: 42px; object-fit: contain; }
-    .footer-note { color: #d3deeb; font-size: 13px; }
+    .contact-item strong { display: block; }
+    .ltr { direction: ltr; text-align: right; }
+    .contact-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; }
+    .contact-card { padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: #f8fafc; }
+    .contact-card h3 { margin: 0 0 6px; color: var(--blue); font-size: 16px; }
+    .contact-card p { margin: 0 0 8px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .contact-card a { display: inline-block; color: var(--blue); font-weight: 800; }
+    .contact-card a:hover { color: var(--green); }
+    .phone { direction: ltr; }
+    .footer { padding: 21px 0; color: #fff; background: var(--blue-dark); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-brand { display: flex; align-items: center; gap: 9px; font-weight: 900; }
+    .footer-brand img { width: 42px; height: 42px; object-fit: contain; border-radius: 5px; }
+    .footer-note { color: #d5e0ec; font-size: 13px; }
+    .back-top { font-size: 14px; font-weight: 700; }
 
-    @media (max-width: 980px) {
-      .nav { gap: 18px; font-size: 15px; }
-      .brand-name { font-size: 23px; }
-      .hero-copy { width: 70%; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    @media (max-width: 1050px) {
+      .container { width: calc(100% - 40px); }
+      .nav-wrap { gap: 18px; }
+      .brand img { width: 240px; }
+      .nav { gap: 22px; font-size: 17px; }
+      .hero-copy { width: 67%; }
+      .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 760px) {
       .container { width: calc(100% - 30px); }
       .topbar-inner { justify-content: center; }
       .topbar-social { display: none; }
-      .topbar-contact { flex-wrap: wrap; justify-content: center; gap: 7px; font-size: 10px; }
+      .topbar-contact { flex-wrap: wrap; justify-content: center; gap: 4px 10px; font-size: 10px; }
       .topbar-contact .email { display: none; }
       .nav-wrap { position: relative; min-height: 76px; }
-      .brand img { width: 54px; height: 54px; }
-      .brand-name { font-size: 21px; }
-      .brand-name span { font-size: 19px; }
+      .brand img { width: 180px; height: 68px; }
       .menu-toggle { display: block; }
-      .nav { display: none; position: absolute; top: 100%; inset-inline: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 18px; background: #fff; border: 1px solid var(--line); border-radius: 0 0 14px 14px; box-shadow: var(--shadow); }
+      .nav { display: none; position: absolute; top: 100%; inset-inline: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 9px 17px; border: 1px solid var(--line); border-radius: 0 0 13px 13px; background: #fff; box-shadow: var(--shadow); font-size: 16px; }
       .nav.open { display: flex; }
       .nav a { padding: 10px 0; }
-      .hero { min-height: 410px; height: 410px; background-position: 44% center; }
-      .hero-inner { min-height: 410px; justify-content: center; }
-      .hero-copy { width: 94%; text-align: center; padding: 0; }
-      .hero h1 { font-size: clamp(2.4rem, 9vw, 3.2rem); }
+      .hero { height: 410px; background-position: 44% center; }
+      .hero::before { background: linear-gradient(270deg, rgba(4,53,111,.95), rgba(4,53,111,.68) 72%, rgba(4,53,111,.3)); }
+      .hero-inner { justify-content: center; }
+      .hero-copy { width: 94%; padding: 0; text-align: center; }
+      .hero h1 { font-size: clamp(2.3rem, 8.8vw, 3.15rem); }
       .hero p { font-size: 1rem; }
-      .button { font-size: 16px; }
+      .button { min-height: 52px; font-size: 16px; }
       .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-      .service-tile { height: 130px; }
-      .service-tile span { font-size: 12px; }
+      .service-tile { height: 132px; border-radius: 10px; }
+      .service-label { font-size: 12px; gap: 5px; }
+      .service-label svg { width: 19px; height: 19px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .stat { min-height: 118px; }
+      .stat { min-height: 116px; padding: 8px 4px; }
       .stat:nth-child(2)::after { display: none; }
+      .stat svg { width: 31px; height: 31px; }
       .stat strong { font-size: 26px; }
       .stat span { font-size: 12px; }
       .section { padding: 52px 0; }
-      .about-grid { gap: 24px; }
-      .about-image img { height: 280px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card, .project-card img { min-height: 210px; height: 210px; }
-      .contact-details { grid-template-columns: 1fr; padding: 18px; }
-      .contact-info { padding: 22px; }
+      .about-grid { grid-template-columns: 1fr; gap: 23px; }
+      .about-image img { height: 270px; }
+      .projects-grid { grid-template-columns: 1fr; gap: 13px; }
+      .project-card, .project-card img { min-height: 205px; height: 205px; }
+      .why-grid { gap: 11px; }
+      .why-card { padding: 17px 14px; }
+      .why-card h3 { font-size: 15px; }
+      .why-card p { font-size: 12px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 14px; }
+      .contact-details { padding: 15px; }
+      .contact-info { padding: 21px; }
       .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 380px) {
+      .topbar-contact { font-size: 9px; }
+      .service-label { font-size: 11px; }
+      .contact-details { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
@@ -173,22 +208,23 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="topbar-contact" aria-label="بيانات التواصل">
-        <a class="item email" href="mailto:info@electric-power-eg.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm0 2-8 5-8-5h16Zm-16 8V8.5l7.5 5 7.5-5V16H4Z"/></svg>info@electric-power-eg.com</a>
-        <a class="item" href="tel:01104967065"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.8 3.7 5 6.8 8.7 8.7l2.9-2.9a1 1 0 0 1 1.1-.2c1.3.4 2.7.6 4.2.6.6 0 1 .4 1 1V21a1 1 0 0 1-1 1C9.7 22 2 14.3 2 4a1 1 0 0 1 1-1h3.4a1 1 0 0 1 1 1c0 1.5.2 2.9.6 4.2.1.4 0 .9-.3 1.2l-2.9 2.9Z"/></svg>01104967065 - 01119935845 - 01119941565 - 01119947570</a>
+        <a class="email" href="mailto:info@electric-power-eg.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2 .2v.2l8 6.1 8-6.1v-.2a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.5.5Zm16 2.7-7.4 5.6a1 1 0 0 1-1.2 0L4 9.4v8.1a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5V9.4Z"/></svg>info@electric-power-eg.com</a>
+        <a href="tel:01104967065"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.8 9.4 2a1.8 1.8 0 0 1 2.1 1l1.4 3.3a1.8 1.8 0 0 1-.5 2l-1.8 1.5a15 15 0 0 0 3.6 3.6l1.5-1.8a1.8 1.8 0 0 1 2-.5l3.3 1.4a1.8 1.8 0 0 1 1 2.1l-.8 2.8a2.4 2.4 0 0 1-2.3 1.7C10.7 19.1 4.9 13.3 4.9 6.1a2.4 2.4 0 0 1 1.7-2.3Z"/></svg>01104967065 - 01119935845 - 01119941565 - 01119947570</a>
       </div>
       <div class="topbar-social">
-        <a href="#contact" aria-label="Facebook">f</a><a href="#contact" aria-label="YouTube">▶</a><a href="#contact" aria-label="LinkedIn">in</a>
-        <span class="lang"><a href="#">عربي</a> | <a href="#">English</a></span>
+        <div class="social-links" aria-label="التواصل الاجتماعي">
+          <a href="https://www.facebook.com/" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V7.6c0-.9.3-1.6 1.6-1.6h1.7V3.2c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg></a>
+          <a href="https://www.youtube.com/" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0-.5 5 31 31 0 0 0 .5 5 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 .5-5 31 31 0 0 0-.5-5ZM9.7 15.1V8.9l5.5 3.1-5.5 3.1Z"/></svg></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M5.2 3a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4ZM3.3 9h3.8v12H3.3V9Zm6.2 0h3.6v1.6h.1A4 4 0 0 1 16.8 8c3.9 0 4.6 2.5 4.6 5.8V21h-3.8v-6.4c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21H9.5V9Z"/></svg></a>
+        </div>
+        <span class="language"><a href="#" lang="ar">عربي</a> | <a href="#" lang="en">English</a></span>
       </div>
     </div>
   </div>
 
-  <header class="header">
+  <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Electric Power الرئيسية">
-        <img src="logo.png" alt="شعار Electric Power" />
-        <span class="brand-name">Electric<span>Power</span></span>
-      </a>
+      <a class="brand" href="#home" aria-label="Electric Power — الرئيسية"><img src="logo.png" alt="شعار Electric Power" /></a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">☰</button>
       <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
         <a class="active" href="#home">الرئيسية</a>
@@ -211,104 +247,99 @@
       </div>
     </section>
 
-    <section class="service-strip" id="services" aria-label="خدماتنا">
+    <section class="services-strip" id="services" aria-label="خدماتنا">
       <div class="container service-grid">
-        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=85" alt="ألواح ومحطات الطاقة الشمسية" /><span>محطات الطاقة الشمسية</span></a>
-        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=85" alt="البطاريات والإنفرترات" /><span>البطاريات والإنفرترات</span></a>
-        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=800&q=85" alt="حلول الطاقة الصناعية" /><span>حلول صناعية</span></a>
-        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=85" alt="حلول زراعية" /><span>حلول زراعية</span></a>
+        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=85" alt="محطات الطاقة الشمسية" /><span class="service-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v2H3V3Zm1 4h16l2 12H2L4 7Zm2 2-1.3 8h3.1l.5-8H6Zm4.3 0-.5 8h4.4l-.5-8h-3.4Zm5.4 0 .5 8h3.1L18 9h-2.3ZM1 21h22v2H1v-2Z"/></svg>محطات الطاقة الشمسية</span></a>
+        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=85" alt="البطاريات والإنفرترات" /><span class="service-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3V4Zm2 2h6V5H9v1ZM4 8v12h16V8H4Zm7 2h2v3h3v2h-3v3h-2v-3H8v-2h3v-3Z"/></svg>البطاريات والإنفرترات</span></a>
+        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=800&q=85" alt="حلول صناعية" /><span class="service-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21V9l7 4V9l7 4V5h6v16H2Zm2-2h2v-2H4v2Zm0-4h2v-2H4v2Zm5 4h2v-2H9v2Zm0-4h2v-2H9v2Zm5 4h2v-2h-2v2Zm0-4h2v-2h-2v2Zm5 4h2v-2h-2v2Zm0-4h2v-2h-2v2Z"/></svg>حلول صناعية</span></a>
+        <a class="service-tile" href="#projects"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=85" alt="حلول زراعية" /><span class="service-label"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 3.2C12 3.5 5.1 5 3 10.1c-1.2 2.9.2 5.7 3.1 6.7 2.7.9 5.3-.5 6.5-3.1.9-1.8 1.2-4.2 1.3-6.6-1.4 3.1-3.6 5.7-6.5 7.5 2.2-3.9 6.4-7.2 13.4-9.2V3.2ZM3 20h18v2H3v-2Z"/></svg>حلول زراعية</span></a>
       </div>
     </section>
 
-    <section class="stats" aria-label="إحصاءات الشركة">
+    <section class="stats" aria-label="إنجازاتنا">
       <div class="container stats-grid">
         <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 2 6v7c0 5.5 3.7 10.5 10 13 6.3-2.5 10-7.5 10-13V6l-10-5Zm0 4.2 6.3 3.1V13c0 3.9-2.5 7.5-6.3 9.4C8.2 20.5 5.7 16.9 5.7 13V8.3L12 5.2Zm-1 7.3h2v5h-2v-5Zm0-4h2v2h-2V8.5Z"/></svg><strong>100%</strong><span>مكونات وأجهزة معتمدة</span></div>
         <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18v2H3v-2Zm1-2V8h4v10H4Zm6 0V4h4v14h-4Zm6 0v-7h4v7h-4Z"/></svg><strong>+15 MW</strong><span>قدرة محطات مركبة</span></div>
         <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a8 8 0 0 1 8 8c0 5.8-6.7 11.1-7.3 11.5a.8.8 0 0 1-.9 0C10.7 21.1 4 15.8 4 10a8 8 0 0 1 8-8Zm0 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 5.5Z"/></svg><strong>+500</strong><span>مشروع شمسي منفذ</span></div>
-        <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a8 8 0 0 1 8 8c0 5.8-6.7 11.1-7.3 11.5a.8.8 0 0 1-.9 0C10.7 21.1 4 15.8 4 10a8 8 0 0 1 8-8Zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg><strong>5</strong><span>فروع لتغطية المحافظات</span></div>
+        <div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg><strong>5</strong><span>فروع لتغطية المحافظات</span></div>
       </div>
     </section>
 
     <section class="section section-soft" id="about">
       <div class="container about-grid">
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1100&q=85" alt="ألواح طاقة شمسية ضمن مشروع مستدام" loading="lazy" />
-          <div class="about-badge"><strong>Electric Power</strong><span>طاقة لمستقبل أفضل</span></div>
-        </div>
+        <div class="about-image"><img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1100&q=85" alt="ألواح طاقة شمسية لمشروع مستدام" loading="lazy" /><div class="about-badge"><strong>Electric Power</strong><span>حلول تبدأ من احتياجك</span></div></div>
         <div class="about-copy">
           <span class="eyebrow">من نحن</span>
-          <h2>حلول طاقة تخدم احتياج مشروعك</h2>
-          <p>نقدم حلولاً متكاملة في الطاقة الشمسية والبطاريات والأنظمة الكهربائية للمنازل والمزارع والمنشآت. نبدأ بفهم احتياج المشروع، ثم نساعد في اختيار الحل والمكونات المناسبة، مع دعم فني في مراحل التنفيذ والتشغيل.</p>
+          <h2>حلول متكاملة لمستقبل أكثر استدامة</h2>
+          <p>نساعد المنازل والمزارع والمنشآت على الوصول إلى حلول طاقة مناسبة، بدءًا من فهم احتياجات المشروع واختيار المكونات، وصولًا إلى التنفيذ والتشغيل والدعم الفني.</p>
           <div class="benefits">
-            <div class="benefit"><span class="check">✓</span><span>حلول مصممة وفق طبيعة الأحمال وموقع المشروع.</span></div>
-            <div class="benefit"><span class="check">✓</span><span>أنظمة شمسية وتخزين طاقة وحلول كهربائية متكاملة.</span></div>
-            <div class="benefit"><span class="check">✓</span><span>تواصل مباشر لمتابعة احتياجاتك قبل التنفيذ وبعده.</span></div>
+            <div class="benefit"><span class="check">✓</span><span>حلول طاقة شمسية وتخزين طاقة وحلول كهربائية متكاملة.</span></div>
+            <div class="benefit"><span class="check">✓</span><span>اختيار فني يستند إلى الأحمال وطبيعة الموقع واحتياجات التشغيل.</span></div>
+            <div class="benefit"><span class="check">✓</span><span>دعم ومتابعة مباشرة لمراحل المشروع المختلفة.</span></div>
           </div>
-          <a class="button" href="#contact">تحدث مع فريقنا</a>
+          <a class="button" href="#contact">تواصل مع فريقنا</a>
         </div>
       </div>
     </section>
 
     <section class="section" id="projects">
       <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">مشاريعنا</span>
-          <h2>حلول لمشروعات متنوعة</h2>
-          <p>نخدم احتياجات الطاقة في القطاعات الزراعية والصناعية والتجارية من خلال أنظمة مصممة بحسب ظروف كل مشروع.</p>
-        </div>
+        <div class="section-heading"><span class="eyebrow">مشاريعنا</span><h2>حلول لمشروعات متنوعة</h2><p>ندعم المشروعات الزراعية والصناعية والتجارية بحلول طاقة مصممة لتناسب احتياجات التشغيل والموقع.</p></div>
         <div class="projects-grid">
-          <article class="project-card"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=900&q=85" alt="مشروعات الطاقة الشمسية" loading="lazy" /><div class="project-caption"><h3>محطات الطاقة الشمسية</h3><p>حلول لتوليد الطاقة للمواقع والمنشآت.</p></div></article>
-          <article class="project-card"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85" alt="مشروعات زراعية" loading="lazy" /><div class="project-caption"><h3>المشروعات الزراعية</h3><p>دعم احتياجات المزارع والطاقة والري.</p></div></article>
-          <article class="project-card"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=900&q=85" alt="مشروعات صناعية" loading="lazy" /><div class="project-caption"><h3>الحلول الصناعية</h3><p>أنظمة كهربائية وطاقة لدعم استمرارية التشغيل.</p></div></article>
+          <article class="project-card"><img src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=900&q=85" alt="مشروعات الطاقة الشمسية" loading="lazy" /><div class="project-caption"><h3>محطات الطاقة الشمسية</h3><p>حلول توليد طاقة للمواقع والمنشآت.</p></div></article>
+          <article class="project-card"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=85" alt="مشروعات زراعية" loading="lazy" /><div class="project-caption"><h3>المشروعات الزراعية</h3><p>حلول تخدم احتياجات المزارع والري.</p></div></article>
+          <article class="project-card"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=900&q=85" alt="مشروعات صناعية" loading="lazy" /><div class="project-caption"><h3>الحلول الصناعية</h3><p>أنظمة تدعم استقرار واستمرارية التشغيل.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="why">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">لماذا Electric Power؟</span><h2>شريكك من التخطيط إلى التشغيل</h2><p>نهتم بأن يكون اختيار الحل واضحًا ومناسبًا لاحتياجات مشروعك الفعلية.</p></div>
+        <div class="why-grid">
+          <article class="why-card"><div class="why-icon">⌕</div><h3>فهم احتياج المشروع</h3><p>نبدأ بمراجعة الأحمال وطبيعة الموقع قبل اقتراح الحل.</p></article>
+          <article class="why-card"><div class="why-icon">◇</div><h3>اختيار المكونات</h3><p>نراعي التوافق والجودة وكفاءة التشغيل عند اختيار النظام.</p></article>
+          <article class="why-card"><div class="why-icon">⚙</div><h3>تنفيذ ومتابعة</h3><p>اهتمام بالتفاصيل الفنية ومتابعة مراحل التنفيذ والتشغيل.</p></article>
+          <article class="why-card"><div class="why-icon">☎</div><h3>تواصل مباشر</h3><p>سهولة التواصل لطلب الاستشارة أو مناقشة مشروعك.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">تواصل معنا</span>
-          <h2>ابدأ مناقشة مشروعك معنا</h2>
-          <p>للاستفسارات أو طلب عرض سعر، تواصل معنا عبر الهاتف أو البريد الإلكتروني.</p>
-        </div>
+        <div class="section-heading"><span class="eyebrow">تواصل معنا</span><h2>ابدأ مناقشة مشروعك</h2><p>تواصل معنا للاستفسارات أو لمشاركة تفاصيل احتياجك والحصول على معلومات عن الحلول المناسبة.</p></div>
         <div class="contact-grid">
-          <div class="contact-info">
-            <h2>يسعدنا مساعدتك</h2>
-            <p>أرسل لنا نبذة عن المشروع أو احتياجك للطاقة وسيتواصل معك فريقنا.</p>
-            <div class="contact-item"><span class="contact-icon">☎</span><div><small>اتصل بنا</small><strong><a href="tel:01104967065">01104967065</a></strong></div></div>
-            <div class="contact-item"><span class="contact-icon">✉</span><div><small>البريد الإلكتروني</small><strong style="direction:ltr"><a href="mailto:info@electric-power-eg.com">info@electric-power-eg.com</a></strong></div></div>
+          <div class="contact-info"><h3>يسعدنا مساعدتك</h3><p>اختر وسيلة التواصل المناسبة، وسيكون فريقنا سعيد��ا بالرد على استفسارك.</p>
+            <div class="contact-item"><span class="contact-icon">☎</span><div><small>اتصل بنا</small><strong class="ltr"><a href="tel:01104967065">01104967065</a></strong></div></div>
+            <div class="contact-item"><span class="contact-icon">✉</span><div><small>البريد الإلكتروني</small><strong class="ltr"><a href="mailto:info@electric-power-eg.com">info@electric-power-eg.com</a></strong></div></div>
             <div class="contact-item"><span class="contact-icon">⌖</span><div><small>مناطق الخدمة</small><strong>الإسكندرية، السادات، القاهرة، المنيا، أسيوط</strong></div></div>
           </div>
           <div class="contact-details">
-            <div class="contact-card"><h3>أرقام التواصل</h3><p>اختر أي رقم للاتصال مباشرة.</p><a href="tel:01104967065">01104967065</a><br /><a href="tel:01119935845">01119935845</a></div>
-            <div class="contact-card"><h3>أرقام إضافية</h3><p>متاحون لاستفساراتكم.</p><a href="tel:01119941565">01119941565</a><br /><a href="tel:01119947570">01119947570</a></div>
-            <div class="contact-card"><h3>واتساب</h3><p>راسلنا للاستفسار وطلب عرض سعر.</p><a href="https://wa.me/201104967065" target="_blank" rel="noopener noreferrer">ابدأ محادثة واتساب</a></div>
-            <div class="contact-card"><h3>فروعنا</h3><p class="branch-list">الإسكندرية · السادات · القاهرة · المنيا · أسيوط</p><a href="mailto:info@electric-power-eg.com">اسأل عن أقرب فرع</a></div>
+            <div class="contact-card"><h3>أرقام التواصل</h3><p>اتصل مباشرة على أحد الأرقام التالية.</p><a class="phone" href="tel:01104967065">01104967065</a><br /><a class="phone" href="tel:01119935845">01119935845</a></div>
+            <div class="contact-card"><h3>أرقام إضافية</h3><p>نرحب باستفساراتكم على الأرقام التالية.</p><a class="phone" href="tel:01119941565">01119941565</a><br /><a class="phone" href="tel:01119947570">01119947570</a></div>
+            <div class="contact-card"><h3>واتساب</h3><p>راسلنا للاستفسار أو طلب عرض سعر.</p><a href="https://wa.me/201104967065" target="_blank" rel="noopener noreferrer">ابدأ محادثة واتساب</a></div>
+            <div class="contact-card"><h3>الفروع</h3><p>الإسكندرية · السادات · القاهرة · المنيا · أسيوط</p><a href="mailto:info@electric-power-eg.com">اسأل عن أقرب فرع</a></div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand"><img src="logo.png" alt="" /><span>Electric Power</span></div>
-      <div class="footer-note">© <span id="year"></span> Electric Power — جميع الحقوق محفوظة</div>
-      <a href="#home">العودة للأعلى ↑</a>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container footer-inner"><a class="footer-brand" href="#home"><img src="logo.png" alt="" /><span>Electric Power</span></a><span class="footer-note">© <span id="year"></span> Electric Power — جميع الحقوق محفوظة</span><a class="back-top" href="#home">العودة للأعلى ↑</a></div></footer>
 
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const nav = document.getElementById('nav');
     menuToggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(open));
-      menuToggle.textContent = open ? '×' : '☰';
+      const isOpen = nav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'إغلاق القائمة' : 'فتح القائمة');
+      menuToggle.textContent = isOpen ? '×' : '☰';
     });
     nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
       nav.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'فتح القائمة');
       menuToggle.textContent = '☰';
     }));
     document.getElementById('year').textContent = new Date().getFullYear();
