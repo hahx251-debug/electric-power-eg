@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="190" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
-  <title id="title">Electric Power</title>
-  <desc id="desc">Electric Power renewable energy company logo with green leaves, blue lightning and golden sun.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+  <title id="title">Electric Power Company</title>
+  <desc id="desc">Electric Power Company renewable energy logo with green leaves, a blue lightning bolt, and a golden sun.</desc>
   <defs>
     <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#53c51b"/><stop offset="1" stop-color="#08732e"/></linearGradient>
     <linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#39d5ff"/><stop offset=".48" stop-color="#0879cf"/><stop offset="1" stop-color="#073b79"/></linearGradient>
@@ -22,6 +22,7 @@
   <g font-family="Arial, Helvetica, sans-serif" font-style="italic" font-weight="800" fill="#073b79">
     <text x="318" y="89" font-size="58">Electric</text>
     <text x="318" y="148" font-size="58">Power</text>
+    <text x="322" y="198" font-size="27" font-style="normal" letter-spacing="7">COMPANY</text>
   </g>
   <path d="M322 161h315" stroke="#159d2f" stroke-width="6" stroke-linecap="round"/>
 </svg>
